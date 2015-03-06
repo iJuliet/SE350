@@ -44,6 +44,13 @@ typedef struct _queue{
 } queue;
 */
 
+typedef struct _msg_node{
+	int sender_pid;
+	int receiver_pid;
+	void* msg_data;
+	struct _msg_node* next;
+} msg_node;
+
 /*	
 queue **ready_queue;
 
@@ -81,6 +88,8 @@ void process_init()
 		g_proc_table[i].m_stack_size = g_test_procs[i].m_stack_size;
 		g_proc_table[i].mpf_start_pc = g_test_procs[i].mpf_start_pc;
 		g_proc_table[i].m_priority = g_test_procs[i].m_priority;
+		g_proc_table[i].msg_front = NULL;
+		g_proc_table[i].msg_last = NULL;
 	}
 	
 	g_proc_table[NUM_TEST_PROCS].m_pid = 0;
@@ -230,7 +239,7 @@ int k_set_process_priority(int process_id, int priority) {
 				}
 				ready_queue[j]=tmp;
 			}
-			return RTX_OK;
+			return k_release_processor();
 		}
 	}
 	return RTX_ERR;
@@ -313,6 +322,83 @@ PCB* bq_dequeue(void) {
 	return NULL;
 }
 
+void msg_enqueue(PCB* pcb, void* msg_envelope){
+	if (pcb->msg_front == NULL){
+		pcb->msg_front = msg_envelope;
+		pcb->msg_last = msg_envelope;
+	}
+	else{
+		(pcb->msg_last) -> next = msg_envelope;
+		pcb->msg_last = msg_envelope;
+	}
+}
+
+void msg_dequeue(PCB* pcb, int sender_pid){
+		void* result;
+		void* temp = pcb->msg_front;
+		result = NULL;
+		if(temp == NULL){
+			 //block the current process
+		}
+		else if(temp-> sender_pid == sender_pid){
+				result = temp;
+				pcb->msg_front = temp->next;
+		}
+		else{
+			while( temp->next != NULL){
+					if((temp->next) -> sender_pid == sender_pid){
+							//pull the msg from the queue and remove it
+							result = temp -> next;
+							temp -> next = (temp->next) ->next;
+							break;
+					}
+			}
+		}
+		if(result == NULL){
+				//block the current process
+		}
+}
+
 PCB* get_current_proc(void) {
 	return gp_current_process;
 }
+
+PCB* get_pcb_from_pid(int process_id){
+	for (i = 0; i < NUM_TEST_PROCS; i++ ) {
+		if (gp_pcbs[i]->m_pid == process_id) {
+			return gp_pcbs[i];
+		}
+	}
+}
+
+//send message
+int k_send_message(int process_id, void *message_envelope){
+	/*
+	void send_message ( uint32 receiving_pid , msg_t * env ) {
+atomic ( on ) ;
+set sender_procid , destination_procid ;
+pcb_t * receiving_proc = get_pcb_from_pid ( receiving_pid ) ;
+enqueue env onto the msg_queue of receiving_proc ;
+if ( receiving_proc->state is BLOCKED_ON_RECEIVE ) {
+set receiving_proc state to ready ;
+rpq_enqueue ( receiving_proc ) ;
+}
+atomic ( off ) ;
+}*/
+	int sender_pid = get_current_proc()->m_pid;
+	int destination_pid = process_id;
+
+	PCB* receiving_proc = get_pcb_from_pid(process_id);
+	
+	//enqueue env onto msg_queue of receiving proc
+	msg_enqueue(receiving_proc, message_envelope);
+	if (receiving_proc ->
+	
+
+}
+
+
+struct msgbuf {
+	int mtype; /* user defined message type */
+	char mtext[1]; /* body of the message */
+};

@@ -41,6 +41,14 @@ PROC_INIT g_test_procs[NUM_TEST_PROCS];
 int test_num; // this indicates which test are we on
 int ok_tests;
 
+typedef struct _msgbuf {
+	int sender_pid;
+	int receiver_pid;
+	struct _msgbuf* next;
+	int mtype; /* user defined message type */
+	char mtext[1]; /* body of the message */
+} msgbuf;
+
 void set_test_procs() {
 	int i;
 	test_num = 1;
