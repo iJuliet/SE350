@@ -137,7 +137,7 @@ void *k_request_memory_block(void) {
 	while (mem_start_ptr == NULL) {
 		curr_proc = get_current_proc();
 		bq_enqueue(curr_proc);
-		curr_proc->m_state = BLK;
+		curr_proc->m_state = BLK_ON_MEM;
 		k_release_processor();
 	}
 	free_mem_blk = mem_start_ptr;

@@ -29,7 +29,7 @@ typedef unsigned char U8;
 typedef unsigned int U32;
 
 /* process states, note we only assume three states in this example */
-typedef enum {NEW = 0, RDY, RUN, BLK} PROC_STATE_E;  
+typedef enum {NEW = 0, RDY, RUN, BLK_ON_MEM, BLK_ON_MSG} PROC_STATE_E;  
 
 /*
   PCB data structure definition.
@@ -42,7 +42,9 @@ typedef struct pcb
 	U32 *mp_sp;		/* stack pointer of the process */
 	U32 m_pid;		/* process id */
 	int m_priority; 
-	PROC_STATE_E m_state;   /* state of the process */      
+	PROC_STATE_E m_state;   /* state of the process */   
+	void* msg_front;
+	void* msg_last;	
 } PCB;
 
 /* initialization table item */
@@ -52,6 +54,7 @@ typedef struct proc_init
 	int m_priority;         /* initial priority, not used in this example. */ 
 	int m_stack_size;       /* size of stack in words */
 	void (*mpf_start_pc) ();/* entry point of the process */    
+
 } PROC_INIT;
 
 #endif // ! K_RTX_H_

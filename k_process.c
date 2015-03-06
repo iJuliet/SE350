@@ -44,12 +44,13 @@ typedef struct _queue{
 } queue;
 */
 
-typedef struct _msg_node{
+typedef struct _msgbuf {
 	int sender_pid;
 	int receiver_pid;
-	void* msg_data;
-	struct _msg_node* next;
-} msg_node;
+	struct _msgbuf* next;
+	int mtype; /* user defined message type */
+	char mtext[1]; /* body of the message */
+} msgbuf;
 
 /*	
 queue **ready_queue;
@@ -88,8 +89,6 @@ void process_init()
 		g_proc_table[i].m_stack_size = g_test_procs[i].m_stack_size;
 		g_proc_table[i].mpf_start_pc = g_test_procs[i].mpf_start_pc;
 		g_proc_table[i].m_priority = g_test_procs[i].m_priority;
-		g_proc_table[i].msg_front = NULL;
-		g_proc_table[i].msg_last = NULL;
 	}
 	
 	g_proc_table[NUM_TEST_PROCS].m_pid = 0;
@@ -103,6 +102,8 @@ void process_init()
 		(gp_pcbs[i])->m_pid = (g_proc_table[i]).m_pid;
 		(gp_pcbs[i])->m_priority = (g_proc_table[i]).m_priority;
 		(gp_pcbs[i])->m_state = NEW;
+		(gp_pcbs[i])->msg_front = NULL;
+		(gp_pcbs[i])->msg_last = NULL;
 		
 		sp = alloc_stack((g_proc_table[i]).m_stack_size);
 		*(--sp)  = INITIAL_xPSR;      // user process initial xPSR  
@@ -269,7 +270,7 @@ void null_process(void) {
 //add to the right place in ready_queue
 void rpq_enqueue(PCB* pcb) {
 	int i,j;
-	if(pcb -> m_state == BLK){
+	if(pcb -> m_state == BLK_ON_MEM){
 		return;
 	}
 	for(i = 0; i < NUM_TEST_PROCS; i++) {
@@ -322,41 +323,43 @@ PCB* bq_dequeue(void) {
 	return NULL;
 }
 
-void msg_enqueue(PCB* pcb, void* msg_envelope){
+int msg_enqueue(PCB* pcb, void* msg_envelope){
+	if (pcb == NULL || msg_envelope == NULL) {
+		return RTX_ERR;
+	}
 	if (pcb->msg_front == NULL){
 		pcb->msg_front = msg_envelope;
 		pcb->msg_last = msg_envelope;
 	}
 	else{
-		(pcb->msg_last) -> next = msg_envelope;
+		((msgbuf*)pcb->msg_last)->next = msg_envelope;
 		pcb->msg_last = msg_envelope;
 	}
+	return RTX_OK;
 }
 
-void msg_dequeue(PCB* pcb, int sender_pid){
-		void* result;
-		void* temp = pcb->msg_front;
-		result = NULL;
-		if(temp == NULL){
-			 //block the current process
+void* msg_dequeue(PCB* pcb, int sender_pid){
+	msgbuf* prev;	
+	msgbuf* temp = (msgbuf*)pcb->msg_front;		
+	while (temp->sender_pid != sender_pid && temp != NULL) {
+		prev = temp;
+		temp = temp->next;
+	}
+	if(temp == NULL){
+		//block the current process
+	} else {
+		if (pcb->msg_front == temp) {
+			pcb->msg_front = temp->next;
+		} else {
+			prev->next = temp->next;
 		}
-		else if(temp-> sender_pid == sender_pid){
-				result = temp;
-				pcb->msg_front = temp->next;
+		if (pcb->msg_last == pcb->msg_front) {
+			pcb->msg_last = NULL;
+		} else if (pcb->msg_last == temp) {
+			pcb->msg_last = prev;
 		}
-		else{
-			while( temp->next != NULL){
-					if((temp->next) -> sender_pid == sender_pid){
-							//pull the msg from the queue and remove it
-							result = temp -> next;
-							temp -> next = (temp->next) ->next;
-							break;
-					}
-			}
-		}
-		if(result == NULL){
-				//block the current process
-		}
+	}
+	return temp;
 }
 
 PCB* get_current_proc(void) {
@@ -364,41 +367,38 @@ PCB* get_current_proc(void) {
 }
 
 PCB* get_pcb_from_pid(int process_id){
-	for (i = 0; i < NUM_TEST_PROCS; i++ ) {
+	int i = 0;
+	for (; i < NUM_TEST_PROCS; i++ ) {
 		if (gp_pcbs[i]->m_pid == process_id) {
 			return gp_pcbs[i];
 		}
 	}
+	return NULL;
 }
 
 //send message
 int k_send_message(int process_id, void *message_envelope){
-	/*
-	void send_message ( uint32 receiving_pid , msg_t * env ) {
-atomic ( on ) ;
-set sender_procid , destination_procid ;
-pcb_t * receiving_proc = get_pcb_from_pid ( receiving_pid ) ;
-enqueue env onto the msg_queue of receiving_proc ;
-if ( receiving_proc->state is BLOCKED_ON_RECEIVE ) {
-set receiving_proc state to ready ;
-rpq_enqueue ( receiving_proc ) ;
-}
-atomic ( off ) ;
-}*/
-	int sender_pid = get_current_proc()->m_pid;
-	int destination_pid = process_id;
-
+	int status;
 	PCB* receiving_proc = get_pcb_from_pid(process_id);
-	
 	//enqueue env onto msg_queue of receiving proc
-	msg_enqueue(receiving_proc, message_envelope);
-	if (receiving_proc ->
-	
-
+	status = msg_enqueue(receiving_proc, message_envelope);
+	if (receiving_proc->m_state == BLK_ON_MSG) {
+		receiving_proc->m_state = RDY;
+		rpq_enqueue(receiving_proc);
+	}
+	return status;
 }
 
-
-struct msgbuf {
-	int mtype; /* user defined message type */
-	char mtext[1]; /* body of the message */
-};
+//receive message
+void* k_receive_message(int sender_id) {
+	// atomic(on)
+	void* env;
+	PCB* curr_proc = get_current_proc();
+	while(curr_proc->msg_front == NULL) {
+		curr_proc->m_state = BLK_ON_MSG;
+		k_release_processor();
+	}
+	env = msg_dequeue(curr_proc, sender_id);
+	// atomic(off)
+	return env;
+}
