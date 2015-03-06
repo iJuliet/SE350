@@ -1,0 +1,1 @@
+hal.o: HAL.c
