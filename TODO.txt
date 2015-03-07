@@ -1,0 +1,43 @@
+TODO list
+
+
+Kernel part:{
+timer-process, uart process
+
+They are both kernel processes and we do the similar as null process
+
+1. put it in the g_proc_table and give it a mpf_start_pc that points to the function
+2. assign a pid
+3. they all have a PCB
+
+
+
+timer-process(almost finished)
+
+
+uart-process
+(has interrupts with hot keys)
+
+
+
+
+finished:
+
+delay_send (API)
+send_msg(API)
+receive_msg(API)
+
+
+}
+
+
+
+
+
+User part:{
+
+Testing processes
+
+Wall Clock display
+}
+

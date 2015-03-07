@@ -33,6 +33,9 @@ PCB* ready_queue[NUM_TEST_PROCS+1];
 PCB* blocked_queue[NUM_TEST_PROCS];
 
 
+
+
+
 /*typedef struct _queue_node{
 	struct _queue_node* next;
 	PCB* pcb;
@@ -44,14 +47,10 @@ typedef struct _queue{
 } queue;
 */
 
-typedef struct _msgbuf {
-	int sender_pid;
-	int receiver_pid;
-	struct _msgbuf* next;
-	int mtype; /* user defined message type */
-	char mtext[1]; /* body of the message */
-} msgbuf;
 
+
+
+delayed_msg* timeout_queue;
 /*	
 queue **ready_queue;
 
@@ -323,7 +322,7 @@ PCB* bq_dequeue(void) {
 	return NULL;
 }
 
-int msg_enqueue(PCB* pcb, void* msg_envelope){
+int msg_enqueue(PCB* pcb, msgbuf* msg_envelope){
 	if (pcb == NULL || msg_envelope == NULL) {
 		return RTX_ERR;
 	}
@@ -332,7 +331,7 @@ int msg_enqueue(PCB* pcb, void* msg_envelope){
 		pcb->msg_last = msg_envelope;
 	}
 	else{
-		((msgbuf*)pcb->msg_last)->next = msg_envelope;
+		(pcb->msg_last)->next = msg_envelope;
 		pcb->msg_last = msg_envelope;
 	}
 	return RTX_OK;
@@ -340,7 +339,7 @@ int msg_enqueue(PCB* pcb, void* msg_envelope){
 
 void* msg_dequeue(PCB* pcb, int sender_pid){
 	msgbuf* prev;	
-	msgbuf* temp = (msgbuf*)pcb->msg_front;		
+	msgbuf* temp = pcb->msg_front;		
 	while (temp->sender_pid != sender_pid && temp != NULL) {
 		prev = temp;
 		temp = temp->next;
@@ -377,9 +376,16 @@ PCB* get_pcb_from_pid(int process_id){
 }
 
 //send message
-int k_send_message(int process_id, void *message_envelope){
+int k_send_message(int process_id, msgbuf *message_envelope){
 	int status;
 	PCB* receiving_proc = get_pcb_from_pid(process_id);
+	
+	//set the casted message_envelope
+	message_envelope -> sender_pid = get_current_proc -> m_pid;
+	message_envelope -> receiver_pid = process_id;
+	message_envelope -> delay = 0;
+	message_envelope -> next = NULL;
+	
 	//enqueue env onto msg_queue of receiving proc
 	status = msg_enqueue(receiving_proc, message_envelope);
 	if (receiving_proc->m_state == BLK_ON_MSG) {
@@ -388,6 +394,8 @@ int k_send_message(int process_id, void *message_envelope){
 	}
 	return status;
 }
+
+
 
 //receive message
 void* k_receive_message(int sender_id) {
@@ -402,3 +410,47 @@ void* k_receive_message(int sender_id) {
 	// atomic(off)
 	return env;
 }
+
+int delayed_send(int process_id, msgbuf *message_envelope, int delay){
+		
+		msgbuf* temp, *prev;
+		//set the casted message_envelope
+		message_envelope -> sender_pid = get_current_proc -> m_pid;
+		message_envelope -> receiver_pid = process_id;
+		message_envelope -> delay = delay;
+		message_envelope -> next = NULL;
+	
+		//enqueue the msg to timeout_queue
+		//the queue should always remain sorted
+		if(timeout_queue == NULL){
+			 timeout_queue = message_envelope;
+		}
+		else{
+			temp = timeout_queue -> next;
+			prev = timeout_queue;
+			 while(temp->delay < delay && temp != NULL){
+					prev = temp;
+					temp = temp ->next;
+			 }
+			 //should be insert here
+			 prev->next = message_envelope;
+			 message_envelope = temp -> next;
+		}
+}
+
+void timer_i_process ( ) {
+	int target_pid;
+	PCB* timer_pcb = gp_pcbs[TIMER_I_PROCESS];
+	while (timer_pcb->msg_front != NULL){
+			//receive the message in the queue
+		//but shouldn't run k_receive_message since i-process should not be blocked.
+	}
+	
+	while( timeout_queue->delay <= 0){
+			msgbuf* envelope = timeout_queue;
+			timeout_queue = timeout_queue->next;
+			target_pid = envelope -> receiver_pid;
+			k_send_message(target_pid, envelope);
+	}
+}
+

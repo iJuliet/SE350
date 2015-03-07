@@ -31,6 +31,17 @@ typedef unsigned int U32;
 /* process states, note we only assume three states in this example */
 typedef enum {NEW = 0, RDY, RUN, BLK_ON_MEM, BLK_ON_MSG} PROC_STATE_E;  
 
+/*msgbug struct
+*/
+typedef struct _msgbuf {
+	int mtype; /* user defined message type */
+	char mtext[1]; /* body of the message */
+	int sender_pid;
+	int receiver_pid;
+	int delay;
+	struct _msgbuf* next;
+} msgbuf;
+
 /*
   PCB data structure definition.
   You may want to add your own member variables
@@ -43,8 +54,8 @@ typedef struct pcb
 	U32 m_pid;		/* process id */
 	int m_priority; 
 	PROC_STATE_E m_state;   /* state of the process */   
-	void* msg_front;
-	void* msg_last;	
+	msgbuf* msg_front;
+	msgbuf* msg_last;	
 } PCB;
 
 /* initialization table item */
