@@ -12,11 +12,15 @@ They are both kernel processes and we do the similar as null process
 
 
 
-timer-process(almost finished)
+timer-process(finished)
 
 
 uart-process
-(has interrupts with hot keys)
+
+CRT display Process
+
+KCD process
+
 
 
 
@@ -41,3 +45,4 @@ Testing processes
 Wall Clock display
 }
 
+ATOMIC ON/OFF
