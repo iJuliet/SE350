@@ -30,8 +30,9 @@ int main()
 #endif 
 
 	// start the RTX and built-in processes 
-	rtx_init();   
+	//rtx_init();   
 	/* We should never reach here!!!*/ 
+	uart0_put_string("(*^#*(&$(*");
 	return RTX_ERR;  
 }
 

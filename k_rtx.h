@@ -17,6 +17,25 @@
 #define NUM_TEST_PROCS 4
 #define DEFAULT 0
 #define KCD_REG 1
+#define TOTAL_PROCS 9
+
+#define MAX_MSG_SIZE 128
+
+
+//index numbers for kernel processes
+#define NULL_PROCESS 4
+#define KCD_PROCESS 5
+#define CRT_PROCESS 6
+#define TIMER_I_PROCESS 7
+#define UART_I_PROCESS 8
+
+//kernel level process pids
+#define NULL_PROC_ID 0
+#define KCD_PROC_ID 12
+#define CRT_PROC_ID 13
+#define TIMER_PROC_ID 14
+#define UART_PROC_ID 15
+
 
 #ifdef DEBUG_0
 #define USR_SZ_STACK 0x200         /* user proc stack size 512B   */
@@ -38,7 +57,7 @@ typedef struct _msgbuf {
 	char mtext[1]; /* body of the message */
 	int sender_pid;
 	int receiver_pid;
-	int delay;
+	int send_time;
 	struct _msgbuf* next;
 } msgbuf;
 

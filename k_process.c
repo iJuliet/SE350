@@ -15,6 +15,7 @@
 #include <LPC17xx.h>
 #include <system_LPC17xx.h>
 #include "k_process.h"
+#include "timer.h"
 
 #ifdef DEBUG_0
 #include "printf.h"
@@ -25,14 +26,17 @@ PCB **gp_pcbs;                  /* array of pcbs */
 PCB *gp_current_process = NULL; /* always point to the current RUN process */
 
 /* process initialization table */
-PROC_INIT g_proc_table[NUM_TEST_PROCS + 1];
-extern PROC_INIT g_test_procs[NUM_TEST_PROCS + 1];
+PROC_INIT g_proc_table[TOTAL_PROCS];
+extern PROC_INIT g_test_procs[NUM_TEST_PROCS];
 
 //queues
 PCB* ready_queue[NUM_TEST_PROCS+1];
 PCB* blocked_queue[NUM_TEST_PROCS];
 
+int current_time;
 
+char* input[MAX_MSG_SIZE];
+int input_char_counter;
 
 
 
@@ -50,7 +54,7 @@ typedef struct _queue{
 
 
 
-delayed_msg* timeout_queue;
+msgbuf* timeout_queue;
 /*	
 queue **ready_queue;
 
@@ -90,10 +94,21 @@ void process_init()
 		g_proc_table[i].m_priority = g_test_procs[i].m_priority;
 	}
 	
-	g_proc_table[NUM_TEST_PROCS].m_pid = 0;
-	g_proc_table[NUM_TEST_PROCS].mpf_start_pc = &null_process;
-	g_proc_table[NUM_TEST_PROCS].m_stack_size = 0;
-	g_proc_table[NUM_TEST_PROCS].m_priority = 4;
+	
+	//set up for null_process
+	g_proc_table[NULL_PROCESS].m_pid = 0;
+	g_proc_table[NULL_PROCESS].mpf_start_pc = &null_process;
+	g_proc_table[NULL_PROCESS].m_stack_size = 0;
+	g_proc_table[NULL_PROCESS].m_priority = 4;
+	
+	//set up for timer-i-process
+	g_proc_table[TIMER_I_PROCESS].m_pid = TIMER_PROC_PID;
+	g_proc_table[TIMER_I_PROCESS].mpf_start_pc = &timer_i_process;
+	g_proc_table[TIMER_I_PROCESS].m_stack_size = 0;
+	g_proc_table[TIMER_I_PROCESS].m_priority = 4; //does not matter, it is not in the ready queue
+	
+	
+	//set up for uart-i-process
   
 	/* initilize exception stack frame (i.e. initial context) for each process */
 	for ( i = 0; i < NUM_TEST_PROCS+1; i++ ) {
@@ -117,6 +132,11 @@ void process_init()
 		rpq_enqueue(gp_pcbs[i]);
 	}
 	ready_queue[NUM_TEST_PROCS] = gp_pcbs[NUM_TEST_PROCS];
+	
+	//init current_time
+	current_time = 0;
+	//set input char counter
+	input_char_counter = 0;
 }
 
 /*@brief: scheduler, pick the pid of the next to run process
@@ -367,7 +387,7 @@ PCB* get_current_proc(void) {
 
 PCB* get_pcb_from_pid(int process_id){
 	int i = 0;
-	for (; i < NUM_TEST_PROCS; i++ ) {
+	for (; i < TOTAL_PROCS; i++ ) {
 		if (gp_pcbs[i]->m_pid == process_id) {
 			return gp_pcbs[i];
 		}
@@ -381,9 +401,9 @@ int k_send_message(int process_id, msgbuf *message_envelope){
 	PCB* receiving_proc = get_pcb_from_pid(process_id);
 	
 	//set the casted message_envelope
-	message_envelope -> sender_pid = get_current_proc -> m_pid;
+	message_envelope -> sender_pid = (get_current_proc()) -> m_pid;
 	message_envelope -> receiver_pid = process_id;
-	message_envelope -> delay = 0;
+	message_envelope -> send_time = current_time;
 	message_envelope -> next = NULL;
 	
 	//enqueue env onto msg_queue of receiving proc
@@ -414,10 +434,12 @@ void* k_receive_message(int sender_id) {
 int delayed_send(int process_id, msgbuf *message_envelope, int delay){
 		
 		msgbuf* temp, *prev;
+		int send_time = delay + current_time;
 		//set the casted message_envelope
-		message_envelope -> sender_pid = get_current_proc -> m_pid;
+	
+		message_envelope -> sender_pid = get_current_proc() -> m_pid;
 		message_envelope -> receiver_pid = process_id;
-		message_envelope -> delay = delay;
+		message_envelope -> send_time = send_time;
 		message_envelope -> next = NULL;
 	
 		//enqueue the msg to timeout_queue
@@ -428,7 +450,7 @@ int delayed_send(int process_id, msgbuf *message_envelope, int delay){
 		else{
 			temp = timeout_queue -> next;
 			prev = timeout_queue;
-			 while(temp->delay < delay && temp != NULL){
+			 while(temp->send_time < send_time && temp != NULL){
 					prev = temp;
 					temp = temp ->next;
 			 }
@@ -438,15 +460,13 @@ int delayed_send(int process_id, msgbuf *message_envelope, int delay){
 		}
 }
 
-void timer_i_process ( ) {
+void timer_i_process(){
 	int target_pid;
 	PCB* timer_pcb = gp_pcbs[TIMER_I_PROCESS];
-	while (timer_pcb->msg_front != NULL){
-			//receive the message in the queue
-		//but shouldn't run k_receive_message since i-process should not be blocked.
-	}
-	
-	while( timeout_queue->delay <= 0){
+
+	//increment current_time
+	current_time++;
+	while( timeout_queue->send_time <= current_time){
 			msgbuf* envelope = timeout_queue;
 			timeout_queue = timeout_queue->next;
 			target_pid = envelope -> receiver_pid;
@@ -454,3 +474,52 @@ void timer_i_process ( ) {
 	}
 }
 
+
+void uart_i_process(char c){
+		msgbuf* env;
+		int counter;
+		if(c != '\r'){
+			input[input_char_counter] = c;
+			input_char_counter++;
+		}else{
+			
+			
+			env = k_request_memory_block();
+			counter = 0;
+			env->mtype = DEFAULT;
+			while(input[counter] != '\0'){
+				env->mtext[counter] = *temp;
+				input[counter] = '\0'
+				counter++;
+			}
+			//send to KCD process
+			k_send_message(KCD_PROC_ID,env);
+			
+			//clear input 
+			input_char_counter = 0;
+		}
+}
+
+
+void crt_process(){
+	msgbuf* msg_env;
+	PCB* crt_pcb = gp_pcbs[CRT_PROCESS];
+	while(crt_pcb -> msg_front != NULL){
+		msg_env = crt_pcb -> msg_front;
+		
+		//display the message to terminal
+		uart_put_string(msg_env->mtext);
+		msg->front = (msg->front)->next;
+		k_release_memory_block(msg_env);
+	}
+}
+
+void kcd_process(){
+	msgbuf* msg_env;
+	PCB* kcd_pcb = gp_pcbs[KCD_PROCESS];
+	while(kcd_pcb -> msg_front != NULL){
+			//receive message
+			msg_env = kcd_pcb-> msg_front;
+			
+	}
+}

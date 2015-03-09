@@ -23,6 +23,7 @@ PCB *scheduler(void);                  /* pick the pid of the next to run proces
 int process_switch(PCB *p_pcb_old);
 int k_release_processor(void);           /* kernel release_process function */
 void null_process(void);
+void timer_i_process();
 int set_process_priority(int process_id, int priority);
 int get_process_priority(int process_id);
 void rpq_enqueue(PCB* pcb);
