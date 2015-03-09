@@ -417,16 +417,6 @@
               <FilePath>.\uart_polling.c</FilePath>
             </File>
             <File>
-              <FileName>k_memory.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\SE350-master\manual_code\Context_Switching\src\k_memory.c</FilePath>
-            </File>
-            <File>
-              <FileName>k_process.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\SE350-master\manual_code\Context_Switching\src\k_process.c</FilePath>
-            </File>
-            <File>
               <FileName>HAL.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\HAL.c</FilePath>
@@ -450,6 +440,16 @@
               <FileName>usr_proc.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\usr_proc.c</FilePath>
+            </File>
+            <File>
+              <FileName>k_memory.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\k_memory.c</FilePath>
+            </File>
+            <File>
+              <FileName>k_process.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\k_process.c</FilePath>
             </File>
           </Files>
         </Group>
