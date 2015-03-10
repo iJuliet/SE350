@@ -15,6 +15,10 @@
 #include <LPC17xx.h>
 #include <system_LPC17xx.h>
 #include "k_process.h"
+#include "k_memory.h"
+#include "uart_polling.h"
+#include "message.h"
+#include "timer.h"
 
 #ifdef DEBUG_0
 #include "printf.h"
@@ -363,7 +367,7 @@ void timer_i_process(){
 
 	//increment current_time
 	current_time++;
-	while( timeout_queue->send_time <= current_time){
+	while(timeout_queue != NULL && timeout_queue->send_time <= current_time){
 			msgbuf* envelope = timeout_queue;
 			timeout_queue = timeout_queue->next;
 			target_pid = envelope -> receiver_pid;
@@ -379,8 +383,6 @@ void uart_i_process(char c){
 			input[input_char_counter] = c;
 			input_char_counter++;
 		}else{
-			
-			
 			env = (msgbuf*)k_request_memory_block();
 			counter = 0;
 			env->mtype = DEFAULT;
@@ -400,13 +402,15 @@ void uart_i_process(char c){
 
 void crt_process(){
 	msgbuf* msg_env;
+	char* s;
 	PCB* crt_pcb = gp_pcbs[CRT_PROCESS];
 	
 	while(1){
 		msg_env = (msgbuf*)k_receive_message(NULL);
 		
 		//display the message to terminal
-		uart_put_string(msg_env->mtext);
+		s = msg_env->mtext;
+		//uart0_put_string(s);
 		k_release_memory_block(msg_env);
 	}
 }
@@ -417,7 +421,7 @@ void kcd_process(){
 	while(1){
 			msg_env = (msgbuf* )k_receive_message(NULL);
 			//determine message type
-			if(msg_env->mtype = KCD_REG){
+			if(msg_env->mtype == KCD_REG){
 				//registered command
 			}
 			//others

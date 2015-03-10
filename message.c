@@ -76,16 +76,18 @@ int k_send_message(int process_id, msgbuf *message_envelope){
 
 
 //receive message
-void* k_receive_message(int* sender_id) {
+msgbuf* k_receive_message(int* sender_id) {
 	// atomic(on)
-	void* env;
+	msgbuf* env;
 	PCB* curr_proc = get_current_proc();
+	__disable_irq();
 	while(curr_proc->msg_front == NULL) {
 		curr_proc->m_state = BLK_ON_MSG;
 		k_release_processor();
 	}
 	env = msg_dequeue(curr_proc, sender_id);
 	// atomic(off)
+	__enable_irq();
 	return env;
 }
 
@@ -116,4 +118,5 @@ int delayed_send(int process_id, msgbuf *message_envelope, int delay){
 			 prev->next = message_envelope;
 			 message_envelope = temp -> next;
 		}
+		return RTX_OK;
 }

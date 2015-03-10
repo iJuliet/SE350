@@ -58,16 +58,27 @@ void set_test_procs() {
   
 	g_test_procs[0].mpf_start_pc = &proc1;
 	g_test_procs[1].mpf_start_pc = &proc2;
-	g_test_procs[2].mpf_start_pc = &proc3;
-	g_test_procs[3].mpf_start_pc = &proc4;
+	//g_test_procs[2].mpf_start_pc = &proc3;
+	//g_test_procs[3].mpf_start_pc = &proc4;
 }
 
 /**
  * @brief: a process that prints five uppercase letters
  *         and then yields the cpu.
  */
-void proc1(void)
+// proc1 receive proc
+void proc1(void) 
 {
+	int received_messages = 0;	
+	while (1){
+		void* message = receive_message(NULL);
+		received_messages++;
+		uart0_put_string("msg received");
+		release_memory_block(message);
+		set_process_priority(2,HIGH);
+		release_processor();
+	}
+	/*
 	int i, ret_val;
 	i = 0;
 	
@@ -95,19 +106,23 @@ void proc1(void)
 			
 #ifdef DEBUG_0
 			printf("proc1: ret_val=%d\n", ret_val);
-#endif /* DEBUG_0 */
+			
+#endif 
 		}
 		//uart0_put_char('A' + i%26);
 		i++;
 	}
+	*/
 }
 
 /**
  * @brief: a process that prints five numbers
  *         and then yields the cpu.
  */
+// proc 2 send message
 void proc2(void)
 {
+	/*
 	
 	int i = 0;
 	int ret_val = 20;
@@ -120,12 +135,16 @@ void proc2(void)
 	while ( 1) {
 		if ( i != 0 && i%5 == 0 ) {
 			ret_val = release_processor();
-		
-#ifdef DEBUG_0
-			printf("proc2: ret_val=%d\n", ret_val);
-#endif /* DEBUG_0 */
-		}
-		i++;
+	}*/
+	msgbuf* msg_env;
+	int sent_msg = 0;
+	while(1){
+		msg_env = (msgbuf*)request_memory_block();
+		msg_env->mtype = 0;
+		msg_env->mtext[0] = 't';
+		send_message(1,msg_env);
+		set_process_priority(1,HIGH);
+		release_processor();
 	}
 }
 

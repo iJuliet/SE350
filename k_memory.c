@@ -71,9 +71,9 @@ void memory_init(void)
 
 	/* allocate memory for pcb pointers   */
 	gp_pcbs = (PCB **)p_end;
-	p_end += (int) ((NUM_TEST_PROCS+1) * sizeof(PCB *));
+	p_end += (int) ((TOTAL_PROCS) * sizeof(PCB *));
   
-	for ( i = 0; i < NUM_TEST_PROCS+1; i++ ) {
+	for ( i = 0; i < TOTAL_PROCS; i++ ) {
 		gp_pcbs[i] = (PCB *)p_end;
 		p_end += sizeof(PCB); 
 	}
