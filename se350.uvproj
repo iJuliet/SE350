@@ -461,6 +461,11 @@
               <FileType>1</FileType>
               <FilePath>.\uart_irq.c</FilePath>
             </File>
+            <File>
+              <FileName>message.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\message.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

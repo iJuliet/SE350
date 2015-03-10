@@ -7,155 +7,114 @@ N:\SE350\SE350\se350.uvproj
 Project File Date:  03/09/2015
 
 <h2>Output:</h2>
-Rebuild target 'SE350'
-assembling startup_LPC17xx.s...
-compiling system_LPC17xx.c...
-compiling uart_polling.c...
-compiling HAL.c...
+Build target 'SE350'
 compiling k_rtx_init.c...
-compiling main_svc.c...
-compiling printf.c...
-compiling usr_proc.c...
-usr_proc.c(71): warning:  #550-D: variable "ret_val" was set but never used
-usr_proc.c(113): warning:  #550-D: variable "ret_val" was set but never used
-usr_proc.c(204): warning:  #550-D: variable "mem_addr" was set but never used
-usr_proc.c(205): warning:  #177-D: variable "ret_val" was declared but never referenced
+message.h(1): error:  #5: cannot open source input file "process.h": No such file or directory
 compiling k_memory.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+message.h(1): error:  #5: cannot open source input file "process.h": No such file or directory
 compiling k_process.c...
-k_process.c(54): error:  #20: identifier "delayed_msg" is undefined
-k_process.c(385): error:  #132: expression must have pointer-to-struct-or-union type
-k_process.c(419): error:  #132: expression must have pointer-to-struct-or-union type
-k_process.c(430): error:  #132: expression must have pointer-to-struct-or-union type
-k_process.c(440): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
-k_process.c(444): error:  #20: identifier "TIMER_I_PROCESS" is undefined
-k_process.c(450): error:  #132: expression must have pointer-to-struct-or-union type
-k_process.c(452): error:  #132: expression must have pointer-to-struct-or-union type
+message.h(1): error:  #5: cannot open source input file "process.h": No such file or directory
 compiling timer.c...
-Target not created
-Rebuild target 'SE350'
-assembling startup_LPC17xx.s...
-compiling system_LPC17xx.c...
-compiling uart_polling.c...
-compiling HAL.c...
-compiling k_rtx_init.c...
-compiling main_svc.c...
-compiling printf.c...
-compiling usr_proc.c...
-usr_proc.c(71): warning:  #550-D: variable "ret_val" was set but never used
-usr_proc.c(113): warning:  #550-D: variable "ret_val" was set but never used
-usr_proc.c(204): warning:  #550-D: variable "mem_addr" was set but never used
-usr_proc.c(205): warning:  #177-D: variable "ret_val" was declared but never referenced
-compiling k_memory.c...
-compiling k_process.c...
-k_process.c(385): error:  #132: expression must have pointer-to-struct-or-union type
-k_process.c(419): error:  #132: expression must have pointer-to-struct-or-union type
-k_process.c(440): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
-k_process.c(444): error:  #20: identifier "TIMER_I_PROCESS" is undefined
-compiling timer.c...
-Target not created
-Build target 'SE350'
-compiling k_process.c...
-k_process.c(419): error:  #132: expression must have pointer-to-struct-or-union type
-k_process.c(440): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
-k_process.c(444): error:  #20: identifier "TIMER_I_PROCESS" is undefined
-Target not created
-Build target 'SE350'
-compiling k_process.c...
-k_process.c(440): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
-k_process.c(444): error:  #20: identifier "TIMER_I_PROCESS" is undefined
-Target not created
-Build target 'SE350'
-compiling k_rtx_init.c...
-compiling k_memory.c...
-compiling k_process.c...
-k_process.c(440): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
-linking...
-Program Size: Code=4428 RO-data=236 RW-data=48 ZI-data=792  
-"se350.axf" - 0 Error(s), 1 Warning(s).
-Rebuild target 'SE350'
-assembling startup_LPC17xx.s...
-compiling system_LPC17xx.c...
-compiling uart_polling.c...
-compiling HAL.c...
-compiling k_rtx_init.c...
-compiling main_svc.c...
-compiling printf.c...
-compiling usr_proc.c...
-usr_proc.c(71): warning:  #550-D: variable "ret_val" was set but never used
-usr_proc.c(113): warning:  #550-D: variable "ret_val" was set but never used
-usr_proc.c(204): warning:  #550-D: variable "mem_addr" was set but never used
-usr_proc.c(205): warning:  #177-D: variable "ret_val" was declared but never referenced
-compiling k_memory.c...
-compiling k_process.c...
-k_process.c(104): error:  #20: identifier "timer_i_process" is undefined
-k_process.c(399): error:  #136: struct "_msgbuf" has no field "delay"
-k_process.c(454): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
-k_process.c(458): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-compiling timer.c...
-Target not created
-Build target 'SE350'
-compiling k_rtx_init.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
-compiling k_memory.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
-compiling k_process.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
-k_process.c(399): error:  #136: struct "_msgbuf" has no field "delay"
-k_process.c(454): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
-k_process.c(458): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-Target not created
-Build target 'SE350'
-compiling k_process.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
-k_process.c(454): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
-k_process.c(458): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-linking...
-Program Size: Code=4476 RO-data=236 RW-data=52 ZI-data=820  
-"se350.axf" - 0 Error(s), 3 Warning(s).
-Rebuild target 'SE350'
-assembling startup_LPC17xx.s...
-compiling system_LPC17xx.c...
-compiling uart_polling.c...
-compiling HAL.c...
-compiling k_rtx_init.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
-compiling main_svc.c...
-compiling printf.c...
-compiling usr_proc.c...
-usr_proc.c(71): warning:  #550-D: variable "ret_val" was set but never used
-usr_proc.c(113): warning:  #550-D: variable "ret_val" was set but never used
-usr_proc.c(204): warning:  #550-D: variable "mem_addr" was set but never used
-usr_proc.c(205): warning:  #177-D: variable "ret_val" was declared but never referenced
-compiling k_memory.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
-compiling k_process.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
-k_process.c(457): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
-k_process.c(461): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-compiling timer.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+message.h(1): error:  #5: cannot open source input file "process.h": No such file or directory
 compiling uart_irq.c...
+uart_irq.c(11): warning:  #14-D: extra text after expected end of preprocessing directive
 uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-linking...
-Program Size: Code=4804 RO-data=236 RW-data=76 ZI-data=820  
-"se350.axf" - 0 Error(s), 11 Warning(s).
+uart_irq.c(195): warning:  #223-D: function "uart_i_process" declared implicitly
+compiling message.c...
+message.h(1): error:  #5: cannot open source input file "process.h": No such file or directory
+Target not created
 Build target 'SE350'
+compiling k_rtx_init.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+compiling k_memory.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
 compiling k_process.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
-k_process.c(457): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
-k_process.c(461): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+k_process.c(104): error:  #20: identifier "TIMER_PROC_PID" is undefined
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(379): error:  #513: a value of type "char" cannot be assigned to an entity of type "char *"
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(388): error:  #20: identifier "temp" is undefined
+k_process.c(390): error:  #65: expected a ";"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): error:  #20: identifier "msg" is undefined
+k_process.c(411): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(421): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(416): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(417): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+k_process.c(432): error:  #20: identifier "bool" is undefined
+k_process.c(434): warning:  #1-D: last line of file ends without a newline
 compiling timer.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
-linking...
-Program Size: Code=4804 RO-data=236 RW-data=76 ZI-data=820  
-"se350.axf" - 0 Error(s), 4 Warning(s).
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+compiling message.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+message.h(5): warning:  #1-D: last line of file ends without a newline
+message.c(28): error:  #136: struct "pcb" has no field "front"
+message.c(28): error:  #136: struct "pcb" has no field "front"
+message.c(56): warning:  #223-D: function "get_pcb_from_pid" declared implicitly
+message.c(56): error:  #144: a value of type "int" cannot be used to initialize an entity of type "PCB *"
+message.c(61): error:  #20: identifier "current_time" is undefined
+message.c(92): error:  #20: identifier "current_time" is undefined
+message.c(102): error:  #20: identifier "timeout_queue" is undefined
+message.c(116): warning:  #1-D: last line of file ends without a newline
+message.c(116): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
+Build target 'SE350'
+compiling k_memory.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+compiling k_process.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+k_process.c(104): error:  #20: identifier "TIMER_PROC_PID" is undefined
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(379): error:  #513: a value of type "char" cannot be assigned to an entity of type "char *"
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(388): error:  #20: identifier "temp" is undefined
+k_process.c(390): error:  #65: expected a ";"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): error:  #20: identifier "msg" is undefined
+k_process.c(411): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(421): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(416): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(417): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+k_process.c(432): error:  #20: identifier "bool" is undefined
+k_process.c(434): warning:  #1-D: last line of file ends without a newline
+compiling message.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+message.h(5): warning:  #1-D: last line of file ends without a newline
+message.c(56): warning:  #223-D: function "get_pcb_from_pid" declared implicitly
+message.c(56): error:  #144: a value of type "int" cannot be used to initialize an entity of type "PCB *"
+message.c(61): error:  #20: identifier "current_time" is undefined
+message.c(92): error:  #20: identifier "current_time" is undefined
+message.c(102): error:  #20: identifier "timeout_queue" is undefined
+message.c(116): warning:  #1-D: last line of file ends without a newline
+message.c(116): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
 Rebuild target 'SE350'
 assembling startup_LPC17xx.s...
 compiling system_LPC17xx.c...
 compiling uart_polling.c...
 compiling HAL.c...
 compiling k_rtx_init.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
 compiling main_svc.c...
 compiling printf.c...
 compiling usr_proc.c...
@@ -164,33 +123,54 @@ usr_proc.c(113): warning:  #550-D: variable "ret_val" was set but never used
 usr_proc.c(204): warning:  #550-D: variable "mem_addr" was set but never used
 usr_proc.c(205): warning:  #177-D: variable "ret_val" was declared but never referenced
 compiling k_memory.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
 compiling k_process.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
-k_process.c(457): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
-k_process.c(461): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+k_process.c(104): error:  #20: identifier "TIMER_PROC_PID" is undefined
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(379): error:  #513: a value of type "char" cannot be assigned to an entity of type "char *"
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(388): error:  #20: identifier "temp" is undefined
+k_process.c(390): error:  #65: expected a ";"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): error:  #20: identifier "msg" is undefined
+k_process.c(411): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(421): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(416): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(417): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+k_process.c(432): error:  #20: identifier "bool" is undefined
+k_process.c(434): warning:  #1-D: last line of file ends without a newline
 compiling timer.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
 compiling uart_irq.c...
+uart_irq.c(11): warning:  #14-D: extra text after expected end of preprocessing directive
 uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-linking...
-Program Size: Code=4804 RO-data=236 RW-data=76 ZI-data=820  
-"se350.axf" - 0 Error(s), 11 Warning(s).
-Load "N:\\SE350\\SE350\\se350.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Load "N:\\SE350\\SE350\\se350.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
+uart_irq.c(195): warning:  #223-D: function "uart_i_process" declared implicitly
+compiling message.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+message.h(5): warning:  #1-D: last line of file ends without a newline
+message.c(61): error:  #20: identifier "current_time" is undefined
+message.c(92): error:  #20: identifier "current_time" is undefined
+message.c(102): error:  #20: identifier "timeout_queue" is undefined
+message.c(116): warning:  #1-D: last line of file ends without a newline
+message.c(116): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
 Rebuild target 'SE350'
 assembling startup_LPC17xx.s...
 compiling system_LPC17xx.c...
 compiling uart_polling.c...
 compiling HAL.c...
 compiling k_rtx_init.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
 compiling main_svc.c...
 compiling printf.c...
 compiling usr_proc.c...
@@ -199,30 +179,591 @@ usr_proc.c(113): warning:  #550-D: variable "ret_val" was set but never used
 usr_proc.c(204): warning:  #550-D: variable "mem_addr" was set but never used
 usr_proc.c(205): warning:  #177-D: variable "ret_val" was declared but never referenced
 compiling k_memory.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
 compiling k_process.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
-k_process.c(457): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
-k_process.c(461): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+k_process.c(104): error:  #20: identifier "TIMER_PROC_PID" is undefined
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(379): error:  #513: a value of type "char" cannot be assigned to an entity of type "char *"
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(388): error:  #20: identifier "temp" is undefined
+k_process.c(390): error:  #65: expected a ";"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): error:  #20: identifier "msg" is undefined
+k_process.c(411): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(421): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(416): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(417): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
 compiling timer.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
 compiling uart_irq.c...
+uart_irq.c(11): warning:  #14-D: extra text after expected end of preprocessing directive
 uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-linking...
-Program Size: Code=4804 RO-data=236 RW-data=76 ZI-data=820  
-"se350.axf" - 0 Error(s), 11 Warning(s).
-Load "N:\\SE350\\SE350\\se350.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
+uart_irq.c(195): warning:  #223-D: function "uart_i_process" declared implicitly
+compiling message.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+message.h(5): warning:  #1-D: last line of file ends without a newline
+message.c(61): error:  #20: identifier "current_time" is undefined
+message.c(92): error:  #20: identifier "current_time" is undefined
+message.c(102): error:  #20: identifier "timeout_queue" is undefined
+message.c(116): warning:  #1-D: last line of file ends without a newline
+message.c(116): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
 Build target 'SE350'
+compiling k_memory.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+compiling k_process.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+k_process.c(104): error:  #20: identifier "TIMER_PROC_PID" is undefined
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(379): error:  #513: a value of type "char" cannot be assigned to an entity of type "char *"
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(388): error:  #20: identifier "temp" is undefined
+k_process.c(390): error:  #65: expected a ";"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): error:  #20: identifier "msg" is undefined
+k_process.c(411): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(421): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(416): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(417): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+compiling message.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+message.h(5): warning:  #1-D: last line of file ends without a newline
+message.c(61): error:  #20: identifier "current_time" is undefined
+message.c(92): error:  #20: identifier "current_time" is undefined
+message.c(102): error:  #20: identifier "timeout_queue" is undefined
+message.c(116): warning:  #1-D: last line of file ends without a newline
+message.c(116): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
 compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(71): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(113): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(204): warning:  #550-D: variable "mem_addr" was set but never used
+usr_proc.c(205): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+compiling k_process.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+k_process.c(104): error:  #20: identifier "TIMER_PROC_PID" is undefined
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(379): error:  #513: a value of type "char" cannot be assigned to an entity of type "char *"
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(388): error:  #20: identifier "temp" is undefined
+k_process.c(390): error:  #65: expected a ";"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): error:  #20: identifier "msg" is undefined
+k_process.c(411): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(421): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(416): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(417): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
 compiling timer.c...
-k_process.h(26): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+compiling uart_irq.c...
+uart_irq.c(11): warning:  #14-D: extra text after expected end of preprocessing directive
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(195): warning:  #223-D: function "uart_i_process" declared implicitly
+compiling message.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+message.h(5): warning:  #1-D: last line of file ends without a newline
+message.c(103): error:  #20: identifier "timeout_queue" is undefined
+message.c(117): warning:  #1-D: last line of file ends without a newline
+message.c(117): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(71): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(113): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(204): warning:  #550-D: variable "mem_addr" was set but never used
+usr_proc.c(205): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+compiling k_process.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+k_process.c(104): error:  #20: identifier "TIMER_PROC_PID" is undefined
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(379): error:  #513: a value of type "char" cannot be assigned to an entity of type "char *"
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(388): error:  #20: identifier "temp" is undefined
+k_process.c(390): error:  #65: expected a ";"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): error:  #20: identifier "msg" is undefined
+k_process.c(411): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(421): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(416): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(417): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+compiling timer.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+compiling uart_irq.c...
+uart_irq.c(11): warning:  #14-D: extra text after expected end of preprocessing directive
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(195): warning:  #223-D: function "uart_i_process" declared implicitly
+compiling message.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+message.h(5): warning:  #1-D: last line of file ends without a newline
+message.c(118): warning:  #1-D: last line of file ends without a newline
+message.c(118): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(71): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(113): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(204): warning:  #550-D: variable "mem_addr" was set but never used
+usr_proc.c(205): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+compiling k_process.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+k_process.c(104): error:  #20: identifier "TIMER_PROC_PID" is undefined
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(379): error:  #513: a value of type "char" cannot be assigned to an entity of type "char *"
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(388): error:  #513: a value of type "char *" cannot be assigned to an entity of type "char"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(420): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(415): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(416): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+compiling timer.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+compiling uart_irq.c...
+uart_irq.c(11): warning:  #14-D: extra text after expected end of preprocessing directive
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(195): warning:  #223-D: function "uart_i_process" declared implicitly
+compiling message.c...
+message.h(5): warning:  #1-D: last line of file ends without a newline
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+message.h(5): warning:  #1-D: last line of file ends without a newline
+message.c(118): warning:  #1-D: last line of file ends without a newline
+message.c(118): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(71): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(113): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(204): warning:  #550-D: variable "mem_addr" was set but never used
+usr_proc.c(205): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+compiling k_process.c...
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+k_process.c(104): error:  #20: identifier "TIMER_PROC_PID" is undefined
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(379): error:  #513: a value of type "char" cannot be assigned to an entity of type "char *"
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(388): error:  #513: a value of type "char *" cannot be assigned to an entity of type "char"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(420): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(415): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(416): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+compiling timer.c...
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+compiling uart_irq.c...
+uart_irq.c(11): warning:  #14-D: extra text after expected end of preprocessing directive
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(195): warning:  #223-D: function "uart_i_process" declared implicitly
+compiling message.c...
+k_process.h(28): warning:  #1295-D: Deprecated declaration timer_i_process - give arg types
+message.c(118): warning:  #1-D: last line of file ends without a newline
+message.c(118): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
+Build target 'SE350'
+compiling k_rtx_init.c...
+compiling k_memory.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+compiling k_process.c...
+k_process.c(104): error:  #20: identifier "TIMER_PROC_PID" is undefined
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(379): error:  #513: a value of type "char" cannot be assigned to an entity of type "char *"
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(388): error:  #513: a value of type "char *" cannot be assigned to an entity of type "char"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(420): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(415): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(416): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+compiling timer.c...
+compiling message.c...
+message.c(118): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
+Build target 'SE350'
+compiling k_memory.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+compiling k_process.c...
+k_process.c(103): error:  #20: identifier "TIMER_PROC_PID" is undefined
+k_process.c(137): error:  #20: identifier "input_char_counter" is undefined
+k_process.c(361): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(378): error:  #20: identifier "input" is undefined
+k_process.c(378): error:  #20: identifier "input_char_counter" is undefined
+k_process.c(383): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(383): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(386): error:  #20: identifier "input" is undefined
+k_process.c(395): error:  #20: identifier "input_char_counter" is undefined
+k_process.c(408): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(409): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(402): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(419): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(414): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(415): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+compiling message.c...
+message.c(121): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
+Build target 'SE350'
+compiling k_memory.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+compiling k_process.c...
+k_process.c(104): error:  #20: identifier "TIMER_PROC_PID" is undefined
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(420): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(415): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(416): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+compiling message.c...
+message.c(119): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
+Build target 'SE350'
+compiling k_memory.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+compiling k_process.c...
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(420): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(415): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(416): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+Target not created
+Build target 'SE350'
+compiling k_rtx_init.c...
+compiling k_memory.c...
+timer.h(11): error:  #20: identifier "uint32_t" is undefined
+timer.h(11): error:  #20: identifier "uint8_t" is undefined
+compiling k_process.c...
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(420): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(415): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(416): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+compiling timer.c...
+compiling message.c...
+message.c(119): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(71): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(113): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(204): warning:  #550-D: variable "mem_addr" was set but never used
+usr_proc.c(205): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+timer.h(11): error:  #20: identifier "uint32_t" is undefined
+timer.h(11): error:  #20: identifier "uint8_t" is undefined
+compiling k_process.c...
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(420): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(415): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(416): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_irq.c(11): warning:  #14-D: extra text after expected end of preprocessing directive
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(195): warning:  #223-D: function "uart_i_process" declared implicitly
+compiling message.c...
+message.c(119): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
+Build target 'SE350'
+compiling k_rtx_init.c...
+compiling k_memory.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+compiling k_process.c...
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(420): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(415): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(416): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+compiling timer.c...
+compiling message.c...
+message.c(119): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
+Clean started: Project: 'se350'
+   deleting intermediate output files for target 'SE350'
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(71): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(113): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(204): warning:  #550-D: variable "mem_addr" was set but never used
+usr_proc.c(205): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+compiling k_process.c...
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(420): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(415): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(416): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_irq.c(11): warning:  #14-D: extra text after expected end of preprocessing directive
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(195): warning:  #223-D: function "uart_i_process" declared implicitly
+compiling message.c...
+message.c(119): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(71): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(113): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(204): warning:  #550-D: variable "mem_addr" was set but never used
+usr_proc.c(205): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+k_process.c(370): warning:  #223-D: function "k_send_message" declared implicitly
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(384): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(393): warning:  #223-D: function "k_send_message" declared implicitly
+k_process.c(406): warning:  #223-D: function "k_receive_message" declared implicitly
+k_process.c(406): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(418): warning:  #223-D: function "k_receive_message" declared implicitly
+k_process.c(418): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(420): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(425): warning:  #223-D: function "k_send_message" declared implicitly
+k_process.c(415): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(416): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_irq.c(11): warning:  #14-D: extra text after expected end of preprocessing directive
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(195): warning:  #223-D: function "uart_i_process" declared implicitly
+compiling message.c...
+message.c(119): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(71): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(113): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(204): warning:  #550-D: variable "mem_addr" was set but never used
+usr_proc.c(205): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+k_process.c(370): warning:  #223-D: function "k_send_message" declared implicitly
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(393): warning:  #223-D: function "k_send_message" declared implicitly
+k_process.c(406): warning:  #223-D: function "k_receive_message" declared implicitly
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(418): warning:  #223-D: function "k_receive_message" declared implicitly
+k_process.c(418): error:  #513: a value of type "int" cannot be assigned to an entity of type "msgbuf *"
+k_process.c(420): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(425): warning:  #223-D: function "k_send_message" declared implicitly
+k_process.c(415): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(416): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_irq.c(11): warning:  #14-D: extra text after expected end of preprocessing directive
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(195): warning:  #223-D: function "uart_i_process" declared implicitly
+compiling message.c...
+message.c(119): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(71): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(113): warning:  #550-D: variable "ret_val" was set but never used
+usr_proc.c(204): warning:  #550-D: variable "mem_addr" was set but never used
+usr_proc.c(205): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+k_process.c(370): warning:  #223-D: function "k_send_message" declared implicitly
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(393): warning:  #223-D: function "k_send_message" declared implicitly
+k_process.c(406): warning:  #223-D: function "k_receive_message" declared implicitly
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(418): warning:  #223-D: function "k_receive_message" declared implicitly
+k_process.c(420): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(425): warning:  #223-D: function "k_send_message" declared implicitly
+k_process.c(415): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(416): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_irq.c(11): warning:  #14-D: extra text after expected end of preprocessing directive
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(195): warning:  #223-D: function "uart_i_process" declared implicitly
+compiling message.c...
+message.c(119): warning:  #940-D: missing return statement at end of non-void function "delayed_send"
 linking...
-Program Size: Code=4772 RO-data=236 RW-data=76 ZI-data=820  
-"se350.axf" - 0 Error(s), 1 Warning(s).
-Load "N:\\SE350\\SE350\\se350.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
+se350.axf: Error: L6218E: Undefined symbol timeout_queue (referred from k_process.o).
+Target not created
+Build target 'SE350'
+linking...
+se350.axf: Error: L6218E: Undefined symbol timeout_queue (referred from k_process.o).
+Target not created
+Build target 'SE350'
+compiling k_process.c...
+k_process.c(370): warning:  #223-D: function "k_send_message" declared implicitly
+k_process.c(362): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(384): warning:  #223-D: function "k_request_memory_block" declared implicitly
+k_process.c(393): warning:  #223-D: function "k_send_message" declared implicitly
+k_process.c(406): warning:  #223-D: function "k_receive_message" declared implicitly
+k_process.c(409): warning:  #223-D: function "uart_put_string" declared implicitly
+k_process.c(410): warning:  #223-D: function "k_release_memory_block" declared implicitly
+k_process.c(403): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(418): warning:  #223-D: function "k_receive_message" declared implicitly
+k_process.c(420): warning:  #187-D: use of "=" where "==" may have been intended
+k_process.c(425): warning:  #223-D: function "k_send_message" declared implicitly
+k_process.c(415): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(416): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+linking...
+Program Size: Code=4976 RO-data=236 RW-data=80 ZI-data=984  
+"se350.axf" - 0 Error(s), 13 Warning(s).

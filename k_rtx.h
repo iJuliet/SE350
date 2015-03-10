@@ -48,7 +48,7 @@ typedef unsigned char U8;
 typedef unsigned int U32;
 
 /* process states, note we only assume three states in this example */
-typedef enum {NEW = 0, RDY, RUN, BLK_ON_MEM, BLK_ON_MSG} PROC_STATE_E;  
+typedef enum {NEW = 0, RDY, RUN, BLK_ON_MEM, BLK_ON_MSG, WAITING_FOR_INTERRUPT} PROC_STATE_E;  
 
 /*msgbug struct
 */

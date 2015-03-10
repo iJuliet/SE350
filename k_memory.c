@@ -8,6 +8,8 @@
 #include "k_memory.h"
 #include "k_process.h"
 #include "uart_polling.h"
+#include "timer.h"
+#include "message.h"
 
 #ifdef DEBUG_0
 #include "printf.h"

@@ -1,0 +1,10 @@
+message.o: message.c
+message.o: C:\Software\Keil\ARM\Inc\NXP\LPC17xx\LPC17xx.h
+message.o: C:\Software\Keil\ARM\CMSIS\Include\core_cm3.h
+message.o: C:\Software\Keil\ARM\ARMCC\bin\..\include\stdint.h
+message.o: C:\Software\Keil\ARM\CMSIS\Include\core_cmInstr.h
+message.o: C:\Software\Keil\ARM\CMSIS\Include\core_cmFunc.h
+message.o: C:\Software\Keil\ARM\Inc\NXP\LPC17xx\system_LPC17xx.h
+message.o: message.h
+message.o: k_process.h
+message.o: k_rtx.h
