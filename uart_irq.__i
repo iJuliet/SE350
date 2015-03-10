@@ -2,4 +2,4 @@
 -I C:\Software\Keil\ARM\RV31\INC 
 -I C:\Software\Keil\ARM\CMSIS\Include 
 -I C:\Software\Keil\ARM\Inc\NXP\LPC17xx 
--o "printf.o" --omf_browse "printf.crf" --depend "printf.d" "printf.c"
+-o "uart_irq.o" --omf_browse "uart_irq.crf" --depend "uart_irq.d" "uart_irq.c"

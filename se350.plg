@@ -8,188 +8,25 @@ Project File Date:  03/09/2015
 
 <h2>Output:</h2>
 Build target 'SE350'
-compiling uart_polling.c...
 compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
 compiling main_svc.c...
-compiling printf.c...
-compiling usr_proc.c...
-usr_proc.c(140): warning:  #177-D: variable "sent_msg" was declared but never referenced
-usr_proc.c(223): warning:  #550-D: variable "mem_addr" was set but never used
-usr_proc.c(224): warning:  #177-D: variable "ret_val" was declared but never referenced
-compiling k_memory.c...
-compiling k_process.c...
-k_process.c(366): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(405): warning:  #550-D: variable "s" was set but never used
-k_process.c(406): warning:  #177-D: variable "crt_pcb" was declared but never referenced
-k_process.c(419): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
-k_process.c(420): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
-compiling timer.c...
-compiling uart_irq.c...
-uart_irq.c(11): warning:  #14-D: extra text after expected end of preprocessing directive
-uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(195): warning:  #223-D: function "uart_i_process" declared implicitly
-compiling message.c...
-compiling cmd_proc.c...
-cmd_proc.c(5): warning:  #223-D: function "uart0_put_string" declared implicitly
-cmd_proc.c(7): error:  #20: identifier "read_queue" is undefined
-cmd_proc.c(11): warning:  #223-D: function "uart0_put_char" declared implicitly
-cmd_proc.c(11): error:  #20: identifier "ready_queue" is undefined
-cmd_proc.c(13): error:  #18: expected a ")"
-cmd_proc.c(20): warning:  #223-D: function "uart0_put_string" declared implicitly
-cmd_proc.c(19): warning:  #177-D: variable "i" was declared but never referenced
-cmd_proc.c(22): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'SE350'
-compiling cmd_proc.c...
-cmd_proc.c(22): warning:  #1-D: last line of file ends without a newline
-linking...
-Program Size: Code=4736 RO-data=236 RW-data=80 ZI-data=984  
-"se350.axf" - 0 Error(s), 1 Warning(s).
-Load "N:\\SE350_LAB\\SE350\\se350.AXF" 
-No Algorithm found for: 10000000H - 100013B7H
-Partial Erase Done (areas with no algorithms skipped!)
-No Algorithm found for: 10000000H - 100013B7H
-Partial Programming Done (areas with no algorithms skipped!)
-Partial Verify OK (areas with no algorithms skipped!)
-Load "N:\\SE350_LAB\\SE350\\se350.AXF" 
-No Algorithm found for: 10000000H - 100013B7H
-Partial Erase Done (areas with no algorithms skipped!)
-No Algorithm found for: 10000000H - 100013B7H
-Partial Programming Done (areas with no algorithms skipped!)
-Partial Verify OK (areas with no algorithms skipped!)
-Load "N:\\SE350_LAB\\SE350\\se350.AXF" 
-No Algorithm found for: 10000000H - 100013B7H
-Partial Erase Done (areas with no algorithms skipped!)
-No Algorithm found for: 10000000H - 100013B7H
-Partial Programming Done (areas with no algorithms skipped!)
-Partial Verify OK (areas with no algorithms skipped!)
-Load "N:\\SE350_LAB\\SE350\\se350.AXF" 
-No Algorithm found for: 10000000H - 100013B7H
-Partial Erase Done (areas with no algorithms skipped!)
-No Algorithm found for: 10000000H - 100013B7H
-Partial Programming Done (areas with no algorithms skipped!)
-Partial Verify OK (areas with no algorithms skipped!)
-Load "N:\\SE350_LAB\\SE350\\se350.AXF" 
-No Algorithm found for: 10000000H - 100013B7H
-Partial Erase Done (areas with no algorithms skipped!)
-No Algorithm found for: 10000000H - 100013B7H
-Partial Programming Done (areas with no algorithms skipped!)
-Partial Verify OK (areas with no algorithms skipped!)
-Clean started: Project: 'se350'
-   deleting intermediate output files for target 'SE350'
-Build target 'SE350'
-assembling startup_LPC17xx.s...
-compiling system_LPC17xx.c...
-compiling uart_polling.c...
-compiling HAL.c...
-compiling k_rtx_init.c...
-compiling main_svc.c...
-compiling printf.c...
-compiling usr_proc.c...
-usr_proc.c(140): warning:  #177-D: variable "sent_msg" was declared but never referenced
-usr_proc.c(223): warning:  #550-D: variable "mem_addr" was set but never used
-usr_proc.c(224): warning:  #177-D: variable "ret_val" was declared but never referenced
-compiling k_memory.c...
-compiling k_process.c...
-k_process.c(366): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(405): warning:  #550-D: variable "s" was set but never used
-k_process.c(406): warning:  #177-D: variable "crt_pcb" was declared but never referenced
-k_process.c(419): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
-k_process.c(420): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
-compiling timer.c...
-compiling uart_irq.c...
-uart_irq.c(11): warning:  #14-D: extra text after expected end of preprocessing directive
-uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(195): warning:  #223-D: function "uart_i_process" declared implicitly
-compiling message.c...
-compiling cmd_proc.c...
-cmd_proc.c(22): warning:  #1-D: last line of file ends without a newline
-linking...
-Program Size: Code=4736 RO-data=236 RW-data=80 ZI-data=984  
-"se350.axf" - 0 Error(s), 12 Warning(s).
-Load "N:\\SE350_LAB\\SE350\\se350.AXF" 
-No Algorithm found for: 10000000H - 100013B7H
-Partial Erase Done (areas with no algorithms skipped!)
-No Algorithm found for: 10000000H - 100013B7H
-Partial Programming Done (areas with no algorithms skipped!)
-Partial Verify OK (areas with no algorithms skipped!)
-Load "N:\\SE350_LAB\\SE350\\se350.AXF" 
-No Algorithm found for: 10000000H - 100013B7H
-Partial Erase Done (areas with no algorithms skipped!)
-No Algorithm found for: 10000000H - 100013B7H
-Partial Programming Done (areas with no algorithms skipped!)
-Partial Verify OK (areas with no algorithms skipped!)
-compiling cmd_proc.c...
-cmd_proc.c(22): warning:  #1-D: last line of file ends without a newline
-cmd_proc.c - 0 Error(s), 1 Warning(s).
-Build target 'SE350'
-linking...
-Program Size: Code=4748 RO-data=236 RW-data=80 ZI-data=984  
-"se350.axf" - 0 Error(s), 0 Warning(s).
-Load "N:\\SE350_LAB\\SE350\\se350.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'SE350'
-compiling main_svc.c...
-linking...
-Program Size: Code=4716 RO-data=236 RW-data=80 ZI-data=984  
-"se350.axf" - 0 Error(s), 0 Warning(s).
-Load "N:\\SE350_LAB\\SE350\\se350.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'SE350'
-compiling main_svc.c...
-linking...
-Program Size: Code=4172 RO-data=240 RW-data=76 ZI-data=980  
-"se350.axf" - 0 Error(s), 0 Warning(s).
-Load "N:\\SE350_LAB\\SE350\\se350.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'SE350'
-compiling main_svc.c...
-compiling usr_proc.c...
-usr_proc.c(51): error:  #268: declaration may not appear after executable statement in block
-usr_proc.c(141): warning:  #177-D: variable "sent_msg" was declared but never referenced
-usr_proc.c(224): warning:  #550-D: variable "mem_addr" was set but never used
-usr_proc.c(225): warning:  #177-D: variable "ret_val" was declared but never referenced
-Target not created
-Build target 'SE350'
-compiling usr_proc.c...
-usr_proc.c(141): warning:  #177-D: variable "sent_msg" was declared but never referenced
-usr_proc.c(224): warning:  #550-D: variable "mem_addr" was set but never used
-usr_proc.c(225): warning:  #177-D: variable "ret_val" was declared but never referenced
-linking...
-Program Size: Code=4776 RO-data=236 RW-data=80 ZI-data=984  
-"se350.axf" - 0 Error(s), 3 Warning(s).
-Load "N:\\SE350_LAB\\SE350\\se350.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'SE350'
 compiling usr_proc.c...
 usr_proc.c(142): warning:  #177-D: variable "sent_msg" was declared but never referenced
 usr_proc.c(225): warning:  #550-D: variable "mem_addr" was set but never used
 usr_proc.c(226): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+k_process.c(373): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(412): warning:  #550-D: variable "s" was set but never used
+k_process.c(413): warning:  #177-D: variable "crt_pcb" was declared but never referenced
+k_process.c(426): warning:  #177-D: variable "msg_to_spec_proc" was declared but never referenced
+k_process.c(427): warning:  #177-D: variable "kcd_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+compiling message.c...
+compiling cmd_proc.c...
 linking...
-Program Size: Code=4804 RO-data=236 RW-data=80 ZI-data=984  
-"se350.axf" - 0 Error(s), 3 Warning(s).
-Build target 'SE350'
-compiling k_rtx_init.c...
-k_rtx_init.c(17): warning:  #223-D: function "uart0_irq_init" declared implicitly
-k_rtx_init.c(18): warning:  #223-D: function "timer_init" declared implicitly
-linking...
-se350.axf: Error: L6218E: Undefined symbol uart0_irq_init (referred from k_rtx_init.o).
-Target not created
-Build target 'SE350'
-compiling k_rtx_init.c...
-uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
-linking...
-Program Size: Code=4804 RO-data=236 RW-data=80 ZI-data=984  
-"se350.axf" - 0 Error(s), 1 Warning(s).
-Load "N:\\SE350_LAB\\SE350\\se350.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
+Program Size: Code=4812 RO-data=236 RW-data=80 ZI-data=984  
+"se350.axf" - 0 Error(s), 10 Warning(s).

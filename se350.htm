@@ -3,7 +3,7 @@
 <title>Static Call Graph - [N:\SE350_LAB\SE350\se350.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image N:\SE350_LAB\SE350\se350.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Mon Mar 09 23:19:10 2015
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Mon Mar 09 23:25:55 2015
 <BR><P>
 <H3>Maximum Stack Usage =         80 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -180,8 +180,8 @@ Global Symbols
 <P><STRONG><a name="[8b]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000B))
 
 <P><STRONG><a name="[3a]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtentry.o(.ARM.Collect$$rtentry$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
-<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+<BR><BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
 </UL>
 
 <P><STRONG><a name="[8c]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtentry2.o(.ARM.Collect$$rtentry$$00000002))
@@ -663,6 +663,10 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> usr_proc.o(.text)
 </UL>
 <P><STRONG><a name="[99]"></a>k_get_process_priority</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, k_process.o(.text), UNUSED)
+
+<P><STRONG><a name="[9a]"></a>get_rpq</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, k_process.o(.text), UNUSED)
+
+<P><STRONG><a name="[9b]"></a>get_bq</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, k_process.o(.text), UNUSED)
 
 <P><STRONG><a name="[5e]"></a>bq_enqueue</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, k_process.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_request_memory_block
