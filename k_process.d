@@ -11,3 +11,6 @@ k_process.o: k_memory.h
 k_process.o: uart_polling.h
 k_process.o: message.h
 k_process.o: timer.h
+k_process.o: string.h
+k_process.o: uart.h
+k_process.o: uart_def.h

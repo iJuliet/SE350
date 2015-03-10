@@ -21,6 +21,8 @@ uint8_t g_char_in;
 uint8_t g_char_out;
 msgbuf* msg = NULL;
 
+
+extern PCB **gp_pcbs;
 /**
  * @brief: initialize the n_uart
  * NOTES: It only supports UART0. It can be easily extended to support UART1 IRQ.
@@ -164,10 +166,10 @@ __asm void UART0_IRQHandler(void)
 {
 	PRESERVE8
 	IMPORT c_UART0_IRQHandler
-    CPSID I // disable interrupts
+  CPSID I // disable interrupts
 	PUSH{r4-r11, lr}
 	BL c_UART0_IRQHandler
-    CPSIE I // enable interrupts
+  CPSIE I // enable interrupts
 	POP{r4-r11, pc}
 } 
 /**
@@ -175,7 +177,8 @@ __asm void UART0_IRQHandler(void)
  */
 void c_UART0_IRQHandler(void)
 {
-	uint8_t IIR_IntId;	    // Interrupt ID from IIR 		 
+	uint8_t IIR_IntId;	    // Interrupt ID from IIR 	
+	msgbuf* input_msg;
 	LPC_UART_TypeDef *pUart = (LPC_UART_TypeDef *)LPC_UART0;
 #ifdef DEBUG_0
 	uart1_put_string("Entering c_UART0_IRQHandler\n\r");
@@ -183,7 +186,7 @@ void c_UART0_IRQHandler(void)
 
 	/* Reading IIR automatically acknowledges the interrupt */
 	IIR_IntId = (pUart->IIR) >> 1 ; // skip pending bit in IIR 
-	if (IIR_IntId & IIR_RDA) { // Receive Data Avaialbe
+	if (IIR_IntId & IIR_RDA) { // Receive Data Available
 		/* read UART. Read RBR will clear the interrupt */
         g_char_in = pUart->RBR;
         g_send_char = 1;
@@ -203,15 +206,16 @@ void c_UART0_IRQHandler(void)
         }
 #endif // DEBUG_HOTKEYS
 		
-        msgbuf* input_msg = (msgbuf*) k_request_memory_block();
-        if (message == NULL) {
+        input_msg = (msgbuf*) k_request_memory_block();
+				//TODO: non-blocking
+        /*if (input_msg == NULL) {
             //run out of memory
             uart1_put_string("Alert: Running out of memory: Cannot allocate memory to hold keyboard inputs.");
             return;
-        }
-        input_msg->m_type = DEFAULT;
-        input_msg->m_text[0] = g_char_in;
-        input_msg->m_text[1] = '\0';
+        }*/
+        input_msg->mtype = DEFAULT;
+        input_msg->mtext[0] = g_char_in;
+        input_msg->mtext[1] = '\0';
         
         k_send_message(KCD_PROCESS, input_msg);
         
@@ -221,9 +225,9 @@ void c_UART0_IRQHandler(void)
 
         if (*gp_buffer != '\0' ) {
 PRINT:
-			g_char_out = *gp_buffer;
-            pUart->THR = g_char_out;
-            gp_buffer++;
+					g_char_out = *gp_buffer;
+          pUart->THR = g_char_out;
+          gp_buffer++;
 #ifdef DEBUG_0
 			//uart1_put_string("Writing a char = ");
 			//uart1_put_char(g_char_out);
@@ -232,14 +236,12 @@ PRINT:
 			// you could use the printf instead
 			printf("Writing a char = %c \n\r", g_char_out);
 #endif // DEBUG_0			
-			pUart->THR = g_char_out;
-			gp_buffer++;
 		} else {
             if (msg) {
                 k_release_memory_block(msg);
             }
             
-            msg = (msgbuf*)msg_dequeue(gb_pcbs[UART_I_PROCESS], NULL);
+            msg = (msgbuf*)msg_dequeue(gp_pcbs[UART_I_PROCESS], NULL);
             if (msg == NULL) {
 #ifdef DEBUG_0
                 uart1_put_string("Finish writing. Turning off IER_THRE\n\r");
