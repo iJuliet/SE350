@@ -8,3 +8,5 @@ uart_irq.o: C:\Software\Keil\ARM\Inc\NXP\LPC17xx\system_LPC17xx.h
 uart_irq.o: uart.h
 uart_irq.o: uart_def.h
 uart_irq.o: uart_polling.h
+uart_irq.o: k_process.h
+uart_irq.o: k_rtx.h

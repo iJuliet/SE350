@@ -26,12 +26,15 @@ void null_process(void);
 void timer_i_process(void);
 int set_process_priority(int process_id, int priority);
 int get_process_priority(int process_id);
+PCB** get_rpq(void);
+PCB** get_bq(void);
 void rpq_enqueue(PCB* pcb);
 PCB* rpq_dequeue(void);
 void bq_enqueue(PCB* pcb);
 PCB* bq_dequeue(void);
 PCB* get_current_proc(void);
 PCB* get_pcb_from_pid(int process_id);
+void uart_i_process(char c);
 
 extern U32 *alloc_stack(U32 size_b);   /* allocate stack for a process */
 extern void __rte(void);               /* pop exception stack frame */

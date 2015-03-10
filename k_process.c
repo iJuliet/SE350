@@ -288,6 +288,13 @@ void null_process(void) {
 	}
 }
 
+PCB** get_rpq() {
+	return ready_queue;
+}
+
+PCB** get_bq() {
+	return blocked_queue;
+}
 
 //add to the right place in ready_queue
 void rpq_enqueue(PCB* pcb) {
