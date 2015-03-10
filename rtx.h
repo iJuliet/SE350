@@ -27,6 +27,11 @@ typedef struct proc_init
 	void (*mpf_start_pc) ();/* entry point of the process */    
 } PROC_INIT;
 
+typedef struct _user_msgbuf {
+	int mtype; /* user defined message type */
+	char mtext[1]; /* body of the message */
+} MSGBUF;
+
 /* ----- RTX User API ----- */
 #define __SVC_0  __svc_indirect(0)
 
@@ -59,8 +64,11 @@ extern void* k_receive_message(int*);
 #define receive_message(sender_pid) _receive_message((U32)k_receive_message, sender_pid)
 extern void* _receive_message(U32 p_func, int* sender_pid) __SVC_0;
 
-
-extern int k_send_message(int, void *);
+extern int k_send_message(int, void*);
 #define send_message(process_id, env) _send_message((U32) k_send_message, process_id, env)
 extern int _send_message(U32 p_func, int process_id, void* env) __SVC_0;
+
+extern int k_delayed_send(int, void *, int);
+#define delayed_send(process_id, env, delay) _delayed_send((U32) k_delayed_send, process_id, env, delay);
+extern int _delayed_send(U32 p_func, int process_id, void* env, int delay);
 #endif /* !RTX_H_ */

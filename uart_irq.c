@@ -9,6 +9,8 @@
 #include "uart.h"
 #include "uart_polling.h"
 #include "k_process.h"
+#include "rtx.h"
+#include "message.h"
 #ifdef DEBUG_0
 #include "printf.h"
 #endif
@@ -16,7 +18,7 @@
 
 uint8_t g_buffer[]= "You Typed a Q\n\r";
 uint8_t *gp_buffer = g_buffer;
-uint8_t g_send_char = 0;
+uint8_t g_send_char = 0; 
 uint8_t g_char_in;
 uint8_t g_char_out;
 msgbuf* msg = NULL;
@@ -169,8 +171,8 @@ __asm void UART0_IRQHandler(void)
   CPSID I // disable interrupts
 	PUSH{r4-r11, lr}
 	BL c_UART0_IRQHandler
-  CPSIE I // enable interrupts
 	POP{r4-r11, pc}
+	CPSIE I // enable interrupts
 } 
 /**
  * @brief: c UART0 IRQ Handler
@@ -206,7 +208,7 @@ void c_UART0_IRQHandler(void)
         }
 #endif // DEBUG_HOTKEYS
 		
-        input_msg = (msgbuf*) k_request_memory_block();
+        input_msg = (msgbuf*) request_memory_block();
 				//TODO: non-blocking
         /*if (input_msg == NULL) {
             //run out of memory
@@ -217,7 +219,7 @@ void c_UART0_IRQHandler(void)
         input_msg->mtext[0] = g_char_in;
         input_msg->mtext[1] = '\0';
         
-        k_send_message(KCD_PROCESS, input_msg);
+        send_message(KCD_PROCESS, input_msg);
         
 		//uart_i_process(g_char_in);
 	} else if (IIR_IntId & IIR_THRE) {
@@ -238,7 +240,7 @@ PRINT:
 #endif // DEBUG_0			
 		} else {
             if (msg) {
-                k_release_memory_block(msg);
+                release_memory_block(msg);
             }
             
             msg = (msgbuf*)msg_dequeue(gp_pcbs[UART_I_PROCESS], NULL);

@@ -15,7 +15,8 @@
 #include <LPC17xx.h>
 #include <system_LPC17xx.h>
 #include "k_process.h"
-#include "k_memory.h"
+#include "rtx.h"
+#include "k_rtx.h"
 #include "uart_polling.h"
 #include "message.h"
 #include "timer.h"
@@ -41,8 +42,8 @@ PROC_INIT g_proc_table[TOTAL_PROCS];
 extern PROC_INIT g_test_procs[NUM_TEST_PROCS];
 
 //queues
-PCB* ready_queue[NUM_TEST_PROCS+1];
-PCB* blocked_queue[NUM_TEST_PROCS];
+PCB* ready_queue[TOTAL_PROCS];
+PCB* blocked_queue[TOTAL_PROCS];
 
 int current_time;
 
@@ -124,7 +125,7 @@ void process_init()
 	//set up for uart-i-process
   
 	/* initilize exception stack frame (i.e. initial context) for each process */
-	for ( i = 0; i < NUM_TEST_PROCS+1; i++ ) {
+	for ( i = 0; i < TOTAL_PROCS; i++ ) {
 		int j;
 		(gp_pcbs[i])->m_pid = (g_proc_table[i]).m_pid;
 		(gp_pcbs[i])->m_priority = (g_proc_table[i]).m_priority;
@@ -191,7 +192,9 @@ int process_switch(PCB *p_pcb_old)
 
 	if (state == NEW) {
 		if (gp_current_process != p_pcb_old && p_pcb_old->m_state != NEW) {
-			p_pcb_old->m_state = RDY;
+			if(p_pcb_old->m_state == RUN){
+				p_pcb_old->m_state = RDY;
+			}
 			p_pcb_old->mp_sp = (U32 *) __get_MSP();
 		}
 		gp_current_process->m_state = RUN;
@@ -202,8 +205,10 @@ int process_switch(PCB *p_pcb_old)
 	/* The following will only execute if the if block above is FALSE */
 
 	if (gp_current_process != p_pcb_old) {
-		if (state == RDY){ 
-			p_pcb_old->m_state = RDY; 
+		if (state == RDY){
+			if(p_pcb_old->m_state == RUN){
+				p_pcb_old->m_state = RDY; 
+			}
 			p_pcb_old->mp_sp = (U32 *) __get_MSP(); // save the old process's sp
 			gp_current_process->m_state = RUN;
 			__set_MSP((U32) gp_current_process->mp_sp); //switch to the new proc's stack    
@@ -309,16 +314,16 @@ PCB** get_bq() {
 //add to the right place in ready_queue
 void rpq_enqueue(PCB* pcb) {
 	int i,j;
-	if(pcb -> m_state == BLK_ON_MEM){
+	if(pcb -> m_state == BLK_ON_MEM || pcb -> m_state == BLK_ON_MSG){
 		return;
 	}
-	for(i = 0; i < NUM_TEST_PROCS; i++) {
+	for(i = 0; i < TOTAL_PROCS; i++) {
 		if(pcb->m_pid == ready_queue[i]->m_pid){
 			//it is in the queue already
 			return;
 		}
 		if(pcb->m_priority < ready_queue[i]->m_priority) {
-			for(j = NUM_TEST_PROCS; j > i; j--){
+			for(j = TOTAL_PROCS; j > i; j--){
 				ready_queue[j] = ready_queue[j-1]; 
 			}
 			ready_queue[i] = pcb;
@@ -332,7 +337,7 @@ PCB* rpq_dequeue() {
 	int i;
 	PCB* tmp;
 	tmp = ready_queue[0];
-	for(i = 0; i < NUM_TEST_PROCS; i++) {
+	for(i = 0; i < TOTAL_PROCS; i++) {
 			ready_queue[i] = ready_queue[i+1];
 	}
 	
@@ -341,7 +346,7 @@ PCB* rpq_dequeue() {
 
 void bq_enqueue(PCB* pcb) {
 	int i;
-	for (i = 0; i < NUM_TEST_PROCS; i++) {
+	for (i = 0; i < TOTAL_PROCS; i++) {
 		if (blocked_queue[i] == NULL) {
 			blocked_queue[i] = pcb;
 			return;
@@ -349,15 +354,34 @@ void bq_enqueue(PCB* pcb) {
 	}
 }
 
-PCB* bq_dequeue(void) {
+PCB* bq_dequeue(PROC_STATE_E state) {
 	int i;
 	PCB* tmp;
-	for (i = 0; i < NUM_TEST_PROCS; i++) {
-		if (blocked_queue[i] != NULL) {
+	for (i = 0; i <TOTAL_PROCS; i++) {
+		if (blocked_queue[i] != NULL && blocked_queue[i]->m_state == state) {
 			tmp = blocked_queue[i];
 			blocked_queue[i] = NULL;
 			return tmp;
 		}
+	}
+	for(;i < TOTAL_PROCS; i++){
+		blocked_queue[i] = blocked_queue[i+1];
+	}
+	return NULL;
+}
+
+PCB* bq_dequeue_by_pid(int pid){
+	int i;
+	PCB* tmp;
+	for (i = 0; i <TOTAL_PROCS; i++) {
+		if (blocked_queue[i] != NULL && blocked_queue[i]->m_pid == pid) {
+			tmp = blocked_queue[i];
+			blocked_queue[i] = NULL;
+			return tmp;
+		}
+	}
+	for(;i < TOTAL_PROCS; i++){
+		blocked_queue[i] = blocked_queue[i+1];
 	}
 	return NULL;
 }
@@ -381,6 +405,7 @@ PCB* get_pcb_from_pid(int process_id){
 void timer_i_process(){
 	int target_pid;
 	PCB* timer_pcb = gp_pcbs[TIMER_I_PROCESS];
+	timer_pcb ->m_state = RUN;
 
 	//increment current_time
 	current_time++;
@@ -388,8 +413,10 @@ void timer_i_process(){
 			msgbuf* envelope = timeout_queue;
 			timeout_queue = timeout_queue->next;
 			target_pid = envelope -> receiver_pid;
-			k_send_message(target_pid, envelope);
+			k_send_message_no_preemp(target_pid, envelope); //sender_pid is incorrect
 	}
+	
+	timer_pcb -> m_state = WAITING_FOR_INTERRUPT;
 }
 
 
@@ -424,7 +451,7 @@ void crt_process(){
 		msg_env = (msgbuf*)k_receive_message(NULL);
 			if (msg_env == NULL || msg_env->mtype != CRT_REQ) {
 					// wrong message
-					k_release_memory_block(msg_env);
+					release_memory_block(msg_env);
 			} else {
 					// forwards the message to uart_i_process
 					k_send_message(UART_I_PROCESS,msg_env);
@@ -482,7 +509,7 @@ void kcd_process(){
 					} else {
 							// Reaches maximum of commands that can be registered
 					}
-					k_release_memory_block(msg_env);
+					release_memory_block(msg_env);
 			}
 	}
 }

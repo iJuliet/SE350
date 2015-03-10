@@ -103,9 +103,11 @@ __asm void TIMER0_IRQHandler(void)
 {
 	PRESERVE8
 	IMPORT c_TIMER0_IRQHandler
+	//CPSID I // disable interrupts
 	PUSH{r4-r11, lr}
 	BL c_TIMER0_IRQHandler
 	POP{r4-r11, pc}
+	//CPSIE I // enable interrupts
 } 
 /**
  * @brief: c TIMER0 IRQ Handler
@@ -117,4 +119,5 @@ void c_TIMER0_IRQHandler(void)
 	timer_i_process();
 	g_timer_count++ ;
 }
+
 

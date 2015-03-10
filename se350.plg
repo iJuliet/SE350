@@ -7,264 +7,90 @@ N:\SE350\se350.uvproj
 Project File Date:  03/10/2015
 
 <h2>Output:</h2>
-Build target 'SE350'
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
 compiling uart_polling.c...
+compiling HAL.c...
 compiling k_rtx_init.c...
 uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
 compiling main_svc.c...
 compiling printf.c...
 compiling usr_proc.c...
-usr_proc.c(142): warning:  #177-D: variable "sent_msg" was declared but never referenced
-usr_proc.c(225): warning:  #550-D: variable "mem_addr" was set but never used
-usr_proc.c(226): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(139): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(140): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(160): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(161): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(170): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "ret_val" was declared but never referenced
 compiling k_memory.c...
 compiling k_process.c...
-k_process.c(381): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(422): error:  #20: identifier "message" is undefined
-k_process.c(427): warning:  #223-D: function "send_message" declared implicitly
-k_process.c(428): error:  #268: declaration may not appear after executable statement in block
-k_process.c(429): error:  #20: identifier "IER_THRE" is undefined
-k_process.c(437): error:  #20: identifier "BLOCK_SIZE" is undefined
-k_process.c(445): warning:  #223-D: function "strncpy" declared implicitly
-k_process.c(445): warning:  #223-D: function "strlen" declared implicitly
-k_process.c(447): error:  #20: identifier "msgdata" is undefined
-k_process.c(460): warning:  #223-D: function "strcmp" declared implicitly
-k_process.c(472): warning:  #127-D: expected a statement
-k_process.c(476): warning:  #223-D: function "strncpy" declared implicitly
-k_process.c(476): warning:  #223-D: function "strlen" declared implicitly
-k_process.c(487): error:  #159: declaration is incompatible with previous "strncpy" (declared at line 445)
-k_process.c(492): warning:  #1293-D: assignment in condition
-k_process.c(499): error:  #20: identifier "i" is undefined
-k_process.c(507): warning:  #1-D: last line of file ends without a newline
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(384): warning:  #177-D: variable "timer_pcb" was declared but never referenced
 compiling timer.c...
 compiling uart_irq.c...
 uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(206): error:  #268: declaration may not appear after executable statement in block
-uart_irq.c(206): warning:  #223-D: function "k_request_memory_block" declared implicitly
-uart_irq.c(213): error:  #136: struct "_msgbuf" has no field "m_type"
-uart_irq.c(214): error:  #136: struct "_msgbuf" has no field "m_text"
-uart_irq.c(215): error:  #136: struct "_msgbuf" has no field "m_text"
-uart_irq.c(217): warning:  #223-D: function "k_send_message" declared implicitly
-uart_irq.c(238): warning:  #223-D: function "k_release_memory_block" declared implicitly
-uart_irq.c(241): warning:  #223-D: function "msg_dequeue" declared implicitly
-uart_irq.c(241): error:  #20: identifier "gb_pcbs" is undefined
-uart_irq.c(250): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
 compiling message.c...
 compiling cmd_proc.c...
-Target not created
-Build target 'SE350'
-compiling k_process.c...
-k_process.c(381): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(422): error:  #20: identifier "message" is undefined
-k_process.c(427): warning:  #223-D: function "send_message" declared implicitly
-k_process.c(428): error:  #268: declaration may not appear after executable statement in block
-k_process.c(429): error:  #20: identifier "IER_THRE" is undefined
-k_process.c(437): error:  #20: identifier "BLOCK_SIZE" is undefined
-k_process.c(445): warning:  #223-D: function "strncpy" declared implicitly
-k_process.c(445): warning:  #223-D: function "strlen" declared implicitly
-k_process.c(447): error:  #20: identifier "msgdata" is undefined
-k_process.c(460): warning:  #223-D: function "strcmp" declared implicitly
-k_process.c(472): warning:  #127-D: expected a statement
-k_process.c(476): warning:  #223-D: function "strncpy" declared implicitly
-k_process.c(476): warning:  #223-D: function "strlen" declared implicitly
-k_process.c(487): error:  #159: declaration is incompatible with previous "strncpy" (declared at line 445)
-k_process.c(492): warning:  #1293-D: assignment in condition
-k_process.c(499): error:  #20: identifier "i" is undefined
-k_process.c(507): warning:  #1-D: last line of file ends without a newline
-compiling uart_irq.c...
-uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(206): error:  #268: declaration may not appear after executable statement in block
-uart_irq.c(206): warning:  #223-D: function "k_request_memory_block" declared implicitly
-uart_irq.c(213): error:  #136: struct "_msgbuf" has no field "m_type"
-uart_irq.c(214): error:  #136: struct "_msgbuf" has no field "m_text"
-uart_irq.c(215): error:  #136: struct "_msgbuf" has no field "m_text"
-uart_irq.c(217): warning:  #223-D: function "k_send_message" declared implicitly
-uart_irq.c(238): warning:  #223-D: function "k_release_memory_block" declared implicitly
-uart_irq.c(241): warning:  #223-D: function "msg_dequeue" declared implicitly
-uart_irq.c(241): error:  #20: identifier "gp_pcbs" is undefined
-uart_irq.c(250): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
-Target not created
-Build target 'SE350'
-compiling k_process.c...
-k_process.c(381): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(422): error:  #20: identifier "message" is undefined
-k_process.c(427): warning:  #223-D: function "send_message" declared implicitly
-k_process.c(428): error:  #268: declaration may not appear after executable statement in block
-k_process.c(429): error:  #20: identifier "IER_THRE" is undefined
-k_process.c(437): error:  #20: identifier "BLOCK_SIZE" is undefined
-k_process.c(445): warning:  #223-D: function "strncpy" declared implicitly
-k_process.c(445): warning:  #223-D: function "strlen" declared implicitly
-k_process.c(447): error:  #20: identifier "msgdata" is undefined
-k_process.c(460): warning:  #223-D: function "strcmp" declared implicitly
-k_process.c(472): warning:  #127-D: expected a statement
-k_process.c(476): warning:  #223-D: function "strncpy" declared implicitly
-k_process.c(476): warning:  #223-D: function "strlen" declared implicitly
-k_process.c(487): error:  #159: declaration is incompatible with previous "strncpy" (declared at line 445)
-k_process.c(492): warning:  #1293-D: assignment in condition
-k_process.c(499): error:  #20: identifier "i" is undefined
-k_process.c(507): warning:  #1-D: last line of file ends without a newline
-compiling uart_irq.c...
-uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(206): error:  #268: declaration may not appear after executable statement in block
-uart_irq.c(206): warning:  #223-D: function "k_request_memory_block" declared implicitly
-uart_irq.c(217): warning:  #223-D: function "k_send_message" declared implicitly
-uart_irq.c(238): warning:  #223-D: function "k_release_memory_block" declared implicitly
-uart_irq.c(241): warning:  #223-D: function "msg_dequeue" declared implicitly
-uart_irq.c(241): error:  #20: identifier "gp_pcbs" is undefined
-uart_irq.c(250): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
-Target not created
-Build target 'SE350'
-compiling k_process.c...
-k_process.c(381): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(422): error:  #20: identifier "message" is undefined
-k_process.c(427): warning:  #223-D: function "send_message" declared implicitly
-k_process.c(428): error:  #268: declaration may not appear after executable statement in block
-k_process.c(429): error:  #20: identifier "IER_THRE" is undefined
-k_process.c(437): error:  #20: identifier "BLOCK_SIZE" is undefined
-k_process.c(445): warning:  #223-D: function "strncpy" declared implicitly
-k_process.c(445): warning:  #223-D: function "strlen" declared implicitly
-k_process.c(447): error:  #20: identifier "msgdata" is undefined
-k_process.c(460): warning:  #223-D: function "strcmp" declared implicitly
-k_process.c(472): warning:  #127-D: expected a statement
-k_process.c(476): warning:  #223-D: function "strncpy" declared implicitly
-k_process.c(476): warning:  #223-D: function "strlen" declared implicitly
-k_process.c(487): error:  #159: declaration is incompatible with previous "strncpy" (declared at line 445)
-k_process.c(492): warning:  #1293-D: assignment in condition
-k_process.c(499): error:  #20: identifier "i" is undefined
-k_process.c(507): warning:  #1-D: last line of file ends without a newline
-compiling uart_irq.c...
-uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(207): warning:  #223-D: function "k_request_memory_block" declared implicitly
-uart_irq.c(218): warning:  #223-D: function "k_send_message" declared implicitly
-uart_irq.c(239): warning:  #223-D: function "k_release_memory_block" declared implicitly
-uart_irq.c(242): warning:  #223-D: function "msg_dequeue" declared implicitly
-uart_irq.c(242): error:  #20: identifier "gp_pcbs" is undefined
-uart_irq.c(251): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
-Target not created
-Build target 'SE350'
-compiling k_process.c...
-k_process.c(381): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(422): error:  #20: identifier "message" is undefined
-k_process.c(427): warning:  #223-D: function "send_message" declared implicitly
-k_process.c(428): error:  #268: declaration may not appear after executable statement in block
-k_process.c(429): error:  #20: identifier "IER_THRE" is undefined
-k_process.c(437): error:  #20: identifier "BLOCK_SIZE" is undefined
-k_process.c(445): warning:  #223-D: function "strncpy" declared implicitly
-k_process.c(445): warning:  #223-D: function "strlen" declared implicitly
-k_process.c(447): error:  #20: identifier "msgdata" is undefined
-k_process.c(460): warning:  #223-D: function "strcmp" declared implicitly
-k_process.c(472): warning:  #127-D: expected a statement
-k_process.c(476): warning:  #223-D: function "strncpy" declared implicitly
-k_process.c(476): warning:  #223-D: function "strlen" declared implicitly
-k_process.c(487): error:  #159: declaration is incompatible with previous "strncpy" (declared at line 445)
-k_process.c(492): warning:  #1293-D: assignment in condition
-k_process.c(508): warning:  #1-D: last line of file ends without a newline
-compiling uart_irq.c...
-uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(207): warning:  #223-D: function "k_request_memory_block" declared implicitly
-uart_irq.c(218): warning:  #223-D: function "k_send_message" declared implicitly
-uart_irq.c(239): warning:  #223-D: function "k_release_memory_block" declared implicitly
-uart_irq.c(242): warning:  #223-D: function "msg_dequeue" declared implicitly
-uart_irq.c(242): error:  #20: identifier "gp_pcbs" is undefined
-uart_irq.c(251): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
-Target not created
-Build target 'SE350'
-compiling k_process.c...
-k_process.c(381): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(422): error:  #20: identifier "message" is undefined
-k_process.c(427): warning:  #223-D: function "send_message" declared implicitly
-k_process.c(428): error:  #268: declaration may not appear after executable statement in block
-k_process.c(429): error:  #20: identifier "IER_THRE" is undefined
-k_process.c(437): error:  #20: identifier "BLOCK_SIZE" is undefined
-k_process.c(445): warning:  #223-D: function "strncpy" declared implicitly
-k_process.c(445): warning:  #223-D: function "strlen" declared implicitly
-k_process.c(447): error:  #20: identifier "msgdata" is undefined
-k_process.c(460): warning:  #223-D: function "strcmp" declared implicitly
-k_process.c(472): warning:  #127-D: expected a statement
-k_process.c(476): warning:  #223-D: function "strncpy" declared implicitly
-k_process.c(476): warning:  #223-D: function "strlen" declared implicitly
-compiling uart_irq.c...
-uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(207): warning:  #223-D: function "k_request_memory_block" declared implicitly
-uart_irq.c(218): warning:  #223-D: function "k_send_message" declared implicitly
-uart_irq.c(239): warning:  #223-D: function "k_release_memory_block" declared implicitly
-uart_irq.c(242): warning:  #223-D: function "msg_dequeue" declared implicitly
-uart_irq.c(242): error:  #20: identifier "gp_pcbs" is undefined
-uart_irq.c(251): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
 compiling string.c...
 string.c(10): warning:  #1293-D: assignment in condition
 string.c(26): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'SE350'
-compiling k_process.c...
-k_process.c(382): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(423): error:  #20: identifier "message" is undefined
-k_process.c(428): warning:  #223-D: function "send_message" declared implicitly
-k_process.c(429): error:  #268: declaration may not appear after executable statement in block
-k_process.c(430): error:  #20: identifier "IER_THRE" is undefined
-k_process.c(438): error:  #20: identifier "BLOCK_SIZE" is undefined
-k_process.c(448): error:  #20: identifier "msgdata" is undefined
-k_process.c(473): warning:  #127-D: expected a statement
-compiling uart_irq.c...
-uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(207): warning:  #223-D: function "k_request_memory_block" declared implicitly
-uart_irq.c(218): warning:  #223-D: function "k_send_message" declared implicitly
-uart_irq.c(239): warning:  #223-D: function "k_release_memory_block" declared implicitly
-uart_irq.c(242): warning:  #223-D: function "msg_dequeue" declared implicitly
-uart_irq.c(242): error:  #20: identifier "gp_pcbs" is undefined
-uart_irq.c(251): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
-Target not created
-Build target 'SE350'
-compiling k_process.c...
-k_process.c(382): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(423): error:  #20: identifier "message" is undefined
-k_process.c(428): warning:  #223-D: function "send_message" declared implicitly
-k_process.c(429): error:  #268: declaration may not appear after executable statement in block
-k_process.c(430): error:  #20: identifier "IER_THRE" is undefined
-k_process.c(464): error:  #20: identifier "msgdata" is undefined
-k_process.c(473): warning:  #127-D: expected a statement
-compiling uart_irq.c...
-uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(207): warning:  #223-D: function "k_request_memory_block" declared implicitly
-uart_irq.c(218): warning:  #223-D: function "k_send_message" declared implicitly
-uart_irq.c(239): warning:  #223-D: function "k_release_memory_block" declared implicitly
-uart_irq.c(242): warning:  #223-D: function "msg_dequeue" declared implicitly
-uart_irq.c(242): error:  #20: identifier "gp_pcbs" is undefined
-uart_irq.c(251): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
-Target not created
-Build target 'SE350'
-compiling k_process.c...
-k_process.c(382): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(423): error:  #20: identifier "message" is undefined
-k_process.c(428): warning:  #223-D: function "send_message" declared implicitly
-k_process.c(429): error:  #268: declaration may not appear after executable statement in block
-k_process.c(430): error:  #20: identifier "IER_THRE" is undefined
-k_process.c(473): warning:  #127-D: expected a statement
-compiling uart_irq.c...
-uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(207): warning:  #223-D: function "k_request_memory_block" declared implicitly
-uart_irq.c(218): warning:  #223-D: function "k_send_message" declared implicitly
-uart_irq.c(239): warning:  #223-D: function "k_release_memory_block" declared implicitly
-uart_irq.c(242): warning:  #223-D: function "msg_dequeue" declared implicitly
-uart_irq.c(242): error:  #20: identifier "gp_pcbs" is undefined
-uart_irq.c(251): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
-Target not created
-Build target 'SE350'
+linking...
+Program Size: Code=4592 RO-data=236 RW-data=92 ZI-data=1140  
+"se350.axf" - 0 Error(s), 16 Warning(s).
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(139): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(140): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(160): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(161): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(170): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
 compiling k_process.c...
 uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
-k_process.c(383): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(424): error:  #20: identifier "message" is undefined
-k_process.c(429): warning:  #223-D: function "send_message" declared implicitly
-k_process.c(430): error:  #268: declaration may not appear after executable statement in block
-k_process.c(474): warning:  #127-D: expected a statement
+k_process.c(384): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
 compiling uart_irq.c...
 uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(207): warning:  #223-D: function "k_request_memory_block" declared implicitly
-uart_irq.c(218): warning:  #223-D: function "k_send_message" declared implicitly
-uart_irq.c(239): warning:  #223-D: function "k_release_memory_block" declared implicitly
-uart_irq.c(242): warning:  #223-D: function "msg_dequeue" declared implicitly
-uart_irq.c(242): error:  #20: identifier "gp_pcbs" is undefined
-uart_irq.c(251): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=4592 RO-data=236 RW-data=92 ZI-data=1140  
+"se350.axf" - 0 Error(s), 16 Warning(s).
+Build target 'SE350'
+compiling message.c...
+linking...
+Program Size: Code=4592 RO-data=236 RW-data=92 ZI-data=1140  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SE350'
+compiling k_memory.c...
+k_memory.c(179): error:  #140: too many arguments in function call
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(353): error:  #147-D: declaration is incompatible with "PCB *bq_dequeue(void)" (declared at line 34 of "k_process.h")
+k_process.c(357): error:  #136: struct "pcb" has no field "state"
+k_process.c(387): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling message.c...
 Target not created
 Rebuild target 'SE350'
 assembling startup_LPC17xx.s...
@@ -276,105 +102,1169 @@ uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (decla
 compiling main_svc.c...
 compiling printf.c...
 compiling usr_proc.c...
-usr_proc.c(142): warning:  #177-D: variable "sent_msg" was declared but never referenced
-usr_proc.c(225): warning:  #550-D: variable "mem_addr" was set but never used
-usr_proc.c(226): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(139): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(140): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(160): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(161): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(170): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "ret_val" was declared but never referenced
 compiling k_memory.c...
+k_memory.c(179): error:  #140: too many arguments in function call
 compiling k_process.c...
 uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
-k_process.c(383): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(424): error:  #20: identifier "message" is undefined
-k_process.c(429): warning:  #223-D: function "send_message" declared implicitly
-k_process.c(430): error:  #268: declaration may not appear after executable statement in block
-k_process.c(474): warning:  #127-D: expected a statement
+k_process.c(353): error:  #147-D: declaration is incompatible with "PCB *bq_dequeue(void)" (declared at line 34 of "k_process.h")
+k_process.c(357): error:  #136: struct "pcb" has no field "state"
+k_process.c(387): warning:  #177-D: variable "timer_pcb" was declared but never referenced
 compiling timer.c...
 compiling uart_irq.c...
 uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(207): warning:  #223-D: function "k_request_memory_block" declared implicitly
-uart_irq.c(218): warning:  #223-D: function "k_send_message" declared implicitly
-uart_irq.c(239): warning:  #223-D: function "k_release_memory_block" declared implicitly
-uart_irq.c(242): warning:  #223-D: function "msg_dequeue" declared implicitly
-uart_irq.c(242): error:  #20: identifier "gp_pcbs" is undefined
-uart_irq.c(251): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
 compiling message.c...
 compiling cmd_proc.c...
 compiling string.c...
 string.c(10): warning:  #1293-D: assignment in condition
 string.c(26): warning:  #1-D: last line of file ends without a newline
 Target not created
-Build target 'SE350'
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(139): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(140): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(160): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(161): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(170): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
 compiling k_process.c...
 uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
-k_process.c(383): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(425): error:  #20: identifier "message" is undefined
-k_process.c(430): warning:  #223-D: function "send_message" declared implicitly
-k_process.c(475): warning:  #127-D: expected a statement
+k_process.c(387): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
 compiling uart_irq.c...
 uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(207): warning:  #223-D: function "k_request_memory_block" declared implicitly
-uart_irq.c(218): warning:  #223-D: function "k_send_message" declared implicitly
-uart_irq.c(239): warning:  #223-D: function "k_release_memory_block" declared implicitly
-uart_irq.c(242): warning:  #223-D: function "msg_dequeue" declared implicitly
-uart_irq.c(242): error:  #20: identifier "gp_pcbs" is undefined
-uart_irq.c(251): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
-Target not created
-Build target 'SE350'
-compiling k_process.c...
-uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
-k_process.c(383): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(425): error:  #136: struct "_msgbuf" has no field "m_type"
-k_process.c(430): warning:  #223-D: function "send_message" declared implicitly
-k_process.c(475): warning:  #127-D: expected a statement
-compiling uart_irq.c...
-uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(207): warning:  #223-D: function "k_request_memory_block" declared implicitly
-uart_irq.c(218): warning:  #223-D: function "k_send_message" declared implicitly
-uart_irq.c(239): warning:  #223-D: function "k_release_memory_block" declared implicitly
-uart_irq.c(242): warning:  #223-D: function "msg_dequeue" declared implicitly
-uart_irq.c(242): error:  #20: identifier "gp_pcbs" is undefined
-uart_irq.c(251): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
-Target not created
-Build target 'SE350'
-compiling k_process.c...
-uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
-k_process.c(383): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(430): warning:  #223-D: function "send_message" declared implicitly
-k_process.c(475): warning:  #127-D: expected a statement
-compiling uart_irq.c...
-uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(207): warning:  #223-D: function "k_request_memory_block" declared implicitly
-uart_irq.c(218): warning:  #223-D: function "k_send_message" declared implicitly
-uart_irq.c(239): warning:  #223-D: function "k_release_memory_block" declared implicitly
-uart_irq.c(242): warning:  #223-D: function "msg_dequeue" declared implicitly
-uart_irq.c(242): error:  #20: identifier "gp_pcbs" is undefined
-uart_irq.c(251): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
-Target not created
-Build target 'SE350'
-compiling uart_irq.c...
-uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(209): warning:  #223-D: function "k_request_memory_block" declared implicitly
-uart_irq.c(220): warning:  #223-D: function "k_send_message" declared implicitly
-uart_irq.c(241): warning:  #223-D: function "k_release_memory_block" declared implicitly
-uart_irq.c(244): warning:  #223-D: function "msg_dequeue" declared implicitly
-uart_irq.c(253): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
 linking...
-se350.axf: Error: L6218E: Undefined symbol send_message (referred from k_process.o).
-Target not created
+Program Size: Code=4640 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 16 Warning(s).
 Build target 'SE350'
 compiling k_process.c...
 uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
-k_process.c(383): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(475): warning:  #127-D: expected a statement
+k_process.c(389): warning:  #177-D: variable "timer_pcb" was declared but never referenced
 linking...
-Program Size: Code=5168 RO-data=236 RW-data=92 ZI-data=1140  
+Program Size: Code=4648 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(139): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(140): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(160): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(161): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(170): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(391): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=4656 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 16 Warning(s).
+Build target 'SE350'
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(386): error:  #65: expected a ";"
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(139): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(140): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(160): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(161): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(170): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=4740 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 17 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(139): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(140): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(161): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(162): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(172): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(172): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4740 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 8 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(139): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(140): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(161): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(162): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(172): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(172): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4752 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 8 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(73): error:  #268: declaration may not appear after executable statement in block
+usr_proc.c(139): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(140): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(161): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(162): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(172): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(172): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+wall_clock.c(10): error:  #65: expected a ";"
+wall_clock.c(94): error:  #268: declaration may not appear after executable statement in block
+wall_clock.c(95): error:  #393: pointer to incomplete class type is not allowed
+wall_clock.c(95): error:  #20: identifier "KCD_REG" is undefined
+wall_clock.c(96): error:  #393: pointer to incomplete class type is not allowed
+wall_clock.c(97): error:  #393: pointer to incomplete class type is not allowed
+wall_clock.c(98): error:  #20: identifier "PROCESS_ID_KCD" is undefined
+wall_clock.c(100): error:  #268: declaration may not appear after executable statement in block
+wall_clock.c(102): error:  #393: pointer to incomplete class type is not allowed
+wall_clock.c(102): error:  #20: identifier "MESSAGE_TYPE_WALL_CLOCK" is undefined
+wall_clock.c(103): warning:  #223-D: function "delayed_send" declared implicitly
+wall_clock.c(103): error:  #20: identifier "PROCESS_ID_WALL_CLOCK" is undefined
+wall_clock.c(111): error:  #393: pointer to incomplete class type is not allowed
+wall_clock.c(114): warning:  #223-D: function "timer_elapsed_ms" declared implicitly
+wall_clock.c(117): error:  #393: pointer to incomplete class type is not allowed
+wall_clock.c(118): error:  #393: pointer to incomplete class type is not allowed
+wall_clock.c(122): error:  #393: pointer to incomplete class type is not allowed
+wall_clock.c(122): error:  #20: identifier "MESSAGE_TYPE_CRT_DISPLAY_REQUEST" is undefined
+wall_clock.c(123): error:  #20: identifier "CRT_PROC_ID" is undefined
+wall_clock.c(127): warning:  #223-D: function "timer_elapsed_ms" declared implicitly
+wall_clock.c(130): error:  #393: pointer to incomplete class type is not allowed
+wall_clock.c(139): error:  #268: declaration may not appear after executable statement in block
+wall_clock.c(141): error:  #393: pointer to incomplete class type is not allowed
+wall_clock.c(146): error:  #70: incomplete type is not allowed
+wall_clock.c(151): error:  #393: pointer to incomplete class type is not allowed
+wall_clock.c(151): error:  #20: identifier "MESSAGE_TYPE_CRT_DISPLAY_REQUEST" is undefined
+wall_clock.c(152): error:  #393: pointer to incomplete class type is not allowed
+wall_clock.c(152): warning:  #223-D: function "timer_elapsed_ms" declared implicitly
+wall_clock.c(152): error:  #20: identifier "time_base" is undefined
+wall_clock.c(153): error:  #20: identifier "CRT_PROC_ID" is undefined
+wall_clock.c(83): warning:  #550-D: variable "current_time" was set but never used
+wall_clock.c(84): warning:  #177-D: variable "message_trans" was declared but never referenced
+wall_clock.c(160): error:  #169: expected a declaration
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(73): error:  #268: declaration may not appear after executable statement in block
+usr_proc.c(139): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(140): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(161): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(162): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(172): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(172): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+wall_clock.c(161): warning:  #1-D: last line of file ends without a newline
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(71): error:  #20: identifier "msgbuf8" is undefined
+usr_proc.c(74): error:  #20: identifier "msgbuf" is undefined
+usr_proc.c(74): error:  #29: expected an expression
+usr_proc.c(74): error:  #65: expected a ";"
+usr_proc.c(77): error:  #165: too few arguments in function call
+usr_proc.c(141): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+wall_clock.c(161): warning:  #1-D: last line of file ends without a newline
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(71): error:  #20: identifier "msgbuf8" is undefined
+usr_proc.c(74): error:  #20: identifier "msgbuf" is undefined
+usr_proc.c(74): error:  #29: expected an expression
+usr_proc.c(74): error:  #65: expected a ";"
+usr_proc.c(77): error:  #165: too few arguments in function call
+usr_proc.c(141): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+wall_clock.c(162): warning:  #1-D: last line of file ends without a newline
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(71): error:  #20: identifier "msgbuf8" is undefined
+usr_proc.c(74): error:  #20: identifier "msgbuf" is undefined
+usr_proc.c(74): error:  #29: expected an expression
+usr_proc.c(74): error:  #65: expected a ";"
+usr_proc.c(77): error:  #165: too few arguments in function call
+usr_proc.c(141): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+timer.h(9): error:  #20: identifier "uint32_t" is undefined
+timer.h(9): error:  #20: identifier "uint8_t" is undefined
+wall_clock.c(162): warning:  #1-D: last line of file ends without a newline
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(71): error:  #20: identifier "msgbuf8" is undefined
+usr_proc.c(74): error:  #20: identifier "msgbuf" is undefined
+usr_proc.c(74): error:  #29: expected an expression
+usr_proc.c(74): error:  #65: expected a ";"
+usr_proc.c(77): error:  #165: too few arguments in function call
+usr_proc.c(141): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(71): error:  #20: identifier "msgbuf" is undefined
+usr_proc.c(71): error:  #20: identifier "message" is undefined
+usr_proc.c(74): error:  #29: expected an expression
+usr_proc.c(74): error:  #65: expected a ";"
+usr_proc.c(77): error:  #165: too few arguments in function call
+usr_proc.c(141): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(74): error:  #20: identifier "msgbuf" is undefined
+usr_proc.c(74): error:  #29: expected an expression
+usr_proc.c(74): error:  #65: expected a ";"
+usr_proc.c(77): error:  #167: argument of type "char *" is incompatible with parameter of type "int"
+usr_proc.c(77): error:  #165: too few arguments in function call
+usr_proc.c(141): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(77): error:  #167: argument of type "char *" is incompatible with parameter of type "int"
+usr_proc.c(77): error:  #165: too few arguments in function call
+usr_proc.c(141): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(77): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(141): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=4760 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 19 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(77): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(141): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=4784 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 19 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(77): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(141): warning:  #550-D: variable "msg_env" was set but never used
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4784 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 9 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Cannot Write to RAM for Flash Algorithms !
+Programming Failed!
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(77): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=4808 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 18 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(77): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=4812 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 18 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(77): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=4828 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 17 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(77): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(145): error:  #167: argument of type "int" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(166): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(176): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(176): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
+Target not created
+Load "N:\\SE350\\se350.AXF" 
+_____^
+*** error 56: cannot open file
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(77): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(166): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(176): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(176): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4836 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 7 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(77): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=4820 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 17 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(77): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4824 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 7 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(77): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=4832 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 17 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+rtx.h(71): error:  #20: identifier "msgbuf" is undefined
+rtx.h(72): error:  #40: expected an identifier
+compiling printf.c...
+compiling usr_proc.c...
+rtx.h(71): error:  #20: identifier "msgbuf" is undefined
+rtx.h(72): error:  #40: expected an identifier
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(166): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(176): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(176): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+k_memory.c(19): error:  #130: expected a "{"
+k_memory.c(26): warning:  #12-D: parsing restarts here after previous syntax error
+k_memory.c(30): warning:  #940-D: missing return statement at end of non-void function "k_delayed_send"
+k_memory.c(27): warning:  #177-D: variable "next_blk_ptr" was declared but never referenced
+k_memory.c(30): error:  #77-D: this declaration has no storage class or type specifier
+k_memory.c(32): error:  #757: variable "mem_blk" is not a type name
+k_memory.c(33): error:  #757: variable "mem_blk" is not a type name
+k_memory.c(87): error:  #20: identifier "gp_stack" is undefined
+k_memory.c(94): error:  #20: identifier "gp_heap" is undefined
+k_memory.c(96): error:  #29: expected an expression
+k_memory.c(96): error:  #65: expected a ";"
+k_memory.c(97): error:  #132: expression must have pointer-to-struct-or-union type
+k_memory.c(100): error:  #20: identifier "BLOCK_SIZE" is undefined
+k_memory.c(103): error:  #20: identifier "temp" is undefined
+k_memory.c(103): error:  #29: expected an expression
+k_memory.c(103): error:  #65: expected a ";"
+k_memory.c(105): error:  #132: expression must have pointer-to-struct-or-union type
+k_memory.c(121): error:  #20: identifier "gp_stack" is undefined
+k_memory.c(138): error:  #20: identifier "free_mem_blk" is undefined
+k_memory.c(146): error:  #132: expression must have pointer-to-struct-or-union type
+k_memory.c(152): error:  #20: identifier "temp" is undefined
+k_memory.c(158): error:  #20: identifier "gp_heap" is undefined
+k_memory.c(160): error:  #20: identifier "BLOCK_SIZE" is undefined
+k_memory.c(173): error:  #29: expected an expression
+k_memory.c(173): error:  #18: expected a ")"
+compiling k_process.c...
+rtx.h(72): error:  #40: expected an identifier
+timer.h(9): error:  #130: expected a "{"
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(31): warning:  #12-D: parsing restarts here after previous syntax error
+k_process.c(34): warning:  #940-D: missing return statement at end of non-void function "k_delayed_send"
+k_process.c(32): warning:  #177-D: variable "pid" was declared but never referenced
+k_process.c(33): warning:  #177-D: variable "cmd" was declared but never referenced
+k_process.c(34): error:  #77-D: this declaration has no storage class or type specifier
+k_process.c(52): error:  #757: variable "kcdcmd" is not a type name
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(472): warning:  #223-D: function "strncpy" declared implicitly
+k_process.c(472): warning:  #223-D: function "strlen" declared implicitly
+k_process.c(487): warning:  #223-D: function "strcmp" declared implicitly
+k_process.c(504): warning:  #223-D: function "strncpy" declared implicitly
+k_process.c(504): warning:  #223-D: function "strlen" declared implicitly
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+rtx.h(72): error:  #40: expected an identifier
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(5): error:  #130: expected a "{"
+message.c(9): warning:  #12-D: parsing restarts here after previous syntax error
+message.c(10): error:  #20: identifier "pcb" is undefined
+message.c(10): error:  #20: identifier "msg_envelope" is undefined
+message.c(67): error:  #20: identifier "current_time" is undefined
+message.c(71): warning:  #223-D: function "msg_enqueue" declared implicitly
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+message.c(108): error:  #247: function "k_delayed_send" has already been defined
+message.c(111): error:  #20: identifier "current_time" is undefined
+message.c(121): error:  #20: identifier "timeout_queue" is undefined
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(166): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(176): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(176): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+message.h(9): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+k_memory.c(19): error:  #130: expected a "{"
+k_memory.c(26): warning:  #12-D: parsing restarts here after previous syntax error
+k_memory.c(30): warning:  #940-D: missing return statement at end of non-void function "k_delayed_send"
+k_memory.c(27): warning:  #177-D: variable "next_blk_ptr" was declared but never referenced
+k_memory.c(30): error:  #77-D: this declaration has no storage class or type specifier
+k_memory.c(32): error:  #757: variable "mem_blk" is not a type name
+k_memory.c(33): error:  #757: variable "mem_blk" is not a type name
+k_memory.c(87): error:  #20: identifier "gp_stack" is undefined
+k_memory.c(94): error:  #20: identifier "gp_heap" is undefined
+k_memory.c(96): error:  #29: expected an expression
+k_memory.c(96): error:  #65: expected a ";"
+k_memory.c(97): error:  #132: expression must have pointer-to-struct-or-union type
+k_memory.c(100): error:  #20: identifier "BLOCK_SIZE" is undefined
+k_memory.c(103): error:  #20: identifier "temp" is undefined
+k_memory.c(103): error:  #29: expected an expression
+k_memory.c(103): error:  #65: expected a ";"
+k_memory.c(105): error:  #132: expression must have pointer-to-struct-or-union type
+k_memory.c(121): error:  #20: identifier "gp_stack" is undefined
+k_memory.c(138): error:  #20: identifier "free_mem_blk" is undefined
+k_memory.c(146): error:  #132: expression must have pointer-to-struct-or-union type
+k_memory.c(152): error:  #20: identifier "temp" is undefined
+k_memory.c(158): error:  #20: identifier "gp_heap" is undefined
+k_memory.c(160): error:  #20: identifier "BLOCK_SIZE" is undefined
+k_memory.c(173): error:  #29: expected an expression
+k_memory.c(173): error:  #18: expected a ")"
+compiling k_process.c...
+message.h(9): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+timer.h(9): error:  #130: expected a "{"
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(31): warning:  #12-D: parsing restarts here after previous syntax error
+k_process.c(34): warning:  #940-D: missing return statement at end of non-void function "k_delayed_send"
+k_process.c(32): warning:  #177-D: variable "pid" was declared but never referenced
+k_process.c(33): warning:  #177-D: variable "cmd" was declared but never referenced
+k_process.c(34): error:  #77-D: this declaration has no storage class or type specifier
+k_process.c(52): error:  #757: variable "kcdcmd" is not a type name
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(472): warning:  #223-D: function "strncpy" declared implicitly
+k_process.c(472): warning:  #223-D: function "strlen" declared implicitly
+k_process.c(487): warning:  #223-D: function "strcmp" declared implicitly
+k_process.c(504): warning:  #223-D: function "strncpy" declared implicitly
+k_process.c(504): warning:  #223-D: function "strlen" declared implicitly
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.h(9): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+message.c(5): error:  #130: expected a "{"
+message.c(9): warning:  #12-D: parsing restarts here after previous syntax error
+message.c(10): error:  #20: identifier "pcb" is undefined
+message.c(10): error:  #20: identifier "msg_envelope" is undefined
+message.c(67): error:  #20: identifier "current_time" is undefined
+message.c(71): warning:  #223-D: function "msg_enqueue" declared implicitly
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+message.c(108): error:  #247: function "k_delayed_send" has already been defined
+message.c(112): error:  #20: identifier "current_time" is undefined
+message.c(123): error:  #20: identifier "timeout_queue" is undefined
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'SE350'
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+linking...
+Program Size: Code=4848 RO-data=236 RW-data=92 ZI-data=1180  
 "se350.axf" - 0 Error(s), 3 Warning(s).
 Build target 'SE350'
-compiling k_process.c...
-uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
-k_process.c(383): warning:  #177-D: variable "timer_pcb" was declared but never referenced
-k_process.c(475): warning:  #127-D: expected a statement
-k_process.c(487): error: At end of source:  #67: expected a "}"
-Target not created
+linking...
+Program Size: Code=4848 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 0 Warning(s).
 Rebuild target 'SE350'
 assembling startup_LPC17xx.s...
 compiling system_LPC17xx.c...
@@ -385,26 +1275,716 @@ uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (decla
 compiling main_svc.c...
 compiling printf.c...
 compiling usr_proc.c...
-usr_proc.c(142): warning:  #177-D: variable "sent_msg" was declared but never referenced
-usr_proc.c(225): warning:  #550-D: variable "mem_addr" was set but never used
-usr_proc.c(226): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(142): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(166): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(176): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(176): warning:  #177-D: variable "ret_val" was declared but never referenced
 compiling k_memory.c...
 compiling k_process.c...
 uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
-k_process.c(383): warning:  #177-D: variable "timer_pcb" was declared but never referenced
+k_process.c(407): warning:  #177-D: variable "timer_pcb" was declared but never referenced
 compiling timer.c...
 compiling uart_irq.c...
 uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(209): warning:  #223-D: function "k_request_memory_block" declared implicitly
-uart_irq.c(220): warning:  #223-D: function "k_send_message" declared implicitly
-uart_irq.c(241): warning:  #223-D: function "k_release_memory_block" declared implicitly
-uart_irq.c(244): warning:  #223-D: function "msg_dequeue" declared implicitly
-uart_irq.c(253): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(74): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=4848 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 16 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(73): error:  #20: identifier "sent_msg" is undefined
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(166): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(176): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(176): warning:  #177-D: variable "ret_val" was declared but never referenced
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(166): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(167): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(176): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(177): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(177): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4868 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(167): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(168): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(177): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(178): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(178): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4876 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(167): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(168): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(177): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(178): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(178): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4876 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Cannot Write to RAM for Flash Algorithms !
+Erase Failed!
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(167): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(168): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(177): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(178): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(178): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4876 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(167): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(168): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(177): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(178): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(178): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4876 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(167): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(168): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(177): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(178): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(178): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4876 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(144): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(168): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(169): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(178): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(179): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(179): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4768 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 7 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(144): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(168): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(169): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(178): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(179): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(179): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4752 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 7 Warning(s).
+Build target 'SE350'
+linking...
+Program Size: Code=4752 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(183): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4824 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(183): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4820 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(183): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4820 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling message.c...
+message.c(76): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+message.c(78): error:  #20: identifier "gp_pcbs" is undefined
+message.c(78): error:  #20: identifier "TIMER_PROCESS" is undefined
+Target not created
+Build target 'SE350'
+compiling message.c...
+message.c(77): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+message.c(79): error:  #20: identifier "TIMER_PROCESS" is undefined
+Target not created
+Build target 'SE350'
+compiling message.c...
+message.c(78): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+message.c(80): error:  #20: identifier "TIMER_PROCESS" is undefined
+Target not created
+Build target 'SE350'
+compiling message.c...
+message.c(78): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+message.c(80): error:  #20: identifier "TIMER_PROCESS" is undefined
+Target not created
+Build target 'SE350'
+compiling message.c...
+message.c(78): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+message.c(80): error:  #20: identifier "TIMER_PROCESS" is undefined
+Target not created
+Build target 'SE350'
+compiling message.c...
+message.c(78): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+linking...
+Program Size: Code=4856 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling message.c...
+message.c(78): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+message.c(62): warning:  #550-D: variable "timer" was set but never used
+linking...
+Program Size: Code=4840 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Build target 'SE350'
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(245): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(254): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=4844 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(246): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(255): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=4844 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(183): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(246): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(255): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=4844 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 9 Warning(s).
+Build target 'SE350'
+linking...
+Program Size: Code=4844 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SE350'
+compiling timer.c...
+linking...
+Program Size: Code=4840 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SE350'
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling message.c...
+message.c(78): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+linking...
+Program Size: Code=4848 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling message.c...
+message.c(78): warning:  #223-D: function "bq_dequeue_by_pid" declared implicitly
+linking...
+Program Size: Code=4848 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 1 Warning(s).
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(183): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(246): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(255): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
 compiling message.c...
 compiling cmd_proc.c...
 compiling string.c...
 string.c(10): warning:  #1293-D: assignment in condition
 string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
 linking...
-Program Size: Code=5172 RO-data=236 RW-data=92 ZI-data=1140  
+Program Size: Code=4848 RO-data=236 RW-data=92 ZI-data=1180  
 "se350.axf" - 0 Error(s), 14 Warning(s).
+Build target 'SE350'
+linking...
+Program Size: Code=4848 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SE350'
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+linking...
+Program Size: Code=4848 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 1 Warning(s).
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(183): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(416): warning:  #223-D: function "k_send_message_no_preemp" declared implicitly
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(246): warning:  #223-D: function "msg_dequeue" declared implicitly
+uart_irq.c(255): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(62): warning:  #550-D: variable "timer" was set but never used
+message.c(96): warning:  #550-D: variable "timer" was set but never used
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+string.c(26): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+wall_clock.c(163): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=4928 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 17 Warning(s).
+Build target 'SE350'
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+linking...
+Program Size: Code=4928 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(183): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4948 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(185): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(185): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4960 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Build target 'SE350'
+compiling k_memory.c...
+linking...
+Program Size: Code=4964 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(176): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(189): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4988 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(176): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=5000 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(189): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4932 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(189): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4964 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(189): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4964 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(189): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4964 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(143): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(174): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(175): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=4964 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(75): error:  #20: identifier "received_message" is undefined
+usr_proc.c(146): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(178): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(179): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(195): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(195): warning:  #177-D: variable "ret_val" was declared but never referenced
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(146): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(178): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(179): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(195): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(195): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=5012 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(146): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(178): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(179): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(195): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(195): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=5012 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(146): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(179): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(180): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(195): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(196): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(196): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=5048 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(83): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(148): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(181): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(182): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(197): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=5056 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 7 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(83): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(148): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(182): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(199): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(199): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=5104 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(83): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(148): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(182): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(199): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(199): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=5104 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(83): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(148): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(182): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(199): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(199): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=5104 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(83): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(148): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(183): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(200): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(201): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(201): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=5156 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(83): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(148): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(183): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(200): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(201): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(201): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=5156 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling message.c...
+message.c(62): warning:  #550-D: variable "timer" was set but never used
+message.c(96): warning:  #550-D: variable "timer" was set but never used
+linking...
+Program Size: Code=5152 RO-data=236 RW-data=92 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
