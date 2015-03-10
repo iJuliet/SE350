@@ -24,6 +24,12 @@
 #include "printf.h"
 #endif /* DEBUG_0 */
 
+
+typedef struct _kcdcmd {
+    int pid;
+    char cmd[10];
+} kcdcmd;
+
 /* ----- Global Variables ----- */
 PCB **gp_pcbs;                  /* array of pcbs */
 PCB *gp_current_process = NULL; /* always point to the current RUN process */
@@ -40,6 +46,8 @@ int current_time;
 
 char input[MAX_MSG_SIZE];
 int input_char_counter;
+kcdcmd commands [10];
+int regCmds = 0;
 
 
 
@@ -383,7 +391,7 @@ void timer_i_process(){
 }
 
 
-void uart_i_process(char c){
+/*void uart_i_process(char c){
 		msgbuf* env;
 		int counter;
 		if(c != '\r'){
@@ -404,38 +412,98 @@ void uart_i_process(char c){
 			//clear input 
 			input_char_counter = 0;
 		}
-}
+}*/
 
 
 void crt_process(){
 	msgbuf* msg_env;
-	char* s;
-	PCB* crt_pcb = gp_pcbs[CRT_PROCESS];
-	
 	while(1){
 		msg_env = (msgbuf*)k_receive_message(NULL);
-		
-		//display the message to terminal
-		s = msg_env->mtext;
-		//uart0_put_string(s);
-		k_release_memory_block(msg_env);
+        if (message == NULL || message->m_type != CRT_REQ) {
+            // wrong message
+            k_release_memory_block(msg_env);
+        } else {
+            // forwards the message to uart_i_process
+            send_message(UART_I_PROCESS,msg_env);
+            LPC_UART_TypeDef* pUart = (LPC_UART_TypeDef*)LPC_UART0;
+            pUart->IER |= IER_THRE;
+            pUart->THR = '\0';
+        }
 	}
 }
 
 void kcd_process(){
-	msgbuf* msg_env, *msg_to_spec_proc;
-	PCB* kcd_pcb = gp_pcbs[KCD_PROCESS];
-	while(1){
+	msgbuf* msg_env;
+    char msgText [BLOCK_SIZE-5];
+    char* temp;
+    char buffer[10];
+    int i = 0;
+	while(1) {
 			msg_env = (msgbuf* )k_receive_message(NULL);
 			//determine message type
-			if(msg_env->mtype == KCD_REG){
-				//registered command
-			}
-			//others
-			//send msg to crt_process
-			k_send_message(CRT_PROC_ID, msg_env);
+			if(msg_env->mtype == DEFAULT){
+                strncpy(msgText, msg_env->mtext, strlen(msg_env->mtext));
+                temp = msgText;
+                if (msgdata[0] == '%') {
+                    while (*temp != ' ' && *temp != '\r' && i < 10) {
+                        if (*temp != '\0') {
+                            buffer[i++] = *temp++;
+                        } else {
+                            temp++; //*temp++ maybe? need more testing
+                        }
+                    }
+                    
+                    if (i >= 10) { // command identifier should have length < 10
+                        k_send_message(CRT_PROC_ID, msg_env);
+                    } else {
+                        for (i = 0; i < regCmds; i++) {
+                            if (strcmp(commands[i].cmd, buffer) == 0) {
+                                k_send_message(commands[i].pid, msg_env);
+                                buffer[0] = '\0';
+                                msgdata[0] = '\0'; // clears both buffers, kinda hacky, more testing needed
+                                goto DONE;
+                            }
+                        }
+                        
+                        //send msg to crt_process
+                        k_send_message(CRT_PROC_ID, msg_env);
+                    }
+                DONE:
+                }
+            } else if (msg_env->mtype == DEFAULT) {
+                if ( regCmds < 10 ) {
+                    commands[regCmds].pid = msg_env->sender_pid;
+                    strncpy(commands[regCmds].cmd, msg_env->mtext, strlen(msg_env->mtext));
+                    regCmds++;
+                } else {
+                    // Reaches maximum of commands that can be registered
+                }
+                k_release_memory_block(msg_env);
+            }
 				
 			
 	}
 }
 
+// useful functions, place them in separate files in the future
+char* strncpy(char* dest, const char* src, int n) {
+    char *ret = dest;
+    do {
+        if (!n--)
+            return ret;
+    } while (*dest++ = *src++);
+    while (n--)
+        *dest++ = 0;
+    return ret;
+}
+
+int strlen(const char* s) {
+    for (i = 0; s[i] != '\0'; i++) ;
+    return i;
+}
+
+int strcmp(const char* s1, const char* s2) {
+    while(*s1 && (*s1==*s2))
+        s1++,s2++;
+    return *(const unsigned char*)s1-*(const unsigned char*)s2;
+}

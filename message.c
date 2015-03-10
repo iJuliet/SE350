@@ -58,6 +58,7 @@ int k_send_message(int process_id, msgbuf *message_envelope){
 	int status;
 	PCB* receiving_proc = get_pcb_from_pid(process_id);
 	
+    __disable_irq();
 	//set the casted message_envelope
 	message_envelope -> sender_pid = (get_current_proc()) -> m_pid;
 	message_envelope -> receiver_pid = process_id;
@@ -69,7 +70,14 @@ int k_send_message(int process_id, msgbuf *message_envelope){
 	if (receiving_proc->m_state == BLK_ON_MSG) {
 		receiving_proc->m_state = RDY;
 		rpq_enqueue(receiving_proc);
+        // preemption
+        if (receiving_proc->m_priority <= get_current_proc()->m_priority) {
+            __enable_irq();
+            k_release_processor();
+            __disable_irq();
+        }
 	}
+    __enable_irq();
 	return status;
 }
 

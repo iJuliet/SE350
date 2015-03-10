@@ -17,6 +17,7 @@
 #define NUM_TEST_PROCS 4
 #define DEFAULT 0
 #define KCD_REG 1
+#define CRT_REQ 2
 #define TOTAL_PROCS 9
 
 #define MAX_MSG_SIZE 128

@@ -19,6 +19,7 @@ uint8_t *gp_buffer = g_buffer;
 uint8_t g_send_char = 0;
 uint8_t g_char_in;
 uint8_t g_char_out;
+msgbuf* msg = NULL;
 
 /**
  * @brief: initialize the n_uart
@@ -163,8 +164,10 @@ __asm void UART0_IRQHandler(void)
 {
 	PRESERVE8
 	IMPORT c_UART0_IRQHandler
+    CPSID I // disable interrupts
 	PUSH{r4-r11, lr}
 	BL c_UART0_IRQHandler
+    CPSIE I // enable interrupts
 	POP{r4-r11, pc}
 } 
 /**
@@ -174,7 +177,6 @@ void c_UART0_IRQHandler(void)
 {
 	uint8_t IIR_IntId;	    // Interrupt ID from IIR 		 
 	LPC_UART_TypeDef *pUart = (LPC_UART_TypeDef *)LPC_UART0;
-	
 #ifdef DEBUG_0
 	uart1_put_string("Entering c_UART0_IRQHandler\n\r");
 #endif // DEBUG_0
@@ -183,21 +185,45 @@ void c_UART0_IRQHandler(void)
 	IIR_IntId = (pUart->IIR) >> 1 ; // skip pending bit in IIR 
 	if (IIR_IntId & IIR_RDA) { // Receive Data Avaialbe
 		/* read UART. Read RBR will clear the interrupt */
-		g_char_in = pUart->RBR;
+        g_char_in = pUart->RBR;
+        g_send_char = 1;
+        
 #ifdef DEBUG_0
 		uart1_put_string("Reading a char = ");
 		uart1_put_char(g_char_in);
 		uart1_put_string("\n\r");
 #endif // DEBUG_0
+#ifdef DEBUG_HOTKEYS
+        if (g_char_in == 'A') {
+            print_rpq_process();
+        } else if (g_char_in == 'B') {
+            print_blk_on_mem_process();
+        } else if (g_char_in == 'C') {
+            print_blk_on_msg_process();
+        }
+#endif // DEBUG_HOTKEYS
 		
-		g_buffer[12] = g_char_in; // nasty hack
-		g_send_char = 1;
-		uart_i_process(g_char_in);
+        msgbuf* input_msg = (msgbuf*) k_request_memory_block();
+        if (message == NULL) {
+            //run out of memory
+            uart1_put_string("Alert: Running out of memory: Cannot allocate memory to hold keyboard inputs.");
+            return;
+        }
+        input_msg->m_type = DEFAULT;
+        input_msg->m_text[0] = g_char_in;
+        input_msg->m_text[1] = '\0';
+        
+        k_send_message(KCD_PROCESS, input_msg);
+        
+		//uart_i_process(g_char_in);
 	} else if (IIR_IntId & IIR_THRE) {
 	/* THRE Interrupt, transmit holding register becomes empty */
 
-		if (*gp_buffer != '\0' ) {
+        if (*gp_buffer != '\0' ) {
+PRINT:
 			g_char_out = *gp_buffer;
+            pUart->THR = g_char_out;
+            gp_buffer++;
 #ifdef DEBUG_0
 			//uart1_put_string("Writing a char = ");
 			//uart1_put_char(g_char_out);
@@ -209,13 +235,26 @@ void c_UART0_IRQHandler(void)
 			pUart->THR = g_char_out;
 			gp_buffer++;
 		} else {
+            if (msg) {
+                k_release_memory_block(msg);
+            }
+            
+            msg = (msgbuf*)msg_dequeue(gb_pcbs[UART_I_PROCESS], NULL);
+            if (msg == NULL) {
 #ifdef DEBUG_0
-			uart1_put_string("Finish writing. Turning off IER_THRE\n\r");
+                uart1_put_string("Finish writing. Turning off IER_THRE\n\r");
 #endif // DEBUG_0
-			pUart->IER ^= IER_THRE; // toggle the IER_THRE bit 
-			pUart->THR = '\0';
-			g_send_char = 0;
-			gp_buffer = g_buffer;		
+                pUart->IER ^= IER_THRE; // toggle the IER_THRE bit
+                pUart->THR = '\0';
+                g_send_char = 0;
+            } else {
+                gp_buffer = msg->mtext;
+                goto PRINT;
+            }
+            //uart1_put_string("Writing a char = ");
+            //uart1_put_char(g_char_out);
+            //uart1_put_string("\n\r");
+		
 		}
 	      
 	} else {  /* not implemented yet */
