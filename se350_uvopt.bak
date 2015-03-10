@@ -170,27 +170,10 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>UL2CM3</Key>
-          <Name>-UM0302FCE -O463 -S0 -C0 -P00 -N00("ARM CoreSight SW-DP") -D00(2BA01477) -L00(0) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO7 -FD10000000 -FC800 -FN1 -FF0LPC_IAP_512 -FS00 -FL080000</Name>
+          <Name>-UM0776ADE -O463 -S0 -C0 -P00 -N00("ARM CoreSight SW-DP") -D00(2BA01477) -L00(0) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO7 -FD10000000 -FC800 -FN1 -FF0LPC_IAP_512 -FS00 -FL080000</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
-      <Breakpoint>
-        <Bp>
-          <Number>0</Number>
-          <Type>0</Type>
-          <LineNumber>162</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>N:\SE350-master\manual_code\Context_Switching\src\k_process.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-      </Breakpoint>
+      <Breakpoint/>
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
@@ -285,10 +268,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>81</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>19</TopLine>
-      <CurrentLine>20</CurrentLine>
+      <TopLine>89</TopLine>
+      <CurrentLine>94</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\uart_polling.c</PathWithFileName>
       <FilenameWithoutPath>uart_polling.c</FilenameWithoutPath>
@@ -317,10 +300,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>22</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>1</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\k_rtx_init.c</PathWithFileName>
       <FilenameWithoutPath>k_rtx_init.c</FilenameWithoutPath>
@@ -333,10 +316,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>4</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>8</TopLine>
-      <CurrentLine>14</CurrentLine>
+      <CurrentLine>35</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\main_svc.c</PathWithFileName>
       <FilenameWithoutPath>main_svc.c</FilenameWithoutPath>
@@ -365,10 +348,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>2</ColumnNumber>
+      <ColumnNumber>34</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>28</TopLine>
-      <CurrentLine>188</CurrentLine>
+      <TopLine>232</TopLine>
+      <CurrentLine>255</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\usr_proc.c</PathWithFileName>
       <FilenameWithoutPath>usr_proc.c</FilenameWithoutPath>
@@ -383,8 +366,8 @@
       <Focus>0</Focus>
       <ColumnNumber>25</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>10</CurrentLine>
+      <TopLine>70</TopLine>
+      <CurrentLine>76</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\k_memory.c</PathWithFileName>
       <FilenameWithoutPath>k_memory.c</FilenameWithoutPath>
@@ -397,10 +380,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>14</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>40</TopLine>
-      <CurrentLine>56</CurrentLine>
+      <TopLine>347</TopLine>
+      <CurrentLine>360</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\k_process.c</PathWithFileName>
       <FilenameWithoutPath>k_process.c</FilenameWithoutPath>
@@ -413,10 +396,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>60</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>9</CurrentLine>
+      <TopLine>72</TopLine>
+      <CurrentLine>99</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\timer.c</PathWithFileName>
       <FilenameWithoutPath>timer.c</FilenameWithoutPath>
@@ -429,10 +412,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>14</ColumnNumber>
+      <ColumnNumber>30</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>197</TopLine>
-      <CurrentLine>209</CurrentLine>
+      <TopLine>179</TopLine>
+      <CurrentLine>189</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\uart_irq.c</PathWithFileName>
       <FilenameWithoutPath>uart_irq.c</FilenameWithoutPath>
@@ -443,15 +426,31 @@
       <GroupNumber>3</GroupNumber>
       <FileNumber>13</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>1</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>1</TopLine>
+      <CurrentLine>22</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\message.c</PathWithFileName>
+      <FilenameWithoutPath>message.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>14</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>1</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>42</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>1</TopLine>
       <CurrentLine>6</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\message.c</PathWithFileName>
-      <FilenameWithoutPath>message.c</FilenameWithoutPath>
+      <PathWithFileName>.\cmd_proc.c</PathWithFileName>
+      <FilenameWithoutPath>cmd_proc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

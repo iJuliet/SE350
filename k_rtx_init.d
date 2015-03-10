@@ -5,3 +5,6 @@ k_rtx_init.o: uart_polling.h
 k_rtx_init.o: C:\Software\Keil\ARM\ARMCC\bin\..\include\stdint.h
 k_rtx_init.o: k_memory.h
 k_rtx_init.o: k_process.h
+k_rtx_init.o: uart.h
+k_rtx_init.o: uart_def.h
+k_rtx_init.o: timer.h

@@ -1,5 +1,5 @@
 #include "k_process.h"
-
+/*
 void print_rpq_process() {
 	int i;
 	uart0_put_string("Ready queue processes: \n\r");
@@ -19,4 +19,4 @@ void print_blk_on_mem_process() {
 	int i;
 	uart0_put_string("Processes blocked on memory: \n\r");
 }
-	
+	*/

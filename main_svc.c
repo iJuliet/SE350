@@ -31,8 +31,7 @@ int main()
 
 	// start the RTX and built-in processes 
 	rtx_init();   
-	/* We should never reach here!!!*/ 
-	//uart0_put_string("(*^#*(&$(*");
+	/* We should never reach here!!!*/
 	return RTX_ERR;  
 }
 

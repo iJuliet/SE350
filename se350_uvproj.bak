@@ -466,6 +466,11 @@
               <FileType>1</FileType>
               <FilePath>.\message.c</FilePath>
             </File>
+            <File>
+              <FileName>cmd_proc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\cmd_proc.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

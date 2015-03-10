@@ -50,6 +50,7 @@ void set_test_procs() {
 	int i;
 	test_num = 1;
 	ok_tests = 0;
+	uart0_put_string("setting test procs");
 	for( i = 0; i < NUM_TEST_PROCS; i++ ) {
 		g_test_procs[i].m_pid=(U32)(i+1);
 		g_test_procs[i].m_priority=LOWEST;
@@ -70,6 +71,7 @@ void set_test_procs() {
 void proc1(void) 
 {
 	int received_messages = 0;	
+	uart0_put_string("entering process 1");
 	while (1){
 		void* message = receive_message(NULL);
 		received_messages++;
