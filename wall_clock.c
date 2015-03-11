@@ -1,8 +1,9 @@
 #include "rtx.h"
 
+#define DEFAULT 0
 #define KCD_REG 1
 #define CRT_REQ 2
-#define NOTIFY_WALL_CLOCK 0
+#define NOTIFY_WALL_CLOCK 3
 
 #define WALL_CLOCK_PROC_ID 11
 #define KCD_PROC_ID 12
@@ -87,10 +88,11 @@ void wc_process() {
 			}
 		}
 		
-		if (message->mtype == KCD_REG) {
+		if (message->mtype == DEFAULT) {
 			switch (message->mtext[2]){
 			case 'R': {
 				state = 1;
+				time = 0 - current_time;;
 				release_memory_block((void*)message);
 				break;
 			}

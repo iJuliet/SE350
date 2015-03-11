@@ -29,7 +29,7 @@ typedef struct proc_init
 
 typedef struct _user_msgbuf {
 	int mtype; /* user defined message type */
-	char mtext[64]; /* body of the message */
+	char mtext[1]; /* body of the message */
 } MSGBUF;
 
 /* ----- RTX User API ----- */
@@ -70,5 +70,5 @@ extern int _send_message(U32 p_func, int process_id, void* env) __SVC_0;
 
 extern int k_delayed_send(int, void *, int);
 #define delayed_send(process_id, env, delay) _delayed_send((U32) k_delayed_send, process_id, env, delay);
-extern int _delayed_send(U32 p_func, int process_id, void* env, int delay);
+extern int _delayed_send(U32 p_func, int process_id, void* env, int delay) __SVC_0;
 #endif /* !RTX_H_ */
