@@ -136,6 +136,7 @@ void *k_request_memory_block(void) {
 	printf("k_request_memory_block: entering...\n");
 #endif /* ! DEBUG_0 */
 	mem_blk* free_mem_blk;
+	__disable_irq();
 	while (mem_start_ptr == NULL) {
 		curr_proc = get_current_proc();
 		bq_enqueue(curr_proc);
@@ -144,6 +145,7 @@ void *k_request_memory_block(void) {
 	}
 	free_mem_blk = mem_start_ptr;
 	mem_start_ptr = mem_start_ptr->next_blk_ptr;
+	__enable_irq();
 	return (void *) free_mem_blk;
 }
 
@@ -154,7 +156,7 @@ int k_release_memory_block(void *p_mem_blk) {
 	printf("k_release_memory_block: releasing block @ 0x%x\n", p_mem_blk);
 #endif /* ! DEBUG_0 */
 	//memory block pointer is not valid
-	
+	__disable_irq();
 	if( (U32 *)p_mem_blk >= (U32 *)gp_heap && 
 		(U32 *)p_mem_blk <= (U32 *)heap_limit && 
 	((U32 *)p_mem_blk - (U32 *)gp_heap)%BLOCK_SIZE != 0 &&
@@ -182,6 +184,7 @@ int k_release_memory_block(void *p_mem_blk) {
 		blk_proc->m_state = RDY;
 		rpq_enqueue(blk_proc);
 	}
+	__enable_irq();
 	return RTX_OK;
 }
 

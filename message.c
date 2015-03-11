@@ -96,11 +96,10 @@ int k_send_message_no_preemp(int process_id, void *env){
 	PCB* timer;
 	PCB* receiving_proc = get_pcb_from_pid(process_id);
 	
-	
 	__disable_irq();
 	//set the casted message_envelope
 	message_envelope = (msgbuf*) env;
-	message_envelope -> sender_pid = (get_current_proc()) -> m_pid;
+	message_envelope -> sender_pid = ((msgbuf*)env) -> sender_pid;
 	message_envelope -> receiver_pid = process_id;
 	message_envelope -> send_time = current_time;
 	message_envelope -> next = NULL;
@@ -111,7 +110,6 @@ int k_send_message_no_preemp(int process_id, void *env){
 		receiving_proc->m_state = RDY;
 		bq_dequeue_by_pid(receiving_proc->m_pid);
 		rpq_enqueue(receiving_proc);
-		timer = gp_pcbs[TIMER_I_PROCESS];
 	}
 	__enable_irq();
 	return status;

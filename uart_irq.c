@@ -11,6 +11,7 @@
 #include "k_process.h"
 #include "rtx.h"
 #include "message.h"
+#include "cmd_proc.h"
 #ifdef DEBUG_0
 #include "printf.h"
 #endif
@@ -168,11 +169,11 @@ __asm void UART0_IRQHandler(void)
 {
 	PRESERVE8
 	IMPORT c_UART0_IRQHandler
-  CPSID I // disable interrupts
+  //CPSID I // disable interrupts
 	PUSH{r4-r11, lr}
 	BL c_UART0_IRQHandler
+	//CPSIE I // enable interrupts
 	POP{r4-r11, pc}
-	CPSIE I // enable interrupts
 } 
 /**
  * @brief: c UART0 IRQ Handler
@@ -185,6 +186,8 @@ void c_UART0_IRQHandler(void)
 #ifdef DEBUG_0
 	uart1_put_string("Entering c_UART0_IRQHandler\n\r");
 #endif // DEBUG_0
+	
+	uart0_put_string("Entering uart0_ihandler\n\r");
 
 	/* Reading IIR automatically acknowledges the interrupt */
 	IIR_IntId = (pUart->IIR) >> 1 ; // skip pending bit in IIR 
@@ -192,12 +195,16 @@ void c_UART0_IRQHandler(void)
 		/* read UART. Read RBR will clear the interrupt */
         g_char_in = pUart->RBR;
         g_send_char = 1;
+			uart0_put_string("Reading a char = ");
+			uart0_put_char(g_char_in);
+			uart0_put_string("\n\r");
         
 #ifdef DEBUG_0
 		uart1_put_string("Reading a char = ");
 		uart1_put_char(g_char_in);
 		uart1_put_string("\n\r");
 #endif // DEBUG_0
+#define DEBUG_HOTKEYS 1
 #ifdef DEBUG_HOTKEYS
         if (g_char_in == 'A') {
             print_rpq_process();
@@ -207,8 +214,9 @@ void c_UART0_IRQHandler(void)
             print_blk_on_msg_process();
         }
 #endif // DEBUG_HOTKEYS
-		
-        input_msg = (msgbuf*) request_memory_block();
+				uart0_put_string("requesting memory block\n\r");
+        input_msg = (msgbuf*) k_request_memory_block();
+				uart0_put_string("memory block requested\n\r");
 				//TODO: non-blocking
         /*if (input_msg == NULL) {
             //run out of memory
@@ -219,7 +227,9 @@ void c_UART0_IRQHandler(void)
         input_msg->mtext[0] = g_char_in;
         input_msg->mtext[1] = '\0';
         
-        send_message(KCD_PROCESS, input_msg);
+				uart0_put_string("Sending message\n\r");
+				//k_send_message(1,input_msg);
+        k_send_message_no_preemp(KCD_PROC_ID, input_msg);
         
 		//uart_i_process(g_char_in);
 	} else if (IIR_IntId & IIR_THRE) {
@@ -240,7 +250,7 @@ PRINT:
 #endif // DEBUG_0			
 		} else {
             if (msg) {
-                release_memory_block(msg);
+                k_release_memory_block(msg);
             }
             
             msg = (msgbuf*)msg_dequeue(gp_pcbs[UART_I_PROCESS], NULL);

@@ -16,6 +16,8 @@
 #include <system_LPC17xx.h>
 #include "rtx.h"
 #include "uart_polling.h"
+#define DEBUG_0 1
+
 #ifdef DEBUG_0
 #include "printf.h"
 #endif /* DEBUG_0 */

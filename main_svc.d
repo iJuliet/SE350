@@ -7,3 +7,5 @@ main_svc.o: C:\Software\Keil\ARM\CMSIS\Include\core_cmFunc.h
 main_svc.o: C:\Software\Keil\ARM\Inc\NXP\LPC17xx\system_LPC17xx.h
 main_svc.o: rtx.h
 main_svc.o: uart_polling.h
+main_svc.o: printf.h
+main_svc.o: C:\Software\Keil\ARM\ARMCC\bin\..\include\stdarg.h

@@ -58,6 +58,8 @@ void set_test_procs() {
 	g_test_procs[1].mpf_start_pc = &proc2;
 	g_test_procs[2].mpf_start_pc = &proc3;
 	g_test_procs[3].mpf_start_pc = &proc4;
+	
+	g_test_procs[3].m_priority = HIGH;
 }
 
 /**
@@ -85,41 +87,6 @@ void proc1(void)
 		set_process_priority(2,HIGH);
 		release_processor();
 	}
-	/*
-	int i, ret_val;
-	i = 0;
-	
-	
-	while (1) {
-		if(test_num == 1){
-				uart0_put_string("G013_test: START\n\r");
-				uart0_put_string("G013_test: Total 8 tests\n\r");
-				set_process_priority(3,MEDIUM);
-				if(get_process_priority(3) == MEDIUM){
-					uart0_put_string("G013_test: test 1 OK\n\r");	
-					test_num ++;
-					ok_tests ++;
-				}else{
-					uart0_put_string("G013_test: test 1 FAIL\n\r");	
-					test_num ++;
-				}
-		}
-		if ( i != 0 && i%5 == 0 ) {
-			ret_val = release_processor();
-			if(test_num == 2){
-				uart0_put_string("G013_test: test 2 FAIL\n\r");
-				test_num++;
-			}
-			
-#ifdef DEBUG_0
-			printf("proc1: ret_val=%d\n", ret_val);
-			
-#endif 
-		}
-		//uart0_put_char('A' + i%26);
-		i++;
-	}
-	*/
 }
 
 /**
@@ -129,28 +96,14 @@ void proc1(void)
 // proc 2 send message
 void proc2(void)
 {
-	/*
-	
-	int i = 0;
-	int ret_val = 20;
-	if(test_num == 8){
-		uart0_put_string("G013_test: test 8 OK\n\r");
-		ok_tests++;
-		printEndTestString();
-		test_num++;
-	}
-	while ( 1) {
-		if ( i != 0 && i%5 == 0 ) {
-			ret_val = release_processor();
-	}*/
 	
 	MSGBUF* msg_env;
 	void* temp;
 	int sent_msg = 0;
 	
 	while(1){
-			uart0_put_char('0'+sent_msg%10);
-			uart0_put_string(" entering proc2\n\r");
+		uart0_put_char('0'+sent_msg%10);
+		uart0_put_string(" entering proc2\n\r");
 		if(sent_msg < 20){
 			msg_env = (MSGBUF *)request_memory_block();
 			msg_env->mtype = 0;
@@ -166,9 +119,11 @@ void proc2(void)
 			msg_env->mtype = 0;
 			msg_env->mtext[0] = 't';
 			set_process_priority(1,HIGH);
+			k_delayed_send(1,msg_env,10);
 			set_process_priority(3,HIGH);
-			k_delayed_send(1,msg_env,10000);
 			sent_msg++;
+		}else{
+			
 		}
 		release_processor();
 	}
@@ -200,7 +155,9 @@ void proc4(void)
 	U32 *mem_addr;
 	int i, ret_val;
 	while(1){
-		uart0_put_string("entering proc4\n\r");
+		//uart0_put_string("entering proc4\n\r");
+		set_process_priority(1,HIGH);
+		get_process_priority(4);
 		release_processor();
 	}
 }

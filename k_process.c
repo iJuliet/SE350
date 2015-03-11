@@ -121,8 +121,17 @@ void process_init()
 	g_proc_table[TIMER_I_PROCESS].m_stack_size = 0;
 	g_proc_table[TIMER_I_PROCESS].m_priority = -1; //does not matter, it is not in the ready queue
 	
+	//set up for kcd-process
+	g_proc_table[KCD_PROCESS].m_pid = KCD_PROC_ID;
+	g_proc_table[KCD_PROCESS].mpf_start_pc = &kcd_process;
+	g_proc_table[KCD_PROCESS].m_stack_size = 0x100;
+	g_proc_table[KCD_PROCESS].m_priority = -1; 
 	
-	//set up for uart-i-process
+	//set up for crt-process
+	g_proc_table[CRT_PROCESS].m_pid = CRT_PROC_ID;
+	g_proc_table[CRT_PROCESS].mpf_start_pc = &crt_process;
+	g_proc_table[CRT_PROCESS].m_stack_size = 0x100;
+	g_proc_table[CRT_PROCESS].m_priority = -1; 
   
 	/* initilize exception stack frame (i.e. initial context) for each process */
 	for ( i = 0; i < TOTAL_PROCS; i++ ) {
@@ -141,6 +150,9 @@ void process_init()
 		}
 		(gp_pcbs[i])->mp_sp = sp;
 	}
+	//block KCD and CRT
+	gp_pcbs[KCD_PROCESS]->m_state = BLK_ON_MSG;
+	gp_pcbs[CRT_PROCESS]->m_state = BLK_ON_MSG;
 	//organize priority queue
 	for( i = 0; i < NUM_TEST_PROCS; i++) {
 		rpq_enqueue(gp_pcbs[i]);
@@ -196,6 +208,7 @@ int process_switch(PCB *p_pcb_old)
 				p_pcb_old->m_state = RDY;
 			}
 			p_pcb_old->mp_sp = (U32 *) __get_MSP();
+			
 		}
 		gp_current_process->m_state = RUN;
 		__set_MSP((U32) gp_current_process->mp_sp);
