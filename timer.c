@@ -103,10 +103,10 @@ __asm void TIMER0_IRQHandler(void)
 {
 	PRESERVE8
 	IMPORT c_TIMER0_IRQHandler
-	//CPSID I // disable interrupts
+	CPSID I // disable interrupts
 	PUSH{r4-r11, lr}
 	BL c_TIMER0_IRQHandler
-	//CPSIE I // enable interrupts
+	CPSIE I // enable interrupts
 	POP{r4-r11, pc}
 } 
 /**

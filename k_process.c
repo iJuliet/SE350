@@ -22,16 +22,14 @@
 #include "timer.h"
 #include "string.h"
 #include "uart.h"
+#include "syscalls.h"
 
 #ifdef DEBUG_0
 #include "printf.h"
 #endif /* DEBUG_0 */
 
 
-typedef struct _kcdcmd {
-    int pid;
-    char cmd[10];
-} kcdcmd;
+
 
 /* ----- Global Variables ----- */
 PCB **gp_pcbs;                  /* array of pcbs */
@@ -49,8 +47,7 @@ int current_time;
 
 char input[MAX_MSG_SIZE];
 int input_char_counter;
-kcdcmd commands [10];
-int regCmds = 0;
+
 
 
 
@@ -121,17 +118,16 @@ void process_init()
 	g_proc_table[TIMER_I_PROCESS].m_stack_size = 0;
 	g_proc_table[TIMER_I_PROCESS].m_priority = -1; //does not matter, it is not in the ready queue
 	
-	//set up for kcd-process
-	g_proc_table[KCD_PROCESS].m_pid = KCD_PROC_ID;
-	g_proc_table[KCD_PROCESS].mpf_start_pc = &kcd_process;
-	g_proc_table[KCD_PROCESS].m_stack_size = 0x100;
-	g_proc_table[KCD_PROCESS].m_priority = 0; 
+	//set up for uart-i-process
+	g_proc_table[UART_I_PROCESS].m_pid = UART_PROC_ID;
+	g_proc_table[UART_I_PROCESS].mpf_start_pc = NULL;
+	g_proc_table[UART_I_PROCESS].m_stack_size = 0;
+	g_proc_table[UART_I_PROCESS].m_priority = -1; //does not matter, it is not in the ready queue
 	
-	//set up for crt-process
-	g_proc_table[CRT_PROCESS].m_pid = CRT_PROC_ID;
-	g_proc_table[CRT_PROCESS].mpf_start_pc = &crt_process;
-	g_proc_table[CRT_PROCESS].m_stack_size = 0x100;
-	g_proc_table[CRT_PROCESS].m_priority = 0; 
+	
+	
+	//set up for system processes
+	set_up_sys_procs(g_proc_table);
   
 	/* initilize exception stack frame (i.e. initial context) for each process */
 	for ( i = 0; i < TOTAL_PROCS; i++ ) {
@@ -158,9 +154,8 @@ void process_init()
 	for( i = 0; i < NUM_TEST_PROCS; i++) {
 		rpq_enqueue(gp_pcbs[i]);
 	}
-	
-	rpq_enqueue(gp_pcbs[CRT_PROCESS]);
 	rpq_enqueue(gp_pcbs[KCD_PROCESS]);
+	rpq_enqueue(gp_pcbs[CRT_PROCESS]);
 	rpq_enqueue(gp_pcbs[NULL_PROCESS]);
 	
 	//init current_time
@@ -461,74 +456,4 @@ void timer_i_process(){
 		}
 }*/
 
-
-void crt_process(){
-	msgbuf* msg_env;
-	LPC_UART_TypeDef* pUart;
-	while(1){
-		msg_env = (msgbuf*)k_receive_message(NULL);
-			if (msg_env == NULL || msg_env->mtype != CRT_REQ) {
-					// wrong message
-					k_release_memory_block(msg_env);
-			} else {
-					// forwards the message to uart_i_process
-					k_send_message(UART_I_PROCESS,msg_env);
-					pUart = (LPC_UART_TypeDef*)LPC_UART0;
-					pUart->IER |= IER_THRE;
-					pUart->THR = '\0';
-			}
-	}
-}
-
-void kcd_process(){
-	msgbuf* msg_env;
-	char msgText [MAX_MSG_SIZE];
-	char* temp;
-	char buffer[10];
-	int i = 0;
-	while(1) {
-			msg_env = (msgbuf* )k_receive_message(NULL);
-			//determine message type
-			if(msg_env->mtype == DEFAULT){
-					strncpy(msgText, msg_env->mtext, strlen(msg_env->mtext));
-					temp = msgText;
-					if (msgText[0] == '%') {
-							while (*temp != ' ' && *temp != '\r' && i < 10) {
-									if (*temp != '\0') {
-											buffer[i++] = *temp++;
-									} else {
-											temp++; //*temp++ maybe? need more testing
-									}
-							}
-							
-							if (i >= 10) { // command identifier should have length < 10
-									k_send_message(CRT_PROC_ID, msg_env);
-							} else {
-									for (i = 0; i < regCmds; i++) {
-											if (strcmp(commands[i].cmd, buffer) == 0) {
-													k_send_message(commands[i].pid, msg_env);
-													buffer[0] = '\0';
-													msgText[0] = '\0'; // clears both buffers, kinda hacky, more testing needed
-													goto DONE;
-											}
-									}
-									
-									//send msg to crt_process
-									k_send_message(CRT_PROC_ID, msg_env);
-							}
-					DONE:
-							continue;
-					}
-			} else if (msg_env->mtype == KCD_REG) {
-					if ( regCmds < 10 ) {
-							commands[regCmds].pid = msg_env->sender_pid;
-							strncpy(commands[regCmds].cmd, msg_env->mtext, strlen(msg_env->mtext));
-							regCmds++;
-					} else {
-							// Reaches maximum of commands that can be registered
-					}
-					k_release_memory_block(msg_env);
-			}
-	}
-}
 

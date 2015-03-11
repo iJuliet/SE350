@@ -476,6 +476,11 @@
               <FileType>1</FileType>
               <FilePath>.\string.c</FilePath>
             </File>
+            <File>
+              <FileName>wall_clock.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\wall_clock.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

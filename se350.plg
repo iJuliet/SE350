@@ -3,52 +3,130 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-N:\SE350\se350.uvproj
-Project File Date:  03/10/2015
+N:\SE350\SE350_LAB\SE350\se350.uvproj
+Project File Date:  03/11/2015
 
 <h2>Output:</h2>
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(85): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(101): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(138): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(155): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+syscalls.h(11): warning:  #1-D: last line of file ends without a newline
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(265): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(62): warning:  #550-D: variable "timer" was set but never used
+message.c(96): warning:  #177-D: variable "timer" was declared but never referenced
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+compiling syscalls.c...
+syscalls.h(11): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+syscalls.c(33): error:  #20: identifier "CRT_REQ" is undefined
+syscalls.c(38): error:  #20: identifier "UART_I_PROCESS" is undefined
+syscalls.c(48): error:  #20: identifier "MAX_MSG_SIZE" is undefined
+syscalls.c(55): error:  #20: identifier "DEFAULT" is undefined
+syscalls.c(70): error:  #20: identifier "regCmds" is undefined
+syscalls.c(71): error:  #20: identifier "commands" is undefined
+syscalls.c(85): error:  #20: identifier "KCD_REG" is undefined
+syscalls.c(86): error:  #20: identifier "regCmds" is undefined
+syscalls.c(87): error:  #20: identifier "commands" is undefined
+syscalls.c(87): error:  #136: struct "_user_msgbuf" has no field "sender_pid"
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(85): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(101): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(138): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(155): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+syscalls.h(11): warning:  #1-D: last line of file ends without a newline
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(265): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(62): warning:  #550-D: variable "timer" was set but never used
+message.c(96): warning:  #177-D: variable "timer" was declared but never referenced
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+compiling syscalls.c...
+syscalls.h(11): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+syscalls.c(48): error:  #20: identifier "UART_I_PROCESS" is undefined
+syscalls.c(80): error:  #20: identifier "regCmds" is undefined
+syscalls.c(81): error:  #20: identifier "commands" is undefined
+syscalls.c(96): error:  #20: identifier "regCmds" is undefined
+syscalls.c(97): error:  #20: identifier "commands" is undefined
+syscalls.c(97): error:  #136: struct "_user_msgbuf" has no field "sender_pid"
+Target not created
 Build target 'SE350'
 compiling k_process.c...
 uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
-compiling uart_irq.c...
+syscalls.h(11): warning:  #1-D: last line of file ends without a newline
+compiling syscalls.c...
+syscalls.h(11): warning:  #1-D: last line of file ends without a newline
 uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(265): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
-compiling wall_clock.c...
-timer.h(9): error:  #20: identifier "uint32_t" is undefined
-timer.h(9): error:  #20: identifier "uint8_t" is undefined
-wall_clock.c(6): error:  #20: identifier "msgbug" is undefined
-wall_clock.c(6): error:  #29: expected an expression
-wall_clock.c(6): error:  #65: expected a ";"
-wall_clock.c(10): error:  #268: declaration may not appear after executable statement in block
-wall_clock.c(10): error:  #20: identifier "keyreg" is undefined
-wall_clock.c(10): error:  #65: expected a ";"
-wall_clock.c(12): warning:  #223-D: function "send_message" declared implicitly
-wall_clock.c(14): error:  #29: expected an expression
-wall_clock.c(14): error:  #65: expected a ";"
-wall_clock.c(18): error:  #268: declaration may not appear after executable statement in block
-wall_clock.c(18): error:  #20: identifier "keyreg" is undefined
-wall_clock.c(18): error:  #101: "env" has already been declared in the current scope
-wall_clock.c(18): error:  #65: expected a ";"
-wall_clock.c(22): error:  #29: expected an expression
-wall_clock.c(22): error:  #65: expected a ";"
-wall_clock.c(26): error:  #268: declaration may not appear after executable statement in block
-wall_clock.c(26): error:  #20: identifier "keyreg" is undefined
-wall_clock.c(26): error:  #101: "env" has already been declared in the current scope
-wall_clock.c(26): error:  #65: expected a ";"
-wall_clock.c(30): error:  #268: declaration may not appear after executable statement in block
-wall_clock.c(31): error:  #268: declaration may not appear after executable statement in block
-wall_clock.c(32): error:  #268: declaration may not appear after executable statement in block
-wall_clock.c(33): warning:  #223-D: function "request_memory_block" declared implicitly
-wall_clock.c(34): error:  #20: identifier "NOTIFY_WALL_CLOCK" is undefined
-wall_clock.c(35): warning:  #223-D: function "delayed_send" declared implicitly
-wall_clock.c(35): error:  #20: identifier "WALL_CLOCK_PROC_ID" is undefined
-wall_clock.c(38): warning:  #223-D: function "receive_message" declared implicitly
-wall_clock.c(38): error:  #144: a value of type "int" cannot be used to initialize an entity of type "msgbuf *"
-wall_clock.c(46): error:  #20: identifier "state" is undefined
-wall_clock.c(47): warning:  #223-D: function "release_memory_block" declared implicitly
-wall_clock.c(48): error:  #268: declaration may not appear after executable statement in block
-wall_clock.c(51): error:  #268: declaration may not appear after executable statement in block
-wall_clock.c(51): error:  #20: identifier "current_time" is undefined
+syscalls.c(105): error:  #136: struct "_user_msgbuf" has no field "sender_pid"
+Target not created
+Build target 'SE350'
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+syscalls.h(6): error:  #101: "_msgbuf" has already been declared in the current scope
+syscalls.h(13): error:  #256: invalid redeclaration of type name "msgbuf" (declared at line 63 of "k_rtx.h")
+syscalls.h(20): warning:  #1-D: last line of file ends without a newline
+compiling syscalls.c...
+syscalls.h(20): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+Target not created
+Build target 'SE350'
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+syscalls.h(12): warning:  #1-D: last line of file ends without a newline
+compiling syscalls.c...
+syscalls.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6472 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 4 Warning(s).
+Build target 'SE350'
+compiling syscalls.c...
+syscalls.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+syscalls.c(106): error:  #136: struct "_user_msgbuf" has no field "sender_pid"
 Target not created
 Rebuild target 'SE350'
 assembling startup_LPC17xx.s...
@@ -69,6 +147,7 @@ usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never ref
 compiling k_memory.c...
 compiling k_process.c...
 uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+syscalls.h(12): warning:  #1-D: last line of file ends without a newline
 compiling timer.c...
 compiling uart_irq.c...
 uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
@@ -80,71 +159,955 @@ compiling cmd_proc.c...
 compiling string.c...
 string.c(10): warning:  #1293-D: assignment in condition
 compiling wall_clock.c...
-timer.h(9): error:  #20: identifier "uint32_t" is undefined
-timer.h(9): error:  #20: identifier "uint8_t" is undefined
-Target not created
-Rebuild target 'SE350'
-assembling startup_LPC17xx.s...
-compiling system_LPC17xx.c...
-compiling uart_polling.c...
-compiling HAL.c...
-compiling k_rtx_init.c...
-uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
-compiling main_svc.c...
-compiling printf.c...
-compiling usr_proc.c...
-usr_proc.c(85): warning:  #223-D: function "exit" declared implicitly
-usr_proc.c(101): warning:  #177-D: variable "temp" was declared but never referenced
-usr_proc.c(138): warning:  #177-D: variable "status" was declared but never referenced
-usr_proc.c(155): warning:  #177-D: variable "mem_addr" was declared but never referenced
-usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
-usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
-compiling k_memory.c...
-compiling k_process.c...
-uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
-compiling timer.c...
-compiling uart_irq.c...
+compiling syscalls.c...
+syscalls.h(12): warning:  #1-D: last line of file ends without a newline
 uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(265): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
-compiling message.c...
-message.c(62): warning:  #550-D: variable "timer" was set but never used
-message.c(96): warning:  #177-D: variable "timer" was declared but never referenced
-compiling cmd_proc.c...
-compiling string.c...
-string.c(10): warning:  #1293-D: assignment in condition
-compiling wall_clock.c...
 linking...
 Program Size: Code=6460 RO-data=236 RW-data=100 ZI-data=1180  
-"se350.axf" - 0 Error(s), 13 Warning(s).
-Build target 'SE350'
+"se350.axf" - 0 Error(s), 16 Warning(s).
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(85): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(101): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(138): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(155): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+syscalls.h(12): warning:  #1-D: last line of file ends without a newline
 compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(265): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(62): warning:  #550-D: variable "timer" was set but never used
+message.c(96): warning:  #177-D: variable "timer" was declared but never referenced
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
 linking...
-Program Size: Code=6456 RO-data=236 RW-data=100 ZI-data=1180  
+Program Size: Code=6460 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 16 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6460 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(85): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(101): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(138): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(155): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+syscalls.h(12): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=6480 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 8 Warning(s).
+Build target 'SE350'
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+syscalls.h(12): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=6480 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+syscalls.h(12): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=6480 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+syscalls.h(12): warning:  #1-D: last line of file ends without a newline
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6484 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 4 Warning(s).
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(85): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(101): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(138): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(155): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+syscalls.h(12): warning:  #1-D: last line of file ends without a newline
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(265): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(62): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(95): warning:  #177-D: variable "timer" was declared but never referenced
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(87): warning:  #9-D: nested comment is not allowed
+linking...
+Program Size: Code=6080 RO-data=236 RW-data=96 ZI-data=1016  
+"se350.axf" - 0 Error(s), 17 Warning(s).
+Build target 'SE350'
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+syscalls.h(12): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=6088 RO-data=236 RW-data=96 ZI-data=1016  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(68): error:  #268: declaration may not appear after executable statement in block
+sys_procs.c(48): warning:  #550-D: variable "msg_env" was set but never used
+sys_procs.c(49): warning:  #177-D: variable "pUart" was declared but never referenced
+sys_procs.c(68): error:  #67: expected a "}"
+sys_procs.c(87): warning:  #9-D: nested comment is not allowed
+sys_procs.c(70): warning:  #550-D: variable "msg_env" was set but never used
+sys_procs.c(71): warning:  #177-D: variable "msgText" was declared but never referenced
+sys_procs.c(72): warning:  #177-D: variable "temp" was declared but never referenced
+sys_procs.c(73): warning:  #177-D: variable "buffer" was declared but never referenced
+sys_procs.c(74): warning:  #177-D: variable "i" was declared but never referenced
+Target not created
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(48): warning:  #550-D: variable "msg_env" was set but never used
+sys_procs.c(49): warning:  #177-D: variable "pUart" was declared but never referenced
+sys_procs.c(87): warning:  #9-D: nested comment is not allowed
+sys_procs.c(70): warning:  #550-D: variable "msg_env" was set but never used
+sys_procs.c(71): warning:  #177-D: variable "msgText" was declared but never referenced
+sys_procs.c(72): warning:  #177-D: variable "temp" was declared but never referenced
+sys_procs.c(73): warning:  #177-D: variable "buffer" was declared but never referenced
+sys_procs.c(74): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=6108 RO-data=236 RW-data=96 ZI-data=1016  
+"se350.axf" - 0 Error(s), 10 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(87): warning:  #9-D: nested comment is not allowed
+sys_procs.c(70): warning:  #550-D: variable "msg_env" was set but never used
+sys_procs.c(71): warning:  #177-D: variable "msgText" was declared but never referenced
+sys_procs.c(72): warning:  #177-D: variable "temp" was declared but never referenced
+sys_procs.c(73): warning:  #177-D: variable "buffer" was declared but never referenced
+sys_procs.c(74): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=6164 RO-data=264 RW-data=96 ZI-data=1016  
+"se350.axf" - 0 Error(s), 8 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6504 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(87): warning:  #9-D: nested comment is not allowed
+sys_procs.c(70): warning:  #550-D: variable "msg_env" was set but never used
+sys_procs.c(71): warning:  #177-D: variable "msgText" was declared but never referenced
+sys_procs.c(72): warning:  #177-D: variable "temp" was declared but never referenced
+sys_procs.c(73): warning:  #177-D: variable "buffer" was declared but never referenced
+sys_procs.c(74): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=6164 RO-data=264 RW-data=96 ZI-data=1016  
+"se350.axf" - 0 Error(s), 8 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(78): warning:  #223-D: function "printf" declared implicitly
+sys_procs.c(90): warning:  #9-D: nested comment is not allowed
+sys_procs.c(70): warning:  #550-D: variable "msg_env" was set but never used
+sys_procs.c(71): warning:  #177-D: variable "msgText" was declared but never referenced
+sys_procs.c(72): warning:  #177-D: variable "temp" was declared but never referenced
+sys_procs.c(73): warning:  #177-D: variable "buffer" was declared but never referenced
+sys_procs.c(74): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=9030 RO-data=250 RW-data=108 ZI-data=1268  
+"se350.axf" - 0 Error(s), 9 Warning(s).
+Build target 'SE350'
+linking...
+Program Size: Code=9030 RO-data=250 RW-data=108 ZI-data=1268  
 "se350.axf" - 0 Error(s), 0 Warning(s).
 Build target 'SE350'
-compiling k_process.c...
-uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(82): warning:  #223-D: function "printf" declared implicitly
+sys_procs.c(94): warning:  #9-D: nested comment is not allowed
+sys_procs.c(74): warning:  #550-D: variable "msg_env" was set but never used
+sys_procs.c(75): warning:  #177-D: variable "msgText" was declared but never referenced
+sys_procs.c(76): warning:  #177-D: variable "temp" was declared but never referenced
+sys_procs.c(77): warning:  #177-D: variable "buffer" was declared but never referenced
+sys_procs.c(78): warning:  #177-D: variable "i" was declared but never referenced
 linking...
-Program Size: Code=6456 RO-data=236 RW-data=100 ZI-data=1180  
-"se350.axf" - 0 Error(s), 1 Warning(s).
+Program Size: Code=9030 RO-data=250 RW-data=108 ZI-data=1268  
+"se350.axf" - 0 Error(s), 9 Warning(s).
 Build target 'SE350'
-compiling k_process.c...
-uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(94): warning:  #9-D: nested comment is not allowed
+sys_procs.c(74): warning:  #550-D: variable "msg_env" was set but never used
+sys_procs.c(75): warning:  #177-D: variable "msgText" was declared but never referenced
+sys_procs.c(76): warning:  #177-D: variable "temp" was declared but never referenced
+sys_procs.c(77): warning:  #177-D: variable "buffer" was declared but never referenced
+sys_procs.c(78): warning:  #177-D: variable "i" was declared but never referenced
 linking...
-Program Size: Code=6440 RO-data=236 RW-data=100 ZI-data=1180  
-"se350.axf" - 0 Error(s), 1 Warning(s).
+Program Size: Code=6192 RO-data=264 RW-data=96 ZI-data=1016  
+"se350.axf" - 0 Error(s), 8 Warning(s).
 Build target 'SE350'
-compiling k_process.c...
-uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(97): warning:  #9-D: nested comment is not allowed
+sys_procs.c(77): warning:  #550-D: variable "msg_env" was set but never used
+sys_procs.c(78): warning:  #177-D: variable "msgText" was declared but never referenced
+sys_procs.c(79): warning:  #177-D: variable "temp" was declared but never referenced
+sys_procs.c(80): warning:  #177-D: variable "buffer" was declared but never referenced
+sys_procs.c(81): warning:  #177-D: variable "i" was declared but never referenced
 linking...
-Program Size: Code=6460 RO-data=236 RW-data=100 ZI-data=1180  
-"se350.axf" - 0 Error(s), 1 Warning(s).
+Program Size: Code=6200 RO-data=264 RW-data=96 ZI-data=1016  
+"se350.axf" - 0 Error(s), 8 Warning(s).
 Build target 'SE350'
-compiling k_process.c...
-uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(103): warning:  #9-D: nested comment is not allowed
+sys_procs.c(80): warning:  #550-D: variable "msg_env" was set but never used
+sys_procs.c(81): warning:  #177-D: variable "msgText" was declared but never referenced
+sys_procs.c(82): warning:  #177-D: variable "temp" was declared but never referenced
+sys_procs.c(83): warning:  #177-D: variable "buffer" was declared but never referenced
+sys_procs.c(84): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=6240 RO-data=264 RW-data=96 ZI-data=1016  
+"se350.axf" - 0 Error(s), 8 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6572 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6556 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(103): warning:  #9-D: nested comment is not allowed
+sys_procs.c(81): warning:  #177-D: variable "msgText" was declared but never referenced
+sys_procs.c(82): warning:  #177-D: variable "temp" was declared but never referenced
+sys_procs.c(83): warning:  #177-D: variable "buffer" was declared but never referenced
+sys_procs.c(84): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=6248 RO-data=264 RW-data=96 ZI-data=1016  
+"se350.axf" - 0 Error(s), 7 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(103): warning:  #9-D: nested comment is not allowed
+sys_procs.c(81): warning:  #177-D: variable "msgText" was declared but never referenced
+sys_procs.c(82): warning:  #177-D: variable "temp" was declared but never referenced
+sys_procs.c(83): warning:  #177-D: variable "buffer" was declared but never referenced
+sys_procs.c(84): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=6408 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 7 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(103): warning:  #9-D: nested comment is not allowed
+sys_procs.c(82): warning:  #177-D: variable "temp" was declared but never referenced
+sys_procs.c(83): warning:  #177-D: variable "buffer" was declared but never referenced
+sys_procs.c(84): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+Program Size: Code=6428 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(104): warning:  #9-D: nested comment is not allowed
+sys_procs.c(82): warning:  #550-D: variable "temp" was set but never used
+sys_procs.c(83): warning:  #177-D: variable "buffer" was declared but never referenced
+sys_procs.c(84): warning:  #177-D: variable "i" was declared but never referenced
+sys_procs.c(143): error: At end of source:  #67: expected a "}"
+Target not created
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(104): warning:  #9-D: nested comment is not allowed
+sys_procs.c(82): warning:  #550-D: variable "temp" was set but never used
+sys_procs.c(83): warning:  #177-D: variable "buffer" was declared but never referenced
+sys_procs.c(84): warning:  #177-D: variable "i" was declared but never referenced
 linking...
 Program Size: Code=6448 RO-data=236 RW-data=100 ZI-data=1180  
-"se350.axf" - 0 Error(s), 1 Warning(s).
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(83): warning:  #550-D: variable "buffer" was set but never used
+linking...
+Program Size: Code=6488 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(104): warning:  #9-D: nested comment is not allowed
+sys_procs.c(82): warning:  #550-D: variable "temp" was set but never used
+linking...
+Program Size: Code=6536 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 4 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(104): warning:  #9-D: nested comment is not allowed
+sys_procs.c(82): warning:  #550-D: variable "temp" was set but never used
+linking...
+Program Size: Code=6536 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 4 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(83): warning:  #550-D: variable "buffer" was set but never used
+linking...
+Program Size: Code=6488 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(83): warning:  #550-D: variable "buffer" was set but never used
+linking...
+Program Size: Code=6492 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(104): warning:  #9-D: nested comment is not allowed
+sys_procs.c(83): warning:  #177-D: variable "buffer" was declared but never referenced
+linking...
+Program Size: Code=6472 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 4 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(83): warning:  #177-D: variable "buffer" was declared but never referenced
+linking...
+Program Size: Code=6472 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(83): warning:  #550-D: variable "buffer" was set but never used
+linking...
+Program Size: Code=6488 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(83): warning:  #550-D: variable "buffer" was set but never used
+linking...
+Program Size: Code=6488 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(83): warning:  #177-D: variable "buffer" was declared but never referenced
+linking...
+Program Size: Code=6472 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6580 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6576 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(83): warning:  #550-D: variable "buffer" was set but never used
+linking...
+Program Size: Code=6480 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(83): warning:  #550-D: variable "buffer" was set but never used
+linking...
+Program Size: Code=6480 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(83): warning:  #550-D: variable "buffer" was set but never used
+linking...
+Program Size: Code=6480 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Build target 'SE350'
+linking...
+Program Size: Code=6480 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(265): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(88): error:  #268: declaration may not appear after executable statement in block
+sys_procs.c(88): error:  #20: identifier "bool" is undefined
+sys_procs.c(88): error:  #20: identifier "false" is undefined
+sys_procs.c(89): error:  #268: declaration may not appear after executable statement in block
+sys_procs.c(89): error:  #20: identifier "bool" is undefined
+sys_procs.c(114): error:  #137: expression must be a modifiable lvalue
+sys_procs.c(129): error:  #20: identifier "true" is undefined
+sys_procs.c(168): error:  #136: struct "_user_msgbuf" has no field "sender_pid"
+Target not created
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(88): error:  #268: declaration may not appear after executable statement in block
+sys_procs.c(88): error:  #20: identifier "bool" is undefined
+sys_procs.c(88): error:  #20: identifier "false" is undefined
+sys_procs.c(89): error:  #268: declaration may not appear after executable statement in block
+sys_procs.c(89): error:  #20: identifier "bool" is undefined
+sys_procs.c(114): error:  #137: expression must be a modifiable lvalue
+sys_procs.c(129): error:  #20: identifier "true" is undefined
+Target not created
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(82): error:  #20: identifier "bool" is undefined
+sys_procs.c(88): error:  #20: identifier "false" is undefined
+sys_procs.c(114): error:  #137: expression must be a modifiable lvalue
+sys_procs.c(129): error:  #20: identifier "true" is undefined
+Target not created
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(82): error:  #20: identifier "boolean" is undefined
+sys_procs.c(88): error:  #20: identifier "false" is undefined
+sys_procs.c(114): error:  #137: expression must be a modifiable lvalue
+sys_procs.c(129): error:  #20: identifier "true" is undefined
+Target not created
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(114): error:  #137: expression must be a modifiable lvalue
+sys_procs.c(82): warning:  #550-D: variable "cmdCompleted" was set but never used
+Target not created
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(113): error:  #137: expression must be a modifiable lvalue
+Target not created
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6720 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6728 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+syscalls.h(12): warning:  #1-D: last line of file ends without a newline
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(265): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(69): warning:  #223-D: function "set_uwart0_interrupt" declared implicitly
+linking...
+se350.axf: Error: L6218E: Undefined symbol set_uwart0_interrupt (referred from sys_procs.o).
+Target not created
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6728 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(265): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6724 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(264): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6728 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6728 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(262): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6692 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(262): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6700 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6672 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+syscalls.h(12): warning:  #1-D: last line of file ends without a newline
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6704 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 4 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(263): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6708 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(265): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6712 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(263): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6708 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 4 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(264): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6708 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6660 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(263): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6660 RO-data=236 RW-data=100 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(263): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6660 RO-data=236 RW-data=84 ZI-data=1308  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(262): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6660 RO-data=236 RW-data=84 ZI-data=1180  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(85): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(101): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(138): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(155): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6632 RO-data=236 RW-data=84 ZI-data=1180  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(20): warning:  #520-D: initialization with "{...}" expected for aggregate object
+uart_irq.c(21): error:  #65: expected a ";"
+uart_irq.c(38): error:  #20: identifier "gp_buffer" is undefined
+uart_irq.c(235): error:  #20: identifier "gp_buffer" is undefined
+Target not created
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(20): warning:  #520-D: initialization with "{...}" expected for aggregate object
+uart_irq.c(263): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6640 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(263): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6640 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(21): error:  #29: expected an expression
+uart_irq.c(262): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+Target not created
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(262): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6632 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(263): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6644 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(262): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6632 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(263): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6644 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(260): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6544 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(260): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6540 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(260): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6544 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(260): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=6540 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(260): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(62): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(95): warning:  #177-D: variable "timer" was declared but never referenced
+linking...
+Program Size: Code=6536 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 4 Warning(s).
+Build target 'SE350'
+compiling message.c...
+message.c(63): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(96): warning:  #177-D: variable "timer" was declared but never referenced
+linking...
+Program Size: Code=6544 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling message.c...
+message.c(64): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(97): warning:  #177-D: variable "timer" was declared but never referenced
+linking...
+Program Size: Code=6544 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6568 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6584 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Cannot Write to RAM for Flash Algorithms !
+Erase Failed!
+Build target 'SE350'
+linking...
+Program Size: Code=6584 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(118): error:  #140: too many arguments in function call
+Target not created
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(118): error:  #140: too many arguments in function call
+Target not created
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+_____^
+*** error 56: cannot open file
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(118): error:  #140: too many arguments in function call
+Target not created
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6588 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6592 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6584 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(139): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+linking...
+Program Size: Code=6592 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6568 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling usr_proc.c...
+usr_proc.c(85): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(101): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(138): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(155): warning:  #177-D: variable "mem_addr" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+syscalls.h(12): warning:  #1-D: last line of file ends without a newline
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(260): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(64): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(97): warning:  #177-D: variable "timer" was declared but never referenced
+compiling cmd_proc.c...
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6616 RO-data=236 RW-data=88 ZI-data=1176  
+"se350.axf" - 0 Error(s), 15 Warning(s).
 Rebuild target 'SE350'
 assembling startup_LPC17xx.s...
 compiling system_LPC17xx.c...
@@ -164,17 +1127,25 @@ usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never ref
 compiling k_memory.c...
 compiling k_process.c...
 uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+syscalls.h(12): warning:  #1-D: last line of file ends without a newline
 compiling timer.c...
 compiling uart_irq.c...
 uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
-uart_irq.c(265): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+uart_irq.c(260): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
 compiling message.c...
-message.c(62): warning:  #550-D: variable "timer" was set but never used
-message.c(96): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(64): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(97): warning:  #177-D: variable "timer" was declared but never referenced
 compiling cmd_proc.c...
 compiling string.c...
 string.c(10): warning:  #1293-D: assignment in condition
 compiling wall_clock.c...
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
 linking...
-Program Size: Code=6456 RO-data=236 RW-data=100 ZI-data=1180  
-"se350.axf" - 0 Error(s), 13 Warning(s).
+Program Size: Code=6568 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 16 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.

@@ -1,0 +1,14 @@
+sys_procs.o: sys_procs.c
+sys_procs.o: C:\Software\Keil\ARM\Inc\NXP\LPC17xx\LPC17xx.h
+sys_procs.o: C:\Software\Keil\ARM\CMSIS\Include\core_cm3.h
+sys_procs.o: C:\Software\Keil\ARM\ARMCC\bin\..\include\stdint.h
+sys_procs.o: C:\Software\Keil\ARM\CMSIS\Include\core_cmInstr.h
+sys_procs.o: C:\Software\Keil\ARM\CMSIS\Include\core_cmFunc.h
+sys_procs.o: C:\Software\Keil\ARM\Inc\NXP\LPC17xx\system_LPC17xx.h
+sys_procs.o: sys_procs.h
+sys_procs.o: rtx.h
+sys_procs.o: string.h
+sys_procs.o: uart.h
+sys_procs.o: uart_def.h
+sys_procs.o: uart_polling.h
+sys_procs.o: k_rtx.h

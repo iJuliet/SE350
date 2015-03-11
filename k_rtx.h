@@ -20,7 +20,7 @@
 #define CRT_REQ 2
 #define TOTAL_PROCS 9
 
-#define MAX_MSG_SIZE 128
+#define MAX_MSG_SIZE 64
 
 
 //index numbers for kernel processes
@@ -55,7 +55,7 @@ typedef enum {NEW = 0, RDY, RUN, BLK_ON_MEM, BLK_ON_MSG, WAITING_FOR_INTERRUPT} 
 */
 typedef struct _msgbuf {
 	int mtype; /* user defined message type */
-	char mtext[1]; /* body of the message */
+	char mtext[MAX_MSG_SIZE]; /* body of the message */
 	int sender_pid;
 	int receiver_pid;
 	int send_time;

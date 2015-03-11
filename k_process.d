@@ -14,3 +14,4 @@ k_process.o: timer.h
 k_process.o: string.h
 k_process.o: uart.h
 k_process.o: uart_def.h
+k_process.o: syscalls.h

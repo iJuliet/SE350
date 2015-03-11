@@ -17,8 +17,8 @@
 #endif
 
 
-uint8_t g_buffer[]= "You Typed a Q\n\r";
-uint8_t *gp_buffer = g_buffer;
+uint8_t empty_buffer[]="";
+uint8_t *gp_buffer = empty_buffer;
 uint8_t g_send_char = 0; 
 uint8_t g_char_in;
 uint8_t g_char_out;
@@ -35,7 +35,6 @@ extern PCB **gp_pcbs;
 int uart_irq_init(int n_uart) {
 
 	LPC_UART_TypeDef *pUart;
-
 	if ( n_uart ==0 ) {
 		/*
 		Steps 1 & 2: system control configuration.
@@ -169,10 +168,10 @@ __asm void UART0_IRQHandler(void)
 {
 	PRESERVE8
 	IMPORT c_UART0_IRQHandler
-  //CPSID I // disable interrupts
+	CPSID I // disable interrupts
 	PUSH{r4-r11, lr}
 	BL c_UART0_IRQHandler
-	//CPSIE I // enable interrupts
+	CPSIE I // enable interrupts
 	POP{r4-r11, pc}
 } 
 /**
@@ -187,8 +186,6 @@ void c_UART0_IRQHandler(void)
 	uart1_put_string("Entering c_UART0_IRQHandler\n\r");
 #endif // DEBUG_0
 	
-	uart0_put_string("Entering uart0_ihandler\n\r");
-
 	/* Reading IIR automatically acknowledges the interrupt */
 	IIR_IntId = (pUart->IIR) >> 1 ; // skip pending bit in IIR 
 	if (IIR_IntId & IIR_RDA) { // Receive Data Available
@@ -214,9 +211,7 @@ void c_UART0_IRQHandler(void)
             print_blk_on_msg_process();
         }
 #endif // DEBUG_HOTKEYS
-				uart0_put_string("requesting memory block\n\r");
         input_msg = (msgbuf*) k_request_memory_block();
-				uart0_put_string("memory block requested\n\r");
 				//TODO: non-blocking
         /*if (input_msg == NULL) {
             //run out of memory
@@ -227,11 +222,9 @@ void c_UART0_IRQHandler(void)
         input_msg->mtext[0] = g_char_in;
         input_msg->mtext[1] = '\0';
         
-				uart0_put_string("Sending message\n\r");
-				//k_send_message(1,input_msg);
         k_send_message(KCD_PROC_ID, input_msg);
         
-		//uart_i_process(g_char_in);
+
 	} else if (IIR_IntId & IIR_THRE) {
 	/* THRE Interrupt, transmit holding register becomes empty */
 
@@ -240,6 +233,7 @@ PRINT:
 					g_char_out = *gp_buffer;
           pUart->THR = g_char_out;
           gp_buffer++;
+					//set_uart0_interrupt();
 #ifdef DEBUG_0
 			//uart1_put_string("Writing a char = ");
 			//uart1_put_char(g_char_out);
@@ -261,6 +255,7 @@ PRINT:
                 pUart->IER ^= IER_THRE; // toggle the IER_THRE bit
                 pUart->THR = '\0';
                 g_send_char = 0;
+								gp_buffer = empty_buffer;
             } else {
                 gp_buffer = msg->mtext;
                 goto PRINT;
@@ -277,4 +272,10 @@ PRINT:
 #endif // DEBUG_0
 		return;
 	}	
+}
+
+void set_uart0_interrupt() {
+	LPC_UART_TypeDef* pUart = (LPC_UART_TypeDef*) LPC_UART0;
+	pUart->IER |= IER_THRE;
+	pUart->THR = '\0';
 }

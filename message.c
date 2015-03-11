@@ -29,23 +29,25 @@ void* msg_dequeue(PCB* pcb, int* sender_pid){
 	if(sender_pid == NULL){
 			if (pcb->msg_last == pcb->msg_front) {
 				pcb->msg_last = NULL;
+				pcb->msg_front = NULL;
+			}else{
+				pcb->msg_front = pcb->msg_front ->next;
 			}
-			pcb->msg_front = pcb ->msg_front -> next;
 			return temp;
 	}
-	while (temp->sender_pid != *sender_pid && temp != NULL) {
+	while (temp != NULL && temp->sender_pid != *sender_pid) {
 		prev = temp;
 		temp = temp->next;
 	}
 	if(temp == NULL){
-		//block the current process
+		//do nothing
 	} else {
 		if (pcb->msg_front == temp) {
 			pcb->msg_front = temp->next;
 		} else {
 			prev->next = temp->next;
 		}
-		if (pcb->msg_last == pcb->msg_front) {
+		if (pcb->msg_last == pcb->msg_front || pcb->msg_front == NULL) {
 			pcb->msg_last = NULL;
 		} else if (pcb->msg_last == temp) {
 			pcb->msg_last = prev;
@@ -77,7 +79,6 @@ int k_send_message(int process_id, void *env){
 		receiving_proc->m_state = RDY;
 		bq_dequeue_by_pid(receiving_proc->m_pid);
 		rpq_enqueue(receiving_proc);
-		timer = gp_pcbs[TIMER_I_PROCESS];
 		// preemption
 		if (receiving_proc->m_priority <= get_current_proc()->m_priority) {
 				__enable_irq();
@@ -123,9 +124,10 @@ void* k_receive_message(int* sender_id) {
 	PCB* curr_proc = get_current_proc();
 	__disable_irq();
 	while(curr_proc->msg_front == NULL) {
-		__enable_irq();
+		
 		curr_proc->m_state = BLK_ON_MSG;
 		bq_enqueue(curr_proc);
+		__enable_irq();
 		k_release_processor();
 		__disable_irq();
 	}

@@ -29,7 +29,7 @@ typedef struct proc_init
 
 typedef struct _user_msgbuf {
 	int mtype; /* user defined message type */
-	char mtext[1]; /* body of the message */
+	char mtext[64]; /* body of the message */
 } MSGBUF;
 
 /* ----- RTX User API ----- */
