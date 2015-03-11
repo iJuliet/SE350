@@ -1,6 +1,5 @@
 #include "rtx.h"
 
-
 #define KCD_REG 1
 #define CRT_REQ 2
 #define NOTIFY_WALL_CLOCK 0
