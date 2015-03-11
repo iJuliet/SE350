@@ -41,10 +41,7 @@ PROC_INIT g_test_procs[NUM_TEST_PROCS];
 int test_num; // this indicates which test are we on
 int ok_tests;
 
-typedef struct _msgbuf {
-	int mtype; /* user defined message type */
-	char mtext[1]; /* body of the message */
-} msgbuf;
+
 
 void set_test_procs() {
 	int i;
@@ -59,8 +56,8 @@ void set_test_procs() {
   
 	g_test_procs[0].mpf_start_pc = &proc1;
 	g_test_procs[1].mpf_start_pc = &proc2;
-	//g_test_procs[2].mpf_start_pc = &proc3;
-	//g_test_procs[3].mpf_start_pc = &proc4;
+	g_test_procs[2].mpf_start_pc = &proc3;
+	g_test_procs[3].mpf_start_pc = &proc4;
 }
 
 /**
@@ -70,13 +67,21 @@ void set_test_procs() {
 // proc1 receive proc
 void proc1(void) 
 {
+	MSGBUF* message;
 	int received_messages = 0;	
-	uart0_put_string("entering process 1");
-	while (1){
-		void* message = receive_message(NULL);
-		received_messages++;
-		uart0_put_string("msg received");
-		release_memory_block(message);
+	while(1){
+		uart0_put_char('0'+received_messages%10);
+		uart0_put_string(" entering process 1\n\r");
+		if(received_messages < 21){
+			message = (MSGBUF*)receive_message(NULL);
+			received_messages++;
+			uart0_put_string("msg received\n\r");
+			uart0_put_char(message->mtext[0]);
+			release_memory_block(message);
+		}
+		else{
+			exit(0);
+		}
 		set_process_priority(2,HIGH);
 		release_processor();
 	}
@@ -138,14 +143,33 @@ void proc2(void)
 		if ( i != 0 && i%5 == 0 ) {
 			ret_val = release_processor();
 	}*/
-	msgbuf* msg_env;
+	
+	MSGBUF* msg_env;
+	void* temp;
 	int sent_msg = 0;
+	
 	while(1){
-		msg_env = (msgbuf*)request_memory_block();
-		msg_env->mtype = 0;
-		msg_env->mtext[0] = 't';
-		send_message(1,msg_env);
-		set_process_priority(1,HIGH);
+			uart0_put_char('0'+sent_msg%10);
+			uart0_put_string(" entering proc2\n\r");
+		if(sent_msg < 20){
+			msg_env = (MSGBUF *)request_memory_block();
+			msg_env->mtype = 0;
+			msg_env->mtext[0] = 't';
+			
+			set_process_priority(1,HIGH);
+			send_message(1,msg_env);
+			sent_msg++;
+		}
+		else if(sent_msg == 20){
+			uart0_put_string(" sending delayed message\n\r");
+			msg_env = (MSGBUF *)request_memory_block();
+			msg_env->mtype = 0;
+			msg_env->mtext[0] = 't';
+			set_process_priority(1,HIGH);
+			set_process_priority(3,HIGH);
+			k_delayed_send(1,msg_env,10000);
+			sent_msg++;
+		}
 		release_processor();
 	}
 }
@@ -157,64 +181,15 @@ void proc2(void)
 void proc3(void)
 {
 	int status;
-	U32* mem_addr;
-	while (1) {
-		if( test_num == 2){
-			//first time we execute this process
-			uart0_put_string("G013_test: test 2 OK\n\r");
-			test_num++;
-			ok_tests++;
-		}
-		if (test_num == 6){
-			//second time we execute this process
-			uart0_put_string("G013_test: test 6 OK\n\r");
-			test_num++;
-			ok_tests++;
-			//set proc4 to the same priority
-			set_process_priority(4,MEDIUM);
-		}
-		
-		
-		
-
-#ifdef DEBUG_0
-	printf("proc3: mem_addr=%d\n", mem_addr);
-#endif /*DEBUG_0*/
-		if(test_num == 3){
-			mem_addr = (U32 *)request_memory_block();
-			if(mem_addr != NULL){
-					uart0_put_string("G013_test: test 3 OK\n\r");
-					ok_tests++;
-					
-			}else{
-				uart0_put_string("G013_test: test 3 FAIL\n\r");
-			}
-			test_num++;
-		}
-		
-		if(test_num == 4) {
-			status = release_memory_block((U32 *)mem_addr);
-			if(status == RTX_OK ){
-				uart0_put_string("G013_test: test 4 OK\n\r");
-				ok_tests++;
-			}else{
-				uart0_put_string("G013_test: test 4 FAIL\n\r");
-			}
-			test_num++;
-		}
-		
-		if(test_num == 5) {
-			//try release again, which should give us an error
-			status = release_memory_block((U32*) mem_addr);
-			if(status == RTX_ERR) {
-				uart0_put_string("G013_test: test 5 OK\n\r");
-				ok_tests++;
-			}else{
-				uart0_put_string("G013_test: test 5 FAIL\n\r");
-			}
-			test_num++;
-		}
-		
+	MSGBUF* msg_env;
+	while(1){
+		uart0_put_string("entering proc3\n\r");
+		msg_env = (MSGBUF *)request_memory_block();
+		msg_env->mtype = 0;
+		msg_env->mtext[0] = 'b';
+		set_process_priority(1,HIGH);
+		uart0_put_string(" sending delayed message from proc 3\n\r");
+		k_delayed_send(1,msg_env,2);
 		release_processor();
 	}
 }
@@ -224,29 +199,10 @@ void proc4(void)
 {
 	U32 *mem_addr;
 	int i, ret_val;
-
-	if(test_num == 7){
-		uart0_put_string("G013_test: test 7 OK\n\r");
-		test_num++;
-		ok_tests++;
-	} else{
-		uart0_put_string("G013_test: test 7 FAIL\n\r");
-		test_num++;
+	while(1){
+		uart0_put_string("entering proc4\n\r");
+		release_processor();
 	}
-	set_process_priority(2,HIGH);
-	//set_process_priority(4,HIGH);
-	//request thousands of memory block which should fail in the end
-	for(i=0 ; i<2000; ++i) {
-		mem_addr = (U32 *)request_memory_block();
-	}
-	//should to go to proc2
-	if(test_num == 8){
-		uart0_put_string("G013_test: test 8 FAIL\n\r");
-		printEndTestString();
-		test_num++;
-	}
-	release_processor();
-
 }
 
 void printEndTestString(){

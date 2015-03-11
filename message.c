@@ -1,9 +1,11 @@
 #include <LPC17xx.h>
 #include <system_LPC17xx.h>
 #include "message.h"
+#include "k_rtx.h"
 
 extern int current_time;
 extern msgbuf* timeout_queue;
+extern PCB **gp_pcbs;
 
 
 int msg_enqueue(PCB* pcb, msgbuf* msg_envelope){
@@ -54,12 +56,16 @@ void* msg_dequeue(PCB* pcb, int* sender_pid){
 
 
 //send message
-int k_send_message(int process_id, msgbuf *message_envelope){
+int k_send_message(int process_id, void *env){
 	int status;
+	msgbuf* message_envelope;
+	PCB* timer;
 	PCB* receiving_proc = get_pcb_from_pid(process_id);
 	
-    __disable_irq();
+	
+	__disable_irq();
 	//set the casted message_envelope
+	message_envelope = (msgbuf*) env;
 	message_envelope -> sender_pid = (get_current_proc()) -> m_pid;
 	message_envelope -> receiver_pid = process_id;
 	message_envelope -> send_time = current_time;
@@ -69,41 +75,75 @@ int k_send_message(int process_id, msgbuf *message_envelope){
 	status = msg_enqueue(receiving_proc, message_envelope);
 	if (receiving_proc->m_state == BLK_ON_MSG) {
 		receiving_proc->m_state = RDY;
+		bq_dequeue_by_pid(receiving_proc->m_pid);
 		rpq_enqueue(receiving_proc);
-        // preemption
-        if (receiving_proc->m_priority <= get_current_proc()->m_priority) {
-            __enable_irq();
-            k_release_processor();
-            __disable_irq();
-        }
+		timer = gp_pcbs[TIMER_I_PROCESS];
+		// preemption
+		if (receiving_proc->m_priority <= get_current_proc()->m_priority) {
+				__enable_irq();
+				k_release_processor();
+				__disable_irq();
+		}
 	}
-    __enable_irq();
+	__enable_irq();
+	return status;
+}
+
+//send message with no preemption
+int k_send_message_no_preemp(int process_id, void *env){
+	int status;
+	msgbuf* message_envelope;
+	PCB* timer;
+	PCB* receiving_proc = get_pcb_from_pid(process_id);
+	
+	
+	__disable_irq();
+	//set the casted message_envelope
+	message_envelope = (msgbuf*) env;
+	message_envelope -> sender_pid = (get_current_proc()) -> m_pid;
+	message_envelope -> receiver_pid = process_id;
+	message_envelope -> send_time = current_time;
+	message_envelope -> next = NULL;
+	
+	//enqueue env onto msg_queue of receiving proc
+	status = msg_enqueue(receiving_proc, message_envelope);
+	if (receiving_proc->m_state == BLK_ON_MSG) {
+		receiving_proc->m_state = RDY;
+		bq_dequeue_by_pid(receiving_proc->m_pid);
+		rpq_enqueue(receiving_proc);
+		timer = gp_pcbs[TIMER_I_PROCESS];
+	}
+	__enable_irq();
 	return status;
 }
 
 
-
 //receive message
-msgbuf* k_receive_message(int* sender_id) {
+void* k_receive_message(int* sender_id) {
 	// atomic(on)
 	msgbuf* env;
 	PCB* curr_proc = get_current_proc();
 	__disable_irq();
 	while(curr_proc->msg_front == NULL) {
+		__enable_irq();
 		curr_proc->m_state = BLK_ON_MSG;
+		bq_enqueue(curr_proc);
 		k_release_processor();
+		__disable_irq();
 	}
 	env = msg_dequeue(curr_proc, sender_id);
 	// atomic(off)
 	__enable_irq();
-	return env;
+	return (void*)env;
 }
 
-int delayed_send(int process_id, msgbuf *message_envelope, int delay){
+int k_delayed_send(int process_id, void *env, int delay){
 		
-		msgbuf* temp, *prev;
+		msgbuf* temp, *prev, *message_envelope;
+		
 		int send_time = delay + current_time;
 		//set the casted message_envelope
+		message_envelope = (msgbuf *) env;
 	
 		message_envelope -> sender_pid = get_current_proc() -> m_pid;
 		message_envelope -> receiver_pid = process_id;
@@ -118,13 +158,12 @@ int delayed_send(int process_id, msgbuf *message_envelope, int delay){
 		else{
 			temp = timeout_queue -> next;
 			prev = timeout_queue;
-			 while(temp->send_time < send_time && temp != NULL){
+			 while(temp != NULL && temp->send_time < send_time){
 					prev = temp;
 					temp = temp ->next;
 			 }
 			 //should be insert here
 			 prev->next = message_envelope;
-			 message_envelope = temp -> next;
 		}
 		return RTX_OK;
 }

@@ -10,3 +10,5 @@ uart_irq.o: uart_def.h
 uart_irq.o: uart_polling.h
 uart_irq.o: k_process.h
 uart_irq.o: k_rtx.h
+uart_irq.o: rtx.h
+uart_irq.o: message.h

@@ -157,7 +157,8 @@ int k_release_memory_block(void *p_mem_blk) {
 	
 	if( (U32 *)p_mem_blk >= (U32 *)gp_heap && 
 		(U32 *)p_mem_blk <= (U32 *)heap_limit && 
-	((U32 *)p_mem_blk - (U32 *)gp_heap)%BLOCK_SIZE != 0){
+	((U32 *)p_mem_blk - (U32 *)gp_heap)%BLOCK_SIZE != 0 &&
+	p_mem_blk != NULL){
 		return RTX_ERR;
 	}
 	
@@ -176,7 +177,7 @@ int k_release_memory_block(void *p_mem_blk) {
 	//set p_mem_blk to NULL
 	p_mem_blk = NULL;
 
-	blk_proc = bq_dequeue();
+	blk_proc = bq_dequeue(BLK_ON_MEM);
 	if (blk_proc != NULL) {
 		blk_proc->m_state = RDY;
 		rpq_enqueue(blk_proc);
