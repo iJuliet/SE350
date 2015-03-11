@@ -152,12 +152,24 @@ void proc3(void)
 
 void proc4(void)
 {
-	U32 *mem_addr;
+	MSGBUF* msg;
 	int i, ret_val;
+	msg = request_memory_block();
+	msg->mtype = KCD_REG;
+	msg->mtext[0] = '%';
+	msg->mtext[1] = 'o';
+	msg->mtext[2] = '\0';
+	send_message(KCD_PROC_ID,msg_env);
 	while(1){
 		//uart0_put_string("entering proc4\n\r");
-		set_process_priority(1,MEDIUM);
-		get_process_priority(4);
+		msg = (MSGBUF*)receive_message(NULL);
+		if (msg->mtype = DEFAULT) {
+			uart0_put_string("Proc4 received a command mesage:\n\r");
+			uart0_put_char('0'+mag->mtext[0]);
+			uart0_put_char('0'+mag->mtext[1]);
+			uart0_put_char('0'+mag->mtext[2]);
+			uart0_put_string("\n\r");
+		}
 		release_processor();
 	}
 }
