@@ -3,7 +3,7 @@
 <title>Static Call Graph - [N:\SE350\se350.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image N:\SE350\se350.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Wed Mar 11 00:41:53 2015
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Wed Mar 11 01:51:32 2015
 <BR><P>
 <H3>Maximum Stack Usage =        208 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -81,7 +81,7 @@ Function Pointers
  <LI><a href="#[6a]">crt_process</a> from k_process.o(.text) referenced from k_process.o(.text)
  <LI><a href="#[35]">k_get_process_priority</a> from k_process.o(.text) referenced from usr_proc.o(.text)
  <LI><a href="#[39]">k_receive_message</a> from message.o(.text) referenced from usr_proc.o(.text)
- <LI><a href="#[3a]">k_release_memory_block</a> from k_memory.o(.text) referenced 2 times from usr_proc.o(.text)
+ <LI><a href="#[3a]">k_release_memory_block</a> from k_memory.o(.text) referenced from usr_proc.o(.text)
  <LI><a href="#[36]">k_release_processor</a> from k_process.o(.text) referenced from usr_proc.o(.text)
  <LI><a href="#[37]">k_request_memory_block</a> from k_memory.o(.text) referenced from usr_proc.o(.text)
  <LI><a href="#[32]">k_rtx_init</a> from k_rtx_init.o(.text) referenced from main_svc.o(.text)
@@ -237,7 +237,7 @@ Global Symbols
 <P><STRONG><a name="[9]"></a>SVC_Handler</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, hal.o(.emb_text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
-<P><STRONG><a name="[e]"></a>TIMER0_IRQHandler</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, timer.o(.emb_text))
+<P><STRONG><a name="[e]"></a>TIMER0_IRQHandler</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, timer.o(.emb_text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = TIMER0_IRQHandler &rArr; c_TIMER0_IRQHandler &rArr; timer_i_process &rArr; k_send_message_no_preemp &rArr; bq_dequeue_by_pid
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_TIMER0_IRQHandler
@@ -472,6 +472,12 @@ Global Symbols
 
 <P><STRONG><a name="[a6]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
+<P><STRONG><a name="[a7]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+
+<P><STRONG><a name="[a8]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+
+<P><STRONG><a name="[a9]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
+
 <P><STRONG><a name="[52]"></a>SystemInit</STRONG> (Thumb, 476 bytes, Stack size 0 bytes, system_lpc17xx.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -480,7 +486,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_rtx_init
 </UL>
 
-<P><STRONG><a name="[a7]"></a>uart_get_char</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, uart_polling.o(.text), UNUSED)
+<P><STRONG><a name="[aa]"></a>uart_get_char</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, uart_polling.o(.text), UNUSED)
 
 <P><STRONG><a name="[56]"></a>uart_put_char</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, uart_polling.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_UART0_IRQHandler
@@ -618,9 +624,10 @@ Global Symbols
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bq_dequeue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_UART0_IRQHandler
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;kcd_process
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crt_process
 </UL>
-<BR>[Address Reference Count : 2]<UL><LI> usr_proc.o(.text)
-<LI> k_process.o(.text)
+<BR>[Address Reference Count : 1]<UL><LI> usr_proc.o(.text)
 </UL>
 <P><STRONG><a name="[69]"></a>rpq_enqueue</STRONG> (Thumb, 92 bytes, Stack size 8 bytes, k_process.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = rpq_enqueue
@@ -632,21 +639,23 @@ Global Symbols
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;process_init
 </UL>
 
-<P><STRONG><a name="[6a]"></a>crt_process</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, k_process.o(.text))
+<P><STRONG><a name="[6a]"></a>crt_process</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, k_process.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = crt_process &rArr; k_send_message &rArr; k_release_processor &rArr; scheduler &rArr; process_switch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_send_message
+<LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_memory_block
 <LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_receive_message
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> k_process.o(.text)
 </UL>
-<P><STRONG><a name="[6b]"></a>kcd_process</STRONG> (Thumb, 246 bytes, Stack size 144 bytes, k_process.o(.text))
+<P><STRONG><a name="[6b]"></a>kcd_process</STRONG> (Thumb, 244 bytes, Stack size 144 bytes, k_process.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = kcd_process &rArr; k_send_message &rArr; k_release_processor &rArr; scheduler &rArr; process_switch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncpy
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
 <LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_send_message
+<LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_memory_block
 <LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_receive_message
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> k_process.o(.text)
@@ -683,7 +692,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_processor
 </UL>
 
-<P><STRONG><a name="[36]"></a>k_release_processor</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, k_process.o(.text))
+<P><STRONG><a name="[36]"></a>k_release_processor</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, k_process.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = k_release_processor &rArr; scheduler &rArr; process_switch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;scheduler
@@ -705,7 +714,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> k_process.o(.text)
 </UL>
-<P><STRONG><a name="[51]"></a>process_init</STRONG> (Thumb, 428 bytes, Stack size 16 bytes, k_process.o(.text))
+<P><STRONG><a name="[51]"></a>process_init</STRONG> (Thumb, 422 bytes, Stack size 16 bytes, k_process.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = process_init &rArr; set_test_procs &rArr; uart_put_string
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rpq_enqueue
@@ -779,7 +788,7 @@ Global Symbols
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print_blk_on_msg_process
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print_blk_on_mem_process
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msg_dequeue
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_send_message_no_preemp
+<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_send_message
 <LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_request_memory_block
 <LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_memory_block
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_put_string
@@ -810,7 +819,8 @@ Global Symbols
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_current_proc
 <LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k_release_processor
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;kcd_process
+<BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_UART0_IRQHandler
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;kcd_process
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crt_process
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usr_proc.o(.text)
@@ -823,8 +833,7 @@ Global Symbols
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bq_dequeue_by_pid
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rpq_enqueue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;c_UART0_IRQHandler
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_i_process
+<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_i_process
 </UL>
 
 <P><STRONG><a name="[39]"></a>k_receive_message</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, message.o(.text))
@@ -900,19 +909,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_sh
 </UL>
 
-<P><STRONG><a name="[a8]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[ab]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
 <P><STRONG><a name="[81]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[a9]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
-
-<P><STRONG><a name="[aa]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
-
-<P><STRONG><a name="[ab]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
-
-<P><STRONG><a name="[ac]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
+<P><STRONG><a name="[ac]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 <P>
 <H3>
 Local Symbols

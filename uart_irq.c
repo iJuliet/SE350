@@ -229,7 +229,7 @@ void c_UART0_IRQHandler(void)
         
 				uart0_put_string("Sending message\n\r");
 				//k_send_message(1,input_msg);
-        k_send_message_no_preemp(KCD_PROC_ID, input_msg);
+        k_send_message(KCD_PROC_ID, input_msg);
         
 		//uart_i_process(g_char_in);
 	} else if (IIR_IntId & IIR_THRE) {

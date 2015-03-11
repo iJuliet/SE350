@@ -125,13 +125,13 @@ void process_init()
 	g_proc_table[KCD_PROCESS].m_pid = KCD_PROC_ID;
 	g_proc_table[KCD_PROCESS].mpf_start_pc = &kcd_process;
 	g_proc_table[KCD_PROCESS].m_stack_size = 0x100;
-	g_proc_table[KCD_PROCESS].m_priority = -1; 
+	g_proc_table[KCD_PROCESS].m_priority = 0; 
 	
 	//set up for crt-process
 	g_proc_table[CRT_PROCESS].m_pid = CRT_PROC_ID;
 	g_proc_table[CRT_PROCESS].mpf_start_pc = &crt_process;
 	g_proc_table[CRT_PROCESS].m_stack_size = 0x100;
-	g_proc_table[CRT_PROCESS].m_priority = -1; 
+	g_proc_table[CRT_PROCESS].m_priority = 0; 
   
 	/* initilize exception stack frame (i.e. initial context) for each process */
 	for ( i = 0; i < TOTAL_PROCS; i++ ) {
@@ -150,14 +150,18 @@ void process_init()
 		}
 		(gp_pcbs[i])->mp_sp = sp;
 	}
+	/*
 	//block KCD and CRT
 	gp_pcbs[KCD_PROCESS]->m_state = BLK_ON_MSG;
-	gp_pcbs[CRT_PROCESS]->m_state = BLK_ON_MSG;
+	gp_pcbs[CRT_PROCESS]->m_state = BLK_ON_MSG;*/
 	//organize priority queue
 	for( i = 0; i < NUM_TEST_PROCS; i++) {
 		rpq_enqueue(gp_pcbs[i]);
 	}
-	ready_queue[NUM_TEST_PROCS] = gp_pcbs[NUM_TEST_PROCS];
+	
+	rpq_enqueue(gp_pcbs[CRT_PROCESS]);
+	rpq_enqueue(gp_pcbs[KCD_PROCESS]);
+	rpq_enqueue(gp_pcbs[NULL_PROCESS]);
 	
 	//init current_time
 	current_time = 0;
@@ -251,7 +255,8 @@ int k_release_processor(void)
   if ( p_pcb_old == NULL ) {
 		p_pcb_old = gp_current_process;
 	}
-	return process_switch(p_pcb_old);
+	process_switch(p_pcb_old);
+	return RTX_OK;
 }
 
 int k_set_process_priority(int process_id, int priority) {
@@ -464,7 +469,7 @@ void crt_process(){
 		msg_env = (msgbuf*)k_receive_message(NULL);
 			if (msg_env == NULL || msg_env->mtype != CRT_REQ) {
 					// wrong message
-					release_memory_block(msg_env);
+					k_release_memory_block(msg_env);
 			} else {
 					// forwards the message to uart_i_process
 					k_send_message(UART_I_PROCESS,msg_env);
@@ -522,7 +527,7 @@ void kcd_process(){
 					} else {
 							// Reaches maximum of commands that can be registered
 					}
-					release_memory_block(msg_env);
+					k_release_memory_block(msg_env);
 			}
 	}
 }

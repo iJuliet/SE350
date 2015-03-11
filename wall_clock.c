@@ -1,3 +1,5 @@
+/*
+
 #include "k_rtx.h"
 #include "timer.h"
 
@@ -140,4 +142,5 @@ void wc_process() {
 		}
 	}
 }
+*/
 

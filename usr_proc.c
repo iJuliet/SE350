@@ -59,7 +59,7 @@ void set_test_procs() {
 	g_test_procs[2].mpf_start_pc = &proc3;
 	g_test_procs[3].mpf_start_pc = &proc4;
 	
-	g_test_procs[3].m_priority = HIGH;
+	g_test_procs[3].m_priority = MEDIUM;
 }
 
 /**
@@ -84,7 +84,7 @@ void proc1(void)
 		else{
 			exit(0);
 		}
-		set_process_priority(2,HIGH);
+		set_process_priority(2,MEDIUM);
 		release_processor();
 	}
 }
@@ -156,7 +156,7 @@ void proc4(void)
 	int i, ret_val;
 	while(1){
 		//uart0_put_string("entering proc4\n\r");
-		set_process_priority(1,HIGH);
+		set_process_priority(1,MEDIUM);
 		get_process_priority(4);
 		release_processor();
 	}
