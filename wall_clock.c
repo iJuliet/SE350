@@ -1,76 +1,87 @@
-/*
+#include "rtx.h"
 
-#include "k_rtx.h"
-#include "timer.h"
+
+#define KCD_REG 1
+#define CRT_REQ 2
+#define NOTIFY_WALL_CLOCK 0
+
+#define WALL_CLOCK_PROC_ID 11
+#define KCD_PROC_ID 12
+#define CRT_PROC_ID 13
+
+
+extern int current_time;
 
 void wc_process() {
-	msgbuf* keyreg_env;
-	keyreg_env = (msgbug*)request_memory_block();
+	int state, time;
+	MSGBUF* keyreg_env;
+	MSGBUF* next_second_message;
+	MSGBUF* message_to_crt;
+	keyreg_env = (MSGBUF*)request_memory_block();
 	keyreg_env->mtype = KCD_REG;
 	keyreg_env->mtext[0] = '%';
 	keyreg_env->mtext[1] = 'W';
-	keyreg env->mtext[2] = 'S';
+	keyreg_env->mtext[2] = 'S';
 	keyreg_env->mtext[3] = '\0';
 	send_message(KCD_PROC_ID, (void*)keyreg_env);
 
-	keyreg_env = (msgbug*)request_memory_block();
+	keyreg_env = (MSGBUF*)request_memory_block();
 	keyreg_env->mtype = KCD_REG;
 	keyreg_env->mtext[0] = '%';
 	keyreg_env->mtext[1] = 'W';
-	keyreg env->mtext[2] = 'T';
+	keyreg_env->mtext[2] = 'T';
 	keyreg_env->mtext[3] = '\0';
 	send_message(KCD_PROC_ID, (void*)keyreg_env);
 
-	keyreg_env = (msgbug*)request_memory_block();
+	keyreg_env = (MSGBUF*)request_memory_block();
 	keyreg_env->mtype = KCD_REG;
 	keyreg_env->mtext[0] = '%';
 	keyreg_env->mtext[1] = 'W';
-	keyreg env->mtext[2] = 'R';
+	keyreg_env->mtext[2] = 'R';
 	keyreg_env->mtext[3] = '\0';
 	send_message(KCD_PROC_ID, (void*)keyreg_env);	
 	
-	int status = 0; // 0 means terminated; 1 means running;
-	int time = 0;
-	msgbuf* next_second_message;
-	next_second_message = (msgbuf*)request_memory_block();
+	state = 0; // 0 means terminated; 1 means running;
+	time = 0;
+	next_second_message = (MSGBUF*)request_memory_block();
 	next_second_message->mtype = NOTIFY_WALL_CLOCK;
 	delayed_send(WALL_CLOCK_PROC_ID, (void*)next_second_message, 1000);
 
 	while (1) {
-		msgbuf* message = receive_message(NULL);
+		MSGBUF* message = receive_message(NULL);
 		if (message->mtype == NOTIFY_WALL_CLOCK) {
 			
-			msgbuf* next_second_message;
-			next_second_message = (msgbuf*)request_memory_block();
+			MSGBUF* next_second_message;
+			next_second_message = (MSGBUF*)request_memory_block();
 			next_second_message->mtype = NOTIFY_WALL_CLOCK;
 			delayed_send(WALL_CLOCK_PROC_ID, (void*)next_second_message, 1000);
 			
 			if (state) {
+				int crt_time,seconds,minutes,hours,s1f,s0f,m1f,m0f,h1f,h0f;
 				release_memory_block((void*)message);
-				msgbuf* message_to_crt;
-				message_to_crt = (msgbuf*)request_memory_block();
+				message_to_crt = (MSGBUF*)request_memory_block();
 				message_to_crt->mtype = CRT_REQ;
-				int crt_time = time + current_time;
-				int seconds = crt_time / 1000 % 60;
-				int minutes = crt_time / 1000 / 60 % 60;
-				int hours   = crt_time / 1000 / 60 / 60 % 24;
-				int s1 = seconds / 10;
-				int s0 = seconds % 10;
-				int m1 = minutes / 10;
-				int m0 = minutes % 10;
-				int h1 = hours   / 10;
-				int h0 = hours   % 10;
-				*(message_to_crt->mtext)++ = h1 + '0';
-				*(message_to_crt->mtext)++ = h0 + '0';
-				*(message_to_crt->mtext)++ = ':';
-				*(message_to_crt->mtext)++ = m1 + '0';
-				*(message_to_crt->mtext)++ = m0 + '0';
-				*(message_to_crt->mtext)++ = ':';
-				*(message_to_crt->mtext)++ = s1 + '0';
-				*(message_to_crt->mtext)++ = s0 + '0';
-				*(message_to_crt->mtext)++ = '\n';
-				*(message_to_crt->mtext)++ = '\r';
-				*(message_to_crt->mtext)++ = '\0';
+				crt_time = time + current_time;
+				seconds = crt_time / 1000 % 60;
+				minutes = crt_time / 1000 / 60 % 60;
+				hours   = crt_time / 1000 / 60 / 60 % 24;
+				s1f = seconds / 10;
+				s0f = seconds % 10;
+				m1f = minutes / 10;
+				m0f = minutes % 10;
+				h1f = hours   / 10;
+				h0f = hours   % 10;
+				message_to_crt->mtext[0] = h1f + '0';
+				message_to_crt->mtext[1] = h0f + '0';
+				message_to_crt->mtext[2] = ':';
+				message_to_crt->mtext[3] = m1f + '0';
+				message_to_crt->mtext[4] = m0f + '0';
+				message_to_crt->mtext[5] = ':';
+				message_to_crt->mtext[6] = s1f + '0';
+				message_to_crt->mtext[7] = s0f + '0';
+				message_to_crt->mtext[8] = '\n';
+				message_to_crt->mtext[9] = '\r';
+				message_to_crt->mtext[10] = '\0';
 				send_message(CRT_PROC_ID, (void*)message_to_crt);
 			} else {
 				release_memory_block(message);
@@ -87,20 +98,21 @@ void wc_process() {
 			
 			case 'S': {
 				int time_set;
+				int h1,h0,m1,m0,s1,s0,ter;
 				char* buf = &(message->mtext)[4];
-				int h1 = *buf - '0';
+				h1 = *buf - '0';
 				buf = &(message->mtext)[5];
-				int h0 = *buf - '0';
+				h0 = *buf - '0';
 				buf = &(message->mtext)[7];
-				int m1 = *buf - '0';
+				m1 = *buf - '0';
 				buf = &(message->mtext)[8];
-				int m0 = *buf - '0';
+				m0 = *buf - '0';
 				buf = &(message->mtext)[10];
-				int s1 = *buf - '0';
+				s1 = *buf - '0';
 				buf = &(message->mtext)[11];
-				int s0 = *buf - '0';
+				s0 = *buf - '0';
 				buf = &(message->mtext)[12];
-				int ter = *buf;
+				ter = *buf;
 				if(h1 > 2 || h1 < 0 || h0 > 9 || h0 < 0 || (h1 == 2 && h0 > 3) || m1 > 6 || m1 < 0 || m0 > 9 || m0 < 0 || s1 > 6 || s1 < 0 || s0 > 9 || s0 < 0 || ter != '\0'){
 					time_set = -1;
 				}
@@ -110,16 +122,16 @@ void wc_process() {
 				if(time_set < 0){
 					state = 0;
 					message->mtype = CRT_REQ;
-					message->mtest[0] = 'E';
-					message->mtest[1] = 'R';
-					message->mtest[2] = 'R';
-					message->mtest[3] = '\n';
-					message->mtest[4] = '\r';
+					message->mtext[0] = 'E';
+					message->mtext[1] = 'R';
+					message->mtext[2] = 'R';
+					message->mtext[3] = '\n';
+					message->mtext[4] = '\r';
 					send_message(CRT_PROC_ID, (void*)message);
 				}
 				else{
 				  state = 1;
-				  time_base = time_set - current_time;
+				  time = time_set - current_time;
 				  release_memory_block(message);
 				}
 				break;
@@ -142,5 +154,4 @@ void wc_process() {
 		}
 	}
 }
-*/
 
