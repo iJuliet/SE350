@@ -14,21 +14,21 @@
 #define RTX_OK  0
 
 #define NULL 0
-#define NUM_TEST_PROCS 4
+#define NUM_TEST_PROCS 5
 #define DEFAULT 0
 #define KCD_REG 1
 #define CRT_REQ 2
-#define TOTAL_PROCS 9
+#define TOTAL_PROCS 10
 
 #define MAX_MSG_SIZE 64
 
 
 //index numbers for kernel processes
-#define NULL_PROCESS 4
-#define KCD_PROCESS 5
-#define CRT_PROCESS 6
-#define TIMER_I_PROCESS 7
-#define UART_I_PROCESS 8
+#define NULL_PROCESS 5
+#define KCD_PROCESS 6
+#define CRT_PROCESS 7
+#define TIMER_I_PROCESS 8
+#define UART_I_PROCESS 9
 
 //kernel level process pids
 #define NULL_PROC_ID 0

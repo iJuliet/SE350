@@ -1625,3 +1625,1513 @@ usr_proc.c(184): warning:  #177-D: variable "ret_val" was declared but never ref
 linking...
 Program Size: Code=6692 RO-data=236 RW-data=88 ZI-data=1112  
 "se350.axf" - 0 Error(s), 7 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(119): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(195): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(183): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(183): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6764 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(119): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(177): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6864 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(109): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(167): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(154): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(154): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(182): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(182): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6868 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(109): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(167): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(154): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(154): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(182): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(182): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6872 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+compiling usr_proc.c...
+usr_proc.c(110): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(168): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(155): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(155): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(183): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(183): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c - 0 Error(s), 6 Warning(s).
+Build target 'SE350'
+linking...
+Program Size: Code=6892 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(111): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(169): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6896 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(111): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(169): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6896 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+linking...
+Program Size: Code=6896 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SE350'
+linking...
+Program Size: Code=6896 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+linking...
+Program Size: Code=6896 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(111): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(170): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(185): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(185): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6928 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(111): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(170): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(185): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(185): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6928 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(111): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(170): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(185): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(185): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6928 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(111): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(169): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6896 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(111): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(169): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6896 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(128): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(183): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(171): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=7096 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(128): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(183): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(171): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=7096 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(128): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(183): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(171): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=7096 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(128): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(183): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(171): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=7088 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(128): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(183): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(171): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=7076 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(128): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(183): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(171): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=7068 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(128): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(183): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(171): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(171): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(198): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=7064 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(129): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(184): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(172): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(172): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(199): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(199): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=7072 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(124): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(179): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(167): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(167): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=7008 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(123): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(178): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(166): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(166): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(193): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(193): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6988 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(121): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6960 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(121): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6816 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+linking...
+Program Size: Code=6816 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6988 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6840 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6984 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6936 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6892 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6840 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6884 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6896 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6844 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(177): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(165): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6856 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(177): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(165): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6856 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6896 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6900 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6848 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6848 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(121): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6856 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(121): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6856 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(121): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6848 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(121): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6848 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(121): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6900 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(121): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6900 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(121): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6848 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Build target 'SE350'
+linking...
+Program Size: Code=6848 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(121): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6848 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(121): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6848 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(121): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6856 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(121): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(173): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(161): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(161): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(188): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(188): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6884 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(121): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(173): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(161): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(161): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(188): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(188): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6884 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6948 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6888 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(260): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(64): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(97): warning:  #177-D: variable "timer" was declared but never referenced
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6856 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 16 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6920 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6932 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+linking...
+Program Size: Code=6932 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6984 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6952 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=7000 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6980 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(160): error:  #268: declaration may not appear after executable statement in block
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(160): error:  #67: expected a "}"
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(191): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=7000 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=7012 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6884 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6852 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6884 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(177): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(165): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(193): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(193): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6884 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(178): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(166): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(166): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6892 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(178): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(166): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(166): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6924 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(178): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(166): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(166): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6976 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(178): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(166): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(166): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6892 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(123): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(179): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(167): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(167): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(195): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(195): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6900 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(123): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(179): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(167): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(167): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(195): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(195): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6848 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(174): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(162): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(162): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6992 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(174): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(162): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(162): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6992 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling wall_clock.c...
+wall_clock.c(167): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(20): warning:  #177-D: variable "next_second_message" was declared but never referenced
+linking...
+Program Size: Code=6992 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(122): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(174): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(162): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(162): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(190): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(199): warning:  #223-D: function "wc_process" declared implicitly
+compiling wall_clock.c...
+wall_clock.c(167): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(20): warning:  #177-D: variable "next_second_message" was declared but never referenced
+linking...
+Program Size: Code=7788 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 9 Warning(s).
+Build target 'SE350'
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling usr_proc.c...
+wall_clock.h(7): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(64): error:  #20: identifier "wall_clock" is undefined
+usr_proc.c(124): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(260): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(64): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(97): warning:  #177-D: variable "timer" was declared but never referenced
+compiling cmd_proc.c...
+compiling wall_clock.c...
+wall_clock.c(167): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(20): warning:  #177-D: variable "next_second_message" was declared but never referenced
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+wall_clock.h(7): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(124): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(176): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(164): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(192): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=7796 RO-data=236 RW-data=88 ZI-data=1128  
+"se350.axf" - 0 Error(s), 7 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+wall_clock.h(7): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(126): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(178): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(166): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(166): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=7800 RO-data=236 RW-data=88 ZI-data=1128  
+"se350.axf" - 0 Error(s), 7 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+linking...
+Program Size: Code=7800 RO-data=236 RW-data=88 ZI-data=1128  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+linking...
+Program Size: Code=7800 RO-data=236 RW-data=88 ZI-data=1128  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+wall_clock.h(7): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(126): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(178): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(166): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(166): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(260): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(64): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(97): warning:  #177-D: variable "timer" was declared but never referenced
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+wall_clock.c(167): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(20): warning:  #177-D: variable "next_second_message" was declared but never referenced
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=7800 RO-data=236 RW-data=88 ZI-data=1128  
+"se350.axf" - 0 Error(s), 19 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+wall_clock.h(7): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(126): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(178): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(166): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(166): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(260): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(64): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(97): warning:  #177-D: variable "timer" was declared but never referenced
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+wall_clock.c(167): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(20): warning:  #177-D: variable "next_second_message" was declared but never referenced
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c(11): warning:  #47-D: incompatible redefinition of macro "KCD_PROCESS" (declared at line 28 of "k_rtx.h")
+sys_procs.c(12): warning:  #47-D: incompatible redefinition of macro "CRT_PROCESS" (declared at line 29 of "k_rtx.h")
+linking...
+Program Size: Code=7808 RO-data=236 RW-data=88 ZI-data=1152  
+"se350.axf" - 0 Error(s), 21 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+wall_clock.h(7): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(126): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(178): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(166): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(166): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(194): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(260): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(64): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(97): warning:  #177-D: variable "timer" was declared but never referenced
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+wall_clock.c(167): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(20): warning:  #177-D: variable "next_second_message" was declared but never referenced
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=7808 RO-data=236 RW-data=88 ZI-data=1152  
+"se350.axf" - 0 Error(s), 19 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Cannot Write to RAM for Flash Algorithms !
+Verify Failed!
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling wall_clock.c...
+wall_clock.c(167): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(20): warning:  #177-D: variable "next_second_message" was declared but never referenced
+linking...
+Program Size: Code=7796 RO-data=236 RW-data=88 ZI-data=1152  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling wall_clock.c...
+wall_clock.c(166): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(20): warning:  #177-D: variable "next_second_message" was declared but never referenced
+linking...
+Program Size: Code=7784 RO-data=236 RW-data=88 ZI-data=1152  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling wall_clock.c...
+wall_clock.c(117): error:  #136: struct "_user_msgbuf" has no field "buffer"
+wall_clock.c(117): error:  #136: struct "_user_msgbuf" has no field "buffer"
+wall_clock.c(168): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(20): warning:  #177-D: variable "next_second_message" was declared but never referenced
+Target not created
+Build target 'SE350'
+compiling wall_clock.c...
+wall_clock.c(168): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(20): warning:  #177-D: variable "next_second_message" was declared but never referenced
+linking...
+Program Size: Code=7796 RO-data=236 RW-data=88 ZI-data=1152  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(260): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=7744 RO-data=236 RW-data=88 ZI-data=1152  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(260): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=7756 RO-data=236 RW-data=88 ZI-data=1152  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(260): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+linking...
+Program Size: Code=7744 RO-data=236 RW-data=88 ZI-data=1152  
+"se350.axf" - 0 Error(s), 2 Warning(s).
