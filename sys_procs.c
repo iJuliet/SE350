@@ -45,13 +45,13 @@ void set_up_sys_procs(PROC_INIT *g_proc_table){
 	g_proc_table[KCD_PROCESS].m_pid = KCD_PROC_ID;
 	g_proc_table[KCD_PROCESS].mpf_start_pc = &kcd_process;
 	g_proc_table[KCD_PROCESS].m_stack_size = 0x200;
-	g_proc_table[KCD_PROCESS].m_priority = 0; 
+	g_proc_table[KCD_PROCESS].m_priority = -1; 
 	
 	//set up for crt-process
 	g_proc_table[CRT_PROCESS].m_pid = CRT_PROC_ID;
 	g_proc_table[CRT_PROCESS].mpf_start_pc = &crt_process;
 	g_proc_table[CRT_PROCESS].m_stack_size = 0x100;
-	g_proc_table[CRT_PROCESS].m_priority = 0; 
+	g_proc_table[CRT_PROCESS].m_priority = -1; 
 }
 
 void crt_process(){
@@ -76,7 +76,7 @@ void crt_process(){
 
 void kcd_process(){
 	
-	msgbuf* msg_env;
+	msgbuf* msg_env, *msg_for_cmd;
 	int validCmd;
 	char msgText [2];
 	char* temp;
@@ -99,16 +99,30 @@ void kcd_process(){
 				if(validCmd){
 						//read chars until '\r'
 						if(*temp == '\r'){
-							strncpy(msg_env->mtext, buffer, MAX_MSG_SIZE);
+							msg_for_cmd = (msgbuf* )request_memory_block();
+							strncpy(msg_for_cmd->mtext, buffer, MAX_MSG_SIZE);
+							msg_for_cmd->mtype = DEFAULT;
 							validCmd = 0;
 							clear_buffer(buffer);
 							i = 0;
-							send_message(pid, msg_env);
+							msg_env->mtext[0] = '\n';
+							msg_env->mtext[1] = '\r';
+							msg_env->mtext[2] = '\0';
+							//sent to crt
+							msg_env->mtype = CRT_REQ;
+							send_message(CRT_PROC_ID, msg_env);
+							send_message(pid, msg_for_cmd);
 						}else{
 							//release the msg
+							//sent to crt
 							buffer[i++] = *temp;
-							release_memory_block(msg_env);
+							msg_env->mtype = CRT_REQ;
+							send_message(CRT_PROC_ID, msg_env);
+							
+							
 						}
+					
+						
 				}else if((msgText[0] == '%' && buffer[0] == '\0') || buffer[0] == '%'){
 					
 						//check if cmd is completed
@@ -118,39 +132,61 @@ void kcd_process(){
 										pid = commands[j].pid;
 										if( *temp == '\r'){
 											//input completed
-											strncpy(msg_env->mtext, buffer, MAX_MSG_SIZE);
+											msg_for_cmd = (msgbuf*)request_memory_block();
+											strncpy(msg_for_cmd->mtext, buffer, MAX_MSG_SIZE);
+											msg_for_cmd->mtype = DEFAULT;
 											clear_buffer(buffer);
 											msgText[0] = '\0'; // clears both buffers, kinda hacky, more testing needed
 											validCmd = 0;
 											i = 0;
-											send_message(pid, msg_env);
+											//sent to crt
+											msg_env->mtype = CRT_REQ;
+											msg_env->mtext[0] = '\n';
+											msg_env->mtext[1] = '\r';
+											msg_env->mtext[2] = '\0';
+											send_message(CRT_PROC_ID, msg_env);
+											
+											
+											send_message(pid, msg_for_cmd);
 											goto DONE;
 										}else{
 											buffer[i++] = *temp;
 											validCmd = 1;
-											release_memory_block(msg_env);
+											msg_env->mtype = CRT_REQ;
+											send_message(CRT_PROC_ID, msg_env);
 											goto DONE;
 										}
 								}
 							}
+							
+							
 							//invalid command
+							
+							//read chars until '\r'
+							if(*temp == '\r'){
+								msg_env->mtext[0] = '\n';
+								msg_env->mtext[1] = '\r';
+								msg_env->mtext[2] = '\0';
+							}
+							
+							//reset
 							validCmd = 0;
-							strncpy(msg_env->mtext, buffer, MAX_MSG_SIZE);
-							msg_env->mtype = CRT_REQ;
 							clear_buffer(buffer);
 							i = 0;
 							msgText[0] = '\0'; // clears both buffers, kinda hacky, more testing needed
+							
+							//sent to crt
+							msg_env->mtype = CRT_REQ;
 							send_message(CRT_PROC_ID, msg_env);
+						
+						
 						} else {
 							//waiting for more chars and release the block
 							buffer[i++] = *temp;
-							release_memory_block(msg_env);
-							/*
-							if (*temp != '\0') {
-										buffer[i++] = *temp++;
-								} else {
-										*temp++;
-								}*/
+							//release_memory_block(msg_env);
+							
+							msg_env->mtype = CRT_REQ;
+							send_message(CRT_PROC_ID, msg_env);
 						}
 						
 						/*
@@ -164,6 +200,11 @@ void kcd_process(){
 					
 				}else{
 					//send msg to crt_process
+					if(*temp == '\r'){
+							msg_env->mtext[0] = '\n';
+							msg_env->mtext[1] = '\r';
+							msg_env->mtext[2] = '\0';
+					}
 					msg_env->mtype = CRT_REQ;
 					send_message(CRT_PROC_ID, msg_env);
 				}

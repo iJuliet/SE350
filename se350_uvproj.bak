@@ -481,6 +481,11 @@
               <FileType>1</FileType>
               <FilePath>.\wall_clock.c</FilePath>
             </File>
+            <File>
+              <FileName>syscalls.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\syscalls.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

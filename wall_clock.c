@@ -14,8 +14,9 @@
 
 extern int current_time;
 
+int state, time;
+	
 void wc_process() {
-	int state, time;
 	MSGBUF* keyreg_env;
 	MSGBUF* next_second_message;
 	MSGBUF* message_to_crt;
@@ -49,7 +50,7 @@ void wc_process() {
 	while (1) {
 		MSGBUF* next_second_message;
 		MSGBUF* message = receive_message(NULL);
-		
+
 		if (message->mtype == NOTIFY_WALL_CLOCK) {
 			//uart0_put_char('0'+(current_time/1000)%10);
 			if (state) {
@@ -88,6 +89,7 @@ void wc_process() {
 		}
 		
 		if (message->mtype == DEFAULT) {
+
 			switch (message->mtext[2]){
 			case 'R': {
 				state = 1;
@@ -146,17 +148,17 @@ void wc_process() {
 			default: {
 					// should print some message here
 					state = 0;
-					release_memory_block(message);
-					message = NULL;
+					//release_memory_block(message);
+					//message = NULL;
 					break;
 			}				
 			
-			}
 			
+		}
 			
 		}
 		
-		if(state){
+		if(state){ 
 			next_second_message = (MSGBUF*)request_memory_block();
 			next_second_message->mtype = NOTIFY_WALL_CLOCK;
 			delayed_send(WALL_CLOCK_PROC_ID, next_second_message, 1000);

@@ -482,9 +482,9 @@
               <FilePath>.\wall_clock.c</FilePath>
             </File>
             <File>
-              <FileName>syscalls.c</FileName>
+              <FileName>sys_procs.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\syscalls.c</FilePath>
+              <FilePath>.\sys_procs.c</FilePath>
             </File>
           </Files>
         </Group>
