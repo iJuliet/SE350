@@ -2,4 +2,4 @@
 -I C:\Software\Keil\ARM\RV31\INC 
 -I C:\Software\Keil\ARM\CMSIS\Include 
 -I C:\Software\Keil\ARM\Inc\NXP\LPC17xx 
--o "wall_clock.o" --omf_browse "wall_clock.crf" --depend "wall_clock.d" "wall_clock.c"
+-o "message.o" --omf_browse "message.crf" --depend "message.d" "message.c"

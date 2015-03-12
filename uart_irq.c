@@ -181,7 +181,11 @@ void c_UART0_IRQHandler(void)
 {
 	uint8_t IIR_IntId;	    // Interrupt ID from IIR 	
 	msgbuf* input_msg;
+	PCB* prev_curr_proc = get_current_proc();
 	LPC_UART_TypeDef *pUart = (LPC_UART_TypeDef *)LPC_UART0;
+	//set_current_proc(get_pcb_from_pid(UART_PROC_ID));
+	gp_pcbs[UART_I_PROCESS]->m_state = RUN;
+	
 #ifdef DEBUG_0
 	uart1_put_string("Entering c_UART0_IRQHandler\n\r");
 #endif // DEBUG_0
@@ -214,11 +218,13 @@ void c_UART0_IRQHandler(void)
 #endif // DEBUG_HOTKEYS
         input_msg = (msgbuf*) k_request_memory_block();
 				//TODO: non-blocking
-        /*if (input_msg == NULL) {
+        if (input_msg == NULL) {
             //run out of memory
-            uart1_put_string("Alert: Running out of memory: Cannot allocate memory to hold keyboard inputs.");
-            return;
-        }*/
+            uart0_put_string("Alert: Running out of memory: Cannot allocate memory to hold keyboard inputs.\n\r");
+            //set_current_proc(prev_curr_proc);
+						gp_pcbs[UART_I_PROCESS]->m_state = WAITING_FOR_INTERRUPT;
+						return;
+        }
         input_msg->mtype = DEFAULT;
         input_msg->mtext[0] = g_char_in;
         input_msg->mtext[1] = '\0';
@@ -273,6 +279,7 @@ PRINT:
 #endif // DEBUG_0
 		return;
 	}	
+	gp_pcbs[UART_I_PROCESS]->m_state = WAITING_FOR_INTERRUPT;
 }
 
 void set_uart0_interrupt() {

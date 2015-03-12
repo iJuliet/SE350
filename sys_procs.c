@@ -45,13 +45,13 @@ void set_up_sys_procs(PROC_INIT *g_proc_table){
 	g_proc_table[KCD_PROCESS].m_pid = KCD_PROC_ID;
 	g_proc_table[KCD_PROCESS].mpf_start_pc = &kcd_process;
 	g_proc_table[KCD_PROCESS].m_stack_size = 0x200;
-	g_proc_table[KCD_PROCESS].m_priority = -1; 
+	g_proc_table[KCD_PROCESS].m_priority = SYSTEM; 
 	
 	//set up for crt-process
 	g_proc_table[CRT_PROCESS].m_pid = CRT_PROC_ID;
 	g_proc_table[CRT_PROCESS].mpf_start_pc = &crt_process;
 	g_proc_table[CRT_PROCESS].m_stack_size = 0x100;
-	g_proc_table[CRT_PROCESS].m_priority = -1; 
+	g_proc_table[CRT_PROCESS].m_priority = SYSTEM; 
 }
 
 void crt_process(){

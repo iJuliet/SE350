@@ -64,6 +64,10 @@ void set_test_procs() {
 	g_test_procs[4].mpf_start_pc = &wc_process;
 	
 	g_test_procs[4].m_priority=HIGH;
+	g_test_procs[3].m_priority=HIGH;
+	g_test_procs[2].m_priority=HIGH;
+	
+	
 	
 }
 
@@ -81,6 +85,7 @@ void proc1(void)
 	uart0_put_string("G013_test: total 6 tests\n\r");
 	
 	while(1){
+		
 		if (received_messages < 20){
 				set_process_priority(2,MEDIUM);
 				message = (MSGBUF*)receive_message(NULL);
@@ -110,6 +115,7 @@ void proc1(void)
 				}
 				release_memory_block(message);
 		}
+		
 		release_processor();
 	}
 }
@@ -152,6 +158,7 @@ void proc2(void)
 			delayed_send(1,msg_env,1000);
 			sent_msg++;
 		}
+
 		release_processor();
 	}
 }
@@ -171,18 +178,17 @@ void proc3(void)
 	msg->mtext[2] = '\0';
 	send_message(KCD_PROC_ID,msg);
 	while(1){
-		uart0_put_string("Please enter the command \"%o\"\n\r");
+		//uart0_put_string("Please enter the command \"%o\"\n\r");
 		msg = (MSGBUF*)receive_message(NULL);
 		if (msg->mtype == DEFAULT) {
-			uart0_put_string("Proc4 received a command mesage: ");
+			uart0_put_string("Proc3 received a command mesage: ");
 			uart0_put_string(msg->mtext);
 			uart0_put_string("\n\r");
 			uart0_put_string("G013_test: test 6 pass\n\r");
 			ok_tests++;
 			printEndTestString();
 		}
-		set_process_priority(3,LOW);
-		set_process_priority(4,MEDIUM);
+		//set_process_priority(3,LOWEST);
 		release_processor();
 	}
 }
@@ -191,10 +197,23 @@ void proc3(void)
 void proc4(void)
 {
 	
+	MSGBUF* msg;
 	int i, ret_val;
+	msg = request_memory_block();
+	msg->mtype = KCD_REG;
+	msg->mtext[0] = '%';
+	msg->mtext[1] = 'M';
+	msg->mtext[2] = '\0';
+	send_message(KCD_PROC_ID,msg);
 	while(1){
-		set_process_priority(4,MEDIUM);
-		set_process_priority(1,HIGH);
+		uart1_put_string("proc4---");
+		msg = (MSGBUF*)receive_message(NULL);
+		if (msg->mtype == DEFAULT) {
+			for(i=0; i< 2000;++i){
+				 request_memory_block();
+				//lead to memory leak
+			}
+		}
 		release_processor();
 	}
 }

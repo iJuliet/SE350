@@ -139,9 +139,14 @@ void *k_request_memory_block(void) {
 	__disable_irq();
 	while (mem_start_ptr == NULL) {
 		curr_proc = get_current_proc();
+		if(gp_pcbs[UART_I_PROCESS]->m_state == RUN){
+			return NULL;
+		}
 		bq_enqueue(curr_proc);
 		curr_proc->m_state = BLK_ON_MEM;
+		__enable_irq();
 		k_release_processor();
+		__disable_irq();
 	}
 	free_mem_blk = mem_start_ptr;
 	mem_start_ptr = mem_start_ptr->next_blk_ptr;

@@ -35,6 +35,7 @@ PCB* bq_dequeue(PROC_STATE_E);
 PCB* bq_dequeue_by_pid(int);
 PCB* get_pcb_from_pid(int);
 PCB* get_current_proc(void);
+void set_current_proc(PCB*);
 PCB* get_pcb_from_pid(int process_id);
 
 extern U32 *alloc_stack(U32 size_b);   /* allocate stack for a process */

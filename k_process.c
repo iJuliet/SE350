@@ -360,6 +360,10 @@ PCB* rpq_dequeue() {
 void bq_enqueue(PCB* pcb) {
 	int i;
 	for (i = 0; i < TOTAL_PROCS; i++) {
+		if(pcb->m_pid == blocked_queue[i]->m_pid){
+			//it is in the queue already
+			return;
+		}
 		if (blocked_queue[i] == NULL) {
 			blocked_queue[i] = pcb;
 			return;
@@ -402,6 +406,10 @@ PCB* bq_dequeue_by_pid(int pid){
 
 PCB* get_current_proc(void) {
 	return gp_current_process;
+}
+
+void set_current_proc(PCB* pcb) {
+	gp_current_process = pcb;
 }
 
 PCB* get_pcb_from_pid(int process_id){
