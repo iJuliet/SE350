@@ -36,12 +36,14 @@
 #include "printf.h"
 #endif /* DEBUG_0 */
 
+#define DEFAULT 0
+#define KCD_REG 1
+#define KCD_PROC_ID 12
+
 /* initialization table item */
 PROC_INIT g_test_procs[NUM_TEST_PROCS];
 int test_num; // this indicates which test are we on
 int ok_tests;
-
-
 
 void set_test_procs() {
 	int i;
@@ -59,7 +61,7 @@ void set_test_procs() {
 	g_test_procs[2].mpf_start_pc = &proc3;
 	g_test_procs[3].mpf_start_pc = &proc4;
 	
-	g_test_procs[3].m_priority = MEDIUM;
+	//g_test_procs[3].m_priority = MEDIUM;
 }
 
 /**
@@ -71,20 +73,38 @@ void proc1(void)
 {
 	MSGBUF* message;
 	int received_messages = 0;	
+	
+	uart0_put_string("G013_test: START");
+	uart0_put_string("G013_test: total 100 tests");
+	/*G099_test: test 1 OK
+	G099_test: test 2 OK
+	G099_test: test 3 FAIL
+	G099_test: 2/3 tests OK
+	G099_test: 1/3 tests FAIL*/
+	
 	while(1){
-		uart0_put_char('0'+received_messages%10);
-		uart0_put_string(" entering process 1\n\r");
-		if(received_messages < 21){
-			message = (MSGBUF*)receive_message(NULL);
-			received_messages++;
-			uart0_put_string("msg received\n\r");
-			uart0_put_char(message->mtext[0]);
-			release_memory_block(message);
+		//set_process_priority(5,MEDIUM);
+		/*
+		//uart0_put_char('0'+received_messages%10);
+		//uart0_put_string(" entering process 1\n\r");
+		*/
+		if(test_num == 1){
+			if (received_messages < 21){
+				message = (MSGBUF*)receive_message(NULL);
+				received_messages++;
+				uart0_put_string("Proc1 received message: ");
+				uart0_put_string(message->mtext);
+				release_memory_block(message);
+			} else {
+				uart0_put_string("G013_test: test 2 OK\n\r");
+				ok_tests++;
+				test_num++;
+			}
 		}
-		else{
-			exit(0);
+		else if(test_num > 1 && received_messages < 21){
+				uart0_put_string("G013_test: test 1 fail\n\r");
+				test_num++;
 		}
-		set_process_priority(2,MEDIUM);
 		release_processor();
 	}
 }
@@ -102,8 +122,14 @@ void proc2(void)
 	int sent_msg = 0;
 	
 	while(1){
-		uart0_put_char('0'+sent_msg%10);
-		uart0_put_string(" entering proc2\n\r");
+		//uart0_put_char('0'+sent_msg%10);
+		//uart0_put_string(" entering proc2\n\r");
+		if (test_num == 1) {
+			uart0_put_string("G013_test: test 1 pass\n\r");
+			test_num++;
+			ok_tests++;
+		}
+		
 		if(sent_msg < 20){
 			msg_env = (MSGBUF *)request_memory_block();
 			msg_env->mtype = 0;
@@ -137,14 +163,16 @@ void proc3(void)
 {
 	int status;
 	MSGBUF* msg_env;
+	
 	while(1){
-		uart0_put_string("entering proc3\n\r");
+		/*
+		//uart0_put_string("entering proc3\n\r");
 		msg_env = (MSGBUF *)request_memory_block();
 		msg_env->mtype = 0;
 		msg_env->mtext[0] = 'b';
 		set_process_priority(1,HIGH);
 		uart0_put_string(" sending delayed message from proc 3\n\r");
-		k_delayed_send(1,msg_env,2);
+		k_delayed_send(1,msg_env,2);*/
 		release_processor();
 	}
 }
@@ -159,20 +187,20 @@ void proc4(void)
 	msg->mtext[0] = '%';
 	msg->mtext[1] = 'o';
 	msg->mtext[2] = '\0';
-	send_message(KCD_PROC_ID,msg_env);
+	send_message(KCD_PROC_ID,msg);
+	//set_process_priority(5,LOW);
 	while(1){
-		//uart0_put_string("entering proc4\n\r");
 		msg = (MSGBUF*)receive_message(NULL);
-		if (msg->mtype = DEFAULT) {
+		if (msg->mtype == DEFAULT) {
 			uart0_put_string("Proc4 received a command mesage:\n\r");
-			uart0_put_char('0'+mag->mtext[0]);
-			uart0_put_char('0'+mag->mtext[1]);
-			uart0_put_char('0'+mag->mtext[2]);
+			uart0_put_string(msg->mtext);
 			uart0_put_string("\n\r");
 		}
+		set_process_priority(4,MEDIUM);
 		release_processor();
 	}
 }
+
 
 void printEndTestString(){
 		uart0_put_string("G013_test: ");

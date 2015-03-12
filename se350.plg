@@ -1149,3 +1149,479 @@ Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF"
 Erase Done.
 Programming Done.
 Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(85): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(101): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(138): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(158): error:  #20: identifier "KCD_REG" is undefined
+usr_proc.c(162): error:  #20: identifier "KCD_PROC_ID" is undefined
+usr_proc.c(162): error:  #20: identifier "msg_env" is undefined
+usr_proc.c(166): error:  #20: identifier "DEFAULT" is undefined
+usr_proc.c(166): warning:  #1293-D: assignment in condition
+usr_proc.c(168): error:  #20: identifier "mag" is undefined
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(25): error:  #5: cannot open source input file "syscalls.h": No such file or directory
+compiling wall_clock.c...
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(85): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(101): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(138): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(158): error:  #20: identifier "KCD_REG" is undefined
+usr_proc.c(162): error:  #20: identifier "KCD_PROC_ID" is undefined
+usr_proc.c(162): error:  #20: identifier "msg_env" is undefined
+usr_proc.c(166): error:  #20: identifier "DEFAULT" is undefined
+usr_proc.c(166): warning:  #1293-D: assignment in condition
+usr_proc.c(168): error:  #20: identifier "mag" is undefined
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+k_process.c(129): warning:  #223-D: function "set_up_sys_procs" declared implicitly
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(85): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(101): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(138): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(158): error:  #20: identifier "KCD_REG" is undefined
+usr_proc.c(162): error:  #20: identifier "KCD_PROC_ID" is undefined
+usr_proc.c(162): error:  #20: identifier "msg_env" is undefined
+usr_proc.c(166): error:  #20: identifier "DEFAULT" is undefined
+usr_proc.c(166): warning:  #1293-D: assignment in condition
+usr_proc.c(168): error:  #20: identifier "mag" is undefined
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(89): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(105): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(142): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(170): warning:  #187-D: use of "=" where "==" may have been intended
+usr_proc.c(172): error:  #20: identifier "mag" is undefined
+usr_proc.c(160): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(160): warning:  #177-D: variable "ret_val" was declared but never referenced
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(89): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(105): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(142): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(170): warning:  #187-D: use of "=" where "==" may have been intended
+usr_proc.c(160): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(160): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+se350.axf: Error: L6218E: Undefined symbol _delayed_send (referred from wall_clock.o).
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(89): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(105): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(142): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(160): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(160): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+se350.axf: Error: L6218E: Undefined symbol _delayed_send (referred from wall_clock.o).
+Target not created
+Build target 'SE350'
+compiling main_svc.c...
+compiling usr_proc.c...
+usr_proc.c(89): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(105): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(142): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(160): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(160): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(260): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling wall_clock.c...
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6692 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 11 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(89): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(105): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(142): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(160): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(160): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6692 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 5 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(85): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(101): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(138): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(158): error:  #20: identifier "KCD_REG" is undefined
+usr_proc.c(162): error:  #20: identifier "KCD_PROC_ID" is undefined
+usr_proc.c(163): error:  #268: declaration may not appear after executable statement in block
+usr_proc.c(163): error:  #101: "i" has already been declared in the current scope
+usr_proc.c(163): error:  #101: "ret_val" has already been declared in the current scope
+usr_proc.c(167): error:  #20: identifier "DEFAULT" is undefined
+usr_proc.c(156): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(156): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(87): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(103): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(140): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(165): error:  #268: declaration may not appear after executable statement in block
+usr_proc.c(165): error:  #101: "i" has already been declared in the current scope
+usr_proc.c(165): error:  #101: "ret_val" has already been declared in the current scope
+usr_proc.c(158): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(158): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "ret_val" was declared but never referenced
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(87): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(103): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(140): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(158): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(158): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6720 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 5 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(63): error:  #20: identifier "proc5" is undefined
+usr_proc.c(88): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(104): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "ret_val" was declared but never referenced
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(88): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(104): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6728 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(88): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(104): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6716 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(88): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(104): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6716 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(89): warning:  #223-D: function "exit" declared implicitly
+usr_proc.c(104): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6728 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(104): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6716 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 5 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(104): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6660 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 7 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(104): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6584 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 5 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6592 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6588 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(104): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6596 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 5 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(104): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(141): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(159): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6596 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 7 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(103): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(104): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(105): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(142): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(161): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(161): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6372 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 8 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(103): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(104): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(105): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(142): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(161): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(161): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6352 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 8 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(75): warning:  #177-D: variable "message" was declared but never referenced
+usr_proc.c(76): warning:  #177-D: variable "received_messages" was declared but never referenced
+usr_proc.c(104): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(105): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(106): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(144): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(162): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(162): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6280 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 10 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(75): warning:  #177-D: variable "message" was declared but never referenced
+usr_proc.c(76): warning:  #177-D: variable "received_messages" was declared but never referenced
+usr_proc.c(104): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(105): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(106): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(144): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(162): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(162): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6308 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 10 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(75): warning:  #177-D: variable "message" was declared but never referenced
+usr_proc.c(76): warning:  #177-D: variable "received_messages" was declared but never referenced
+usr_proc.c(104): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(105): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(106): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(144): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6316 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 10 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(75): warning:  #177-D: variable "message" was declared but never referenced
+usr_proc.c(76): warning:  #177-D: variable "received_messages" was declared but never referenced
+usr_proc.c(104): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(105): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(106): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(144): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6296 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 10 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6296 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=6300 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(63): warning:  #175-D: subscript out of range
+usr_proc.c(75): warning:  #177-D: variable "message" was declared but never referenced
+usr_proc.c(76): warning:  #177-D: variable "received_messages" was declared but never referenced
+usr_proc.c(104): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(105): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(106): warning:  #177-D: variable "sent_msg" was declared but never referenced
+usr_proc.c(143): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(144): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(175): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(163): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(163): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6256 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 11 Warning(s).
+Load "N:\\SE350\\SE350_LAB\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(96): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(130): error:  #20: identifier "ok_test" is undefined
+usr_proc.c(121): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(184): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "ret_val" was declared but never referenced
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(96): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(121): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(164): warning:  #177-D: variable "status" was declared but never referenced
+usr_proc.c(165): warning:  #177-D: variable "msg_env" was declared but never referenced
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(184): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(184): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=6692 RO-data=236 RW-data=88 ZI-data=1112  
+"se350.axf" - 0 Error(s), 7 Warning(s).

@@ -22,7 +22,7 @@
 #include "timer.h"
 #include "string.h"
 #include "uart.h"
-#include "syscalls.h"
+#include "sys_procs.h"
 
 #ifdef DEBUG_0
 #include "printf.h"

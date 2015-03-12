@@ -81,10 +81,12 @@ void kcd_process(){
 	char msgText [2];
 	char* temp;
 	char buffer[MAX_MSG_SIZE];
-	int i = 0;
+	int pid;
+	int i,j;
 	buffer[0] = '\0';
 	validCmd = 0;
 	clear_buffer(buffer);
+	i=0;
 	while(1) {
 
 			msg_env = (msgbuf* )receive_message(NULL);
@@ -101,7 +103,7 @@ void kcd_process(){
 							validCmd = 0;
 							clear_buffer(buffer);
 							i = 0;
-							send_message(commands[i].pid, msg_env);
+							send_message(pid, msg_env);
 						}else{
 							//release the msg
 							buffer[i++] = *temp;
@@ -111,8 +113,9 @@ void kcd_process(){
 					
 						//check if cmd is completed
 						if( *temp == ' ' || *temp == '\r'){
-							for (i = 0; i < regCmds; i++) {
-								if (strcmp(commands[i].cmd, buffer) == 0) {
+							for (j = 0; j < regCmds; j++) {
+								if (strcmp(commands[j].cmd, buffer) == 0) {
+										pid = commands[j].pid;
 										if( *temp == '\r'){
 											//input completed
 											strncpy(msg_env->mtext, buffer, MAX_MSG_SIZE);
@@ -120,12 +123,13 @@ void kcd_process(){
 											msgText[0] = '\0'; // clears both buffers, kinda hacky, more testing needed
 											validCmd = 0;
 											i = 0;
-											send_message(commands[i].pid, msg_env);
-											return;
+											send_message(pid, msg_env);
+											goto DONE;
 										}else{
 											buffer[i++] = *temp;
 											validCmd = 1;
 											release_memory_block(msg_env);
+											goto DONE;
 										}
 								}
 							}
@@ -174,6 +178,8 @@ void kcd_process(){
 				}
 				release_memory_block(msg_env);
 		}
+		DONE:
+			continue;
 		//release_processor();
 	}
 }
