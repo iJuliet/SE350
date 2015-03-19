@@ -18,8 +18,9 @@
 ### List of Objects: adding '"string.o"'
 ### List of Objects: adding '"wall_clock.o"'
 ### List of Objects: adding '"sys_procs.o"'
+### List of Objects: adding '"set_priority_process.o"'
 ### ADS-LD Command completed:
---cpu Cortex-M3 "startup_lpc17xx.o" "system_lpc17xx.o" "uart_polling.o" "hal.o" "k_rtx_init.o" "main_svc.o" "printf.o" "usr_proc.o" "k_memory.o" "k_process.o" "timer.o" "uart_irq.o" "message.o" "cmd_proc.o" "string.o" "wall_clock.o" "sys_procs.o" 
+--cpu Cortex-M3 "startup_lpc17xx.o" "system_lpc17xx.o" "uart_polling.o" "hal.o" "k_rtx_init.o" "main_svc.o" "printf.o" "usr_proc.o" "k_memory.o" "k_process.o" "timer.o" "uart_irq.o" "message.o" "cmd_proc.o" "string.o" "wall_clock.o" "sys_procs.o" "set_priority_process.o" 
 --strict --scatter "se350.sct" 
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
@@ -27,7 +28,7 @@
 ### ADS-LD Output File: 'se350.axf'
 ### ADS-LD Command File: 'se350.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'se350.lnp', Handle=0x00000390
+### Creating CmdFile 'se350.lnp', Handle=0x0000049C
 ### Writing '.lnp' file
 ### ADS-LD Command file 'se350.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

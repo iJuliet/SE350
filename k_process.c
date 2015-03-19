@@ -23,6 +23,8 @@
 #include "string.h"
 #include "uart.h"
 #include "sys_procs.h"
+#include "wall_clock.h"
+#include "set_priority_process.h"
 
 #ifdef DEBUG_0
 #include "printf.h"
@@ -105,6 +107,11 @@ void process_init()
 		g_proc_table[i].m_priority = g_test_procs[i].m_priority;
 	}
 	
+	//wall clock
+	g_proc_table[WALL_CLOCK_PROCESS].m_pid = WALL_CLOCK_PROC_ID;
+	g_proc_table[WALL_CLOCK_PROCESS].mpf_start_pc = &wc_process;
+	g_proc_table[WALL_CLOCK_PROCESS].m_stack_size = 0x100;
+	g_proc_table[WALL_CLOCK_PROCESS].m_priority = 1;
 	
 	//set up for null_process
 	g_proc_table[NULL_PROCESS].m_pid = NULL_PROC_ID;
@@ -124,7 +131,10 @@ void process_init()
 	g_proc_table[UART_I_PROCESS].m_stack_size = 0;
 	g_proc_table[UART_I_PROCESS].m_priority = -1; //does not matter, it is not in the ready queue
 	
-	
+	g_proc_table[SET_PRIORITY_PROC].m_pid = SET_PRIORITY_PROC_ID;
+	g_proc_table[SET_PRIORITY_PROC].mpf_start_pc = &set_priority_process;
+	g_proc_table[SET_PRIORITY_PROC].m_stack_size = 0x100;
+	g_proc_table[SET_PRIORITY_PROC].m_priority = 1;
 	
 	//set up for system processes
 	set_up_sys_procs(g_proc_table);
@@ -154,9 +164,11 @@ void process_init()
 	for( i = 0; i < NUM_TEST_PROCS; i++) {
 		rpq_enqueue(gp_pcbs[i]);
 	}
+	rpq_enqueue(gp_pcbs[WALL_CLOCK_PROCESS]);
 	rpq_enqueue(gp_pcbs[KCD_PROCESS]);
 	rpq_enqueue(gp_pcbs[CRT_PROCESS]);
 	rpq_enqueue(gp_pcbs[NULL_PROCESS]);
+	rpq_enqueue(gp_pcbs[SET_PRIORITY_PROC]);
 	
 	//init current_time
 	current_time = 0;

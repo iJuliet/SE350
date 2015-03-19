@@ -13,7 +13,7 @@ void print_rpq_process() {
 		if (ready_queue[i]->m_pid == NULL_PROC_ID) {
 			return;
 		}
-		//printf("Process %d: priority = %d \n\r", ready_queue[i]->m_pid, ready_queue[i]->m_priority);
+		printf("Process %d: priority = %d \n\r", ready_queue[i]->m_pid, ready_queue[i]->m_priority);
 		uart1_put_string("Process ");
 		pid = ready_queue[i]->m_pid;
 		if(pid >10){

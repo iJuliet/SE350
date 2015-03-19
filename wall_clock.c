@@ -1,15 +1,9 @@
 #include "rtx.h"
 #include "uart_polling.h"
 #include "printf.h"
+#include "wall_clock.h"
 
-#define DEFAULT 0
-#define KCD_REG 1
-#define CRT_REQ 2
-#define NOTIFY_WALL_CLOCK 3
 
-#define WALL_CLOCK_PROC_ID 5
-#define KCD_PROC_ID 12
-#define CRT_PROC_ID 13
 
 
 extern int current_time;
@@ -60,6 +54,8 @@ void wc_process() {
 				message_to_crt = (MSGBUF*)request_memory_block();
 				message_to_crt->mtype = CRT_REQ;
 				crt_time = current_time - time;
+				if(crt_time >= 1000){
+					
 				seconds = crt_time / 1000 % 60;
 				minutes = crt_time / 1000 / 60 % 60;
 				hours   = crt_time / 1000 / 60 / 60 % 24;
@@ -80,8 +76,9 @@ void wc_process() {
 				message_to_crt->mtext[8] = '\n';
 				message_to_crt->mtext[9] = '\r';
 				message_to_crt->mtext[10] = '\0';
+			
 				send_message(CRT_PROC_ID, (void*)message_to_crt);
-				
+			}
 			} else {
 				//release_memory_block(message);
 				//message = NULL;
@@ -92,6 +89,15 @@ void wc_process() {
 
 			switch (message->mtext[2]){
 			case 'R': {
+				if(state){
+					message->mtext[0] = '%';
+					message->mtext[1] = 'W';
+					message->mtext[2] = 'T';
+					message->mtext[3] = '\r';
+				
+					message->mtype = DEFAULT;
+					send_message(WALL_CLOCK_PROC_ID, message);
+				}
 				state = 1;
 				time = current_time;
 				break;
@@ -101,6 +107,15 @@ void wc_process() {
 				int time_set;
 				int h1,h0,m1,m0,s1,s0,ter;
 				char buf = message->mtext[4];
+				if(state){
+					message->mtext[0] = '%';
+					message->mtext[1] = 'W';
+					message->mtext[2] = 'T';
+					message->mtext[3] = '\r';
+					message->mtype = DEFAULT;
+					send_message(WALL_CLOCK_PROC_ID, message);
+				}
+				
 				h1 = message->mtext[4] - '0';
 				buf = message->mtext[5];
 				h0 = buf - '0';
@@ -134,9 +149,10 @@ void wc_process() {
 					send_message(CRT_PROC_ID, (void*)message);
 				}
 				else{
-				  state = 1;
-				  time = -time_set + current_time;
+					state = 1;
+					time = -time_set + current_time;
 				}
+				
 				break;
 		  }
 			

@@ -8,8 +8,8 @@
 #include "uart_polling.h"
 #include "k_rtx.h"
 
-#define KCD_PROCESS 6
-#define CRT_PROCESS 7
+#define KCD_PROCESS 8
+#define CRT_PROCESS 9
 #define KCD_PROC_ID 12
 #define CRT_PROC_ID 13
 
