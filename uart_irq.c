@@ -12,6 +12,7 @@
 #include "rtx.h"
 #include "message.h"
 #include "cmd_proc.h"
+#include "sys_procs.h"
 #ifdef DEBUG_0
 #include "printf.h"
 #endif
@@ -184,7 +185,7 @@ void c_UART0_IRQHandler(void)
 	PCB* prev_curr_proc = get_current_proc();
 	LPC_UART_TypeDef *pUart = (LPC_UART_TypeDef *)LPC_UART0;
 	//set_current_proc(get_pcb_from_pid(UART_PROC_ID));
-	gp_pcbs[UART_I_PROCESS]->m_state = RUN;
+	gp_pcbs[UART_PROC_ID]->m_state = RUN;
 	
 #ifdef DEBUG_0
 	uart1_put_string("Entering c_UART0_IRQHandler\n\r");
@@ -222,7 +223,7 @@ void c_UART0_IRQHandler(void)
             //run out of memory
             uart0_put_string("Alert: Running out of memory: Cannot allocate memory to hold keyboard inputs.\n\r");
             //set_current_proc(prev_curr_proc);
-						gp_pcbs[UART_I_PROCESS]->m_state = WAITING_FOR_INTERRUPT;
+						gp_pcbs[UART_PROC_ID]->m_state = WAITING_FOR_INTERRUPT;
 						return;
         }
         input_msg->mtype = DEFAULT;
@@ -254,7 +255,7 @@ PRINT:
                 k_release_memory_block(msg);
             }
             
-            msg = (msgbuf*)msg_dequeue(gp_pcbs[UART_I_PROCESS], NULL);
+            msg = (msgbuf*)msg_dequeue(gp_pcbs[UART_PROC_ID], NULL);
             if (msg == NULL) {
 #ifdef DEBUG_0
                 uart1_put_string("Finish writing. Turning off IER_THRE\n\r");
@@ -279,7 +280,7 @@ PRINT:
 #endif // DEBUG_0
 		return;
 	}	
-	gp_pcbs[UART_I_PROCESS]->m_state = WAITING_FOR_INTERRUPT;
+	gp_pcbs[UART_PROC_ID]->m_state = WAITING_FOR_INTERRUPT;
 }
 
 void set_uart0_interrupt() {

@@ -139,7 +139,7 @@ void *k_request_memory_block(void) {
 	__disable_irq();
 	while (mem_start_ptr == NULL) {
 		curr_proc = get_current_proc();
-		if(gp_pcbs[UART_I_PROCESS]->m_state == RUN){
+		if(gp_pcbs[UART_PROC_ID]->m_state == RUN){
 			return NULL;
 		}
 		bq_enqueue(curr_proc);

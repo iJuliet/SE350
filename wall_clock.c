@@ -2,9 +2,7 @@
 #include "uart_polling.h"
 #include "printf.h"
 #include "wall_clock.h"
-
-
-
+#include "sys_procs.h"
 
 extern int current_time;
 
@@ -12,7 +10,6 @@ int state, time;
 	
 void wc_process() {
 	MSGBUF* keyreg_env;
-	MSGBUF* next_second_message;
 	MSGBUF* message_to_crt;
 	keyreg_env = (MSGBUF*)request_memory_block();
 	keyreg_env->mtype = KCD_REG;
@@ -106,7 +103,21 @@ void wc_process() {
 			case 'S': {
 				int time_set;
 				int h1,h0,m1,m0,s1,s0,ter;
-				char buf = message->mtext[4];
+				h1 = message->mtext[4] - '0';
+				h0 = message->mtext[5] - '0';
+				m1 = message->mtext[7] - '0';
+				m0 = message->mtext[8] - '0';
+				s1 = message->mtext[10] - '0';
+				s0 = message->mtext[11] - '0';
+				ter = message->mtext[12];
+				if(h1 > 2 || h1 < 0 || h0 > 9 || h0 < 0 || (h1 == 2 && h0 > 3) || m1 > 6 
+					|| m1 < 0 || m0 > 9 || m0 < 0 || s1 > 6 || s1 < 0 || s0 > 9 || s0 < 0 ||
+					ter != '\r' || message->mtext[6] != ':' || message->mtext[9] != ':'){
+					time_set = -1;
+				}
+				else{
+					time_set = 1000*((h1*10 + h0)*3600 + (m1*10 + m0)*60 + (s1*10 + s0));	
+				}	
 				if(state){
 					message->mtext[0] = '%';
 					message->mtext[1] = 'W';
@@ -115,30 +126,9 @@ void wc_process() {
 					message->mtype = DEFAULT;
 					send_message(WALL_CLOCK_PROC_ID, message);
 				}
-				
-				h1 = message->mtext[4] - '0';
-				buf = message->mtext[5];
-				h0 = buf - '0';
-				buf = message->mtext[7];
-				m1 = buf - '0';
-				buf = message->mtext[8];
-				m0 = buf - '0';
-				buf = message->mtext[10];
-				s1 = buf - '0';
-				buf = message->mtext[11];
-				s0 = buf - '0';
-				buf = message->mtext[12];
-				ter = buf;
-				if(h1 > 2 || h1 < 0 || h0 > 9 || h0 < 0 || (h1 == 2 && h0 > 3) || m1 > 6 
-					|| m1 < 0 || m0 > 9 || m0 < 0 || s1 > 6 || s1 < 0 || s0 > 9 || s0 < 0 ||
-					ter != '\0' || message->mtext[6] != ':' || message->mtext[9] != ':'){
-					time_set = -1;
-				}
-				else{
-					time_set = 1000*((h1*10 + h0)*3600 + (m1*10 + m0)*60 + (s1*10 + s0));	
-				}	
+					
 				if(time_set < 0){
-					state = 0;
+					
 					message->mtype = CRT_REQ;
 					message->mtext[0] = 'E';
 					message->mtext[1] = 'R';

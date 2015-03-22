@@ -28,12 +28,15 @@ Section Cross References
     main_svc.o(.text) refers to uart_polling.o(.text) for putc
     main_svc.o(.text) refers to k_rtx_init.o(.text) for k_rtx_init
     printf.o(.text) refers to printf.o(.data) for stdout_putf
+    usr_proc.o(.text) refers to string.o(.text) for strncpy
     usr_proc.o(.text) refers to uart_polling.o(.text) for uart_put_string
-    usr_proc.o(.text) refers to k_process.o(.text) for k_release_processor
+    usr_proc.o(.text) refers to message.o(.text) for k_receive_message
     usr_proc.o(.text) refers to k_memory.o(.text) for k_request_memory_block
-    usr_proc.o(.text) refers to message.o(.text) for k_send_message
+    usr_proc.o(.text) refers to k_process.o(.text) for k_release_processor
     usr_proc.o(.text) refers to usr_proc.o(.data) for ok_tests
     usr_proc.o(.text) refers to usr_proc.o(.bss) for g_test_procs
+    usr_proc.o(.text) refers to set_priority_proc.o(.text) for set_priority_process
+    usr_proc.o(.text) refers to wall_clock.o(.text) for wc_process
     k_memory.o(.text) refers to k_process.o(.text) for get_current_proc
     k_memory.o(.text) refers to k_process.o(.data) for gp_pcbs
     k_memory.o(.text) refers to k_memory.o(.data) for gp_stack
@@ -45,8 +48,6 @@ Section Cross References
     k_process.o(.text) refers to k_process.o(.bss) for ready_queue
     k_process.o(.text) refers to k_process.o(.data) for gp_pcbs
     k_process.o(.text) refers to usr_proc.o(.bss) for g_test_procs
-    k_process.o(.text) refers to wall_clock.o(.text) for wc_process
-    k_process.o(.text) refers to set_priority_process.o(.text) for set_priority_process
     timer.o(.emb_text) refers to timer.o(.text) for c_TIMER0_IRQHandler
     timer.o(.text) refers to k_process.o(.text) for timer_i_process
     timer.o(.text) refers to timer.o(.data) for g_timer_count
@@ -63,7 +64,6 @@ Section Cross References
     message.o(.text) refers to k_process.o(.data) for current_time
     cmd_proc.o(.text) refers to k_process.o(.text) for get_rpq
     cmd_proc.o(.text) refers to uart_polling.o(.text) for uart_put_string
-    cmd_proc.o(.text) refers to printf.o(.text) for tfp_printf
     wall_clock.o(.text) refers to k_memory.o(.text) for k_request_memory_block
     wall_clock.o(.text) refers to message.o(.text) for k_send_message
     wall_clock.o(.text) refers to wall_clock.o(.data) for state
@@ -75,11 +75,11 @@ Section Cross References
     sys_procs.o(.text) refers to k_memory.o(.text) for k_release_memory_block
     sys_procs.o(.text) refers to sys_procs.o(.bss) for commands
     sys_procs.o(.text) refers to sys_procs.o(.data) for regCmds
-    set_priority_process.o(.text) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
-    set_priority_process.o(.text) refers to string.o(.text) for strlen
-    set_priority_process.o(.text) refers to k_memory.o(.text) for k_request_memory_block
-    set_priority_process.o(.text) refers to message.o(.text) for k_send_message
-    set_priority_process.o(.text) refers to k_process.o(.text) for k_set_process_priority
+    set_priority_proc.o(.text) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    set_priority_proc.o(.text) refers to string.o(.text) for strlen
+    set_priority_proc.o(.text) refers to k_memory.o(.text) for k_request_memory_block
+    set_priority_proc.o(.text) refers to message.o(.text) for k_send_message
+    set_priority_proc.o(.text) refers to k_process.o(.text) for k_set_process_priority
     __main.o(!!!main) refers to rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
     rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
     rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
@@ -273,7 +273,7 @@ Image Symbol Table
     message.c                                0x00000000   Number         0  message.o ABSOLUTE
     message.c                                0x00000000   Number         0  message.o ABSOLUTE
     printf.c                                 0x00000000   Number         0  printf.o ABSOLUTE
-    set_priority_process.c                   0x00000000   Number         0  set_priority_process.o ABSOLUTE
+    set_priority_proc.c                      0x00000000   Number         0  set_priority_proc.o ABSOLUTE
     startup_LPC17xx.s                        0x00000000   Number         0  startup_lpc17xx.o ABSOLUTE
     string.c                                 0x00000000   Number         0  string.o ABSOLUTE
     sys_procs.c                              0x00000000   Number         0  sys_procs.o ABSOLUTE
@@ -355,39 +355,39 @@ Image Symbol Table
     putchw                                   0x00000723   Thumb Code    82  printf.o(.text)
     putcp                                    0x000008c9   Thumb Code    10  printf.o(.text)
     .text                                    0x00000904   Section        0  usr_proc.o(.text)
-    .text                                    0x00000e3c   Section        0  k_memory.o(.text)
-    .text                                    0x00000fb0   Section        0  k_process.o(.text)
-    .text                                    0x00001544   Section        0  uart_irq.o(.text)
-    NVIC_EnableIRQ                           0x000016e9   Thumb Code    24  uart_irq.o(.text)
-    .text                                    0x0000172c   Section        0  message.o(.text)
-    .text                                    0x000018f0   Section        0  cmd_proc.o(.text)
-    .text                                    0x00001b44   Section        0  string.o(.text)
-    .text                                    0x00001ba4   Section        0  wall_clock.o(.text)
-    .text                                    0x00001f08   Section        0  sys_procs.o(.text)
-    .text                                    0x000021c8   Section        0  set_priority_process.o(.text)
-    .text                                    0x000022f8   Section      100  rt_memcpy_w.o(.text)
-    .text                                    0x0000235c   Section       74  sys_stackheap_outer.o(.text)
-    .constdata                               0x000023a8   Section       80  uart_irq.o(.constdata)
+    .text                                    0x00001068   Section        0  k_memory.o(.text)
+    .text                                    0x000011dc   Section        0  k_process.o(.text)
+    .text                                    0x00001720   Section        0  uart_irq.o(.text)
+    NVIC_EnableIRQ                           0x000018c5   Thumb Code    24  uart_irq.o(.text)
+    .text                                    0x00001908   Section        0  message.o(.text)
+    .text                                    0x00001acc   Section        0  cmd_proc.o(.text)
+    .text                                    0x00001cf0   Section        0  string.o(.text)
+    .text                                    0x00001d50   Section        0  wall_clock.o(.text)
+    .text                                    0x000020a4   Section        0  sys_procs.o(.text)
+    .text                                    0x00002364   Section        0  set_priority_proc.o(.text)
+    .text                                    0x000024f8   Section      100  rt_memcpy_w.o(.text)
+    .text                                    0x0000255c   Section       74  sys_stackheap_outer.o(.text)
+    .constdata                               0x000025a8   Section       80  uart_irq.o(.constdata)
     .data                                    0x10000000   Section        4  system_lpc17xx.o(.data)
     .data                                    0x10000004   Section        8  printf.o(.data)
     stdout_putf                              0x10000004   Data           4  printf.o(.data)
     stdout_putp                              0x10000008   Data           4  printf.o(.data)
     .data                                    0x1000000c   Section        8  usr_proc.o(.data)
     .data                                    0x10000014   Section       20  k_memory.o(.data)
-    .data                                    0x10000028   Section       20  k_process.o(.data)
-    .data                                    0x1000003c   Section        4  timer.o(.data)
-    .data                                    0x10000040   Section       18  uart_irq.o(.data)
-    .data                                    0x10000054   Section        8  wall_clock.o(.data)
-    .data                                    0x1000005c   Section        4  sys_procs.o(.data)
-    .bss                                     0x10000060   Section       96  usr_proc.o(.bss)
-    .bss                                     0x100000c0   Section      376  k_process.o(.bss)
-    .bss                                     0x10000238   Section      160  sys_procs.o(.bss)
-    .bss                                     0x100002d8   Section       96  libspace.o(.bss)
-    HEAP                                     0x10000338   Section        0  startup_lpc17xx.o(HEAP)
-    STACK                                    0x10000338   Section      512  startup_lpc17xx.o(STACK)
-    Heap_Mem                                 0x10000338   Data           0  startup_lpc17xx.o(HEAP)
-    Stack_Mem                                0x10000338   Data         512  startup_lpc17xx.o(STACK)
-    __initial_sp                             0x10000538   Data           0  startup_lpc17xx.o(STACK)
+    .data                                    0x10000028   Section       16  k_process.o(.data)
+    .data                                    0x10000038   Section        4  timer.o(.data)
+    .data                                    0x1000003c   Section       18  uart_irq.o(.data)
+    .data                                    0x10000050   Section        8  wall_clock.o(.data)
+    .data                                    0x10000058   Section        4  sys_procs.o(.data)
+    .bss                                     0x1000005c   Section      176  usr_proc.o(.bss)
+    .bss                                     0x1000010c   Section      384  k_process.o(.bss)
+    .bss                                     0x1000028c   Section      160  sys_procs.o(.bss)
+    .bss                                     0x1000032c   Section       96  libspace.o(.bss)
+    HEAP                                     0x10000390   Section        0  startup_lpc17xx.o(HEAP)
+    STACK                                    0x10000390   Section      512  startup_lpc17xx.o(STACK)
+    Heap_Mem                                 0x10000390   Data           0  startup_lpc17xx.o(HEAP)
+    Stack_Mem                                0x10000390   Data         512  startup_lpc17xx.o(STACK)
+    __initial_sp                             0x10000590   Data           0  startup_lpc17xx.o(STACK)
 
     Global Symbols
 
@@ -543,62 +543,67 @@ Image Symbol Table
     init_printf                              0x0000089d   Thumb Code    10  printf.o(.text)
     tfp_printf                               0x000008a7   Thumb Code    34  printf.o(.text)
     tfp_sprintf                              0x000008d3   Thumb Code    38  printf.o(.text)
-    proc6                                    0x00000905   Thumb Code    10  usr_proc.o(.text)
-    proc5                                    0x0000090f   Thumb Code    10  usr_proc.o(.text)
-    proc4                                    0x00000919   Thumb Code    84  usr_proc.o(.text)
-    printEndTestString                       0x0000096d   Thumb Code   170  usr_proc.o(.text)
-    proc3                                    0x00000a17   Thumb Code   104  usr_proc.o(.text)
-    proc2                                    0x00000a7f   Thumb Code   154  usr_proc.o(.text)
-    proc1                                    0x00000b19   Thumb Code   218  usr_proc.o(.text)
-    set_test_procs                           0x00000bf3   Thumb Code   100  usr_proc.o(.text)
-    memory_init                              0x00000e3d   Thumb Code   132  k_memory.o(.text)
-    alloc_stack                              0x00000ec1   Thumb Code    32  k_memory.o(.text)
-    k_request_memory_block                   0x00000ee1   Thumb Code    72  k_memory.o(.text)
-    k_release_memory_block                   0x00000f29   Thumb Code   102  k_memory.o(.text)
-    rpq_enqueue                              0x00000fb1   Thumb Code    92  k_process.o(.text)
-    timer_i_process                          0x0000100d   Thumb Code    74  k_process.o(.text)
-    process_switch                           0x00001057   Thumb Code   132  k_process.o(.text)
-    rpq_dequeue                              0x000010db   Thumb Code    28  k_process.o(.text)
-    scheduler                                0x000010f7   Thumb Code    42  k_process.o(.text)
-    k_release_processor                      0x00001121   Thumb Code    48  k_process.o(.text)
-    null_process                             0x00001151   Thumb Code     8  k_process.o(.text)
-    process_init                             0x00001159   Thumb Code   442  k_process.o(.text)
-    k_set_process_priority                   0x00001313   Thumb Code   242  k_process.o(.text)
-    k_get_process_priority                   0x00001405   Thumb Code    44  k_process.o(.text)
-    get_rpq                                  0x00001431   Thumb Code     4  k_process.o(.text)
-    get_bq                                   0x00001435   Thumb Code     4  k_process.o(.text)
-    bq_enqueue                               0x00001439   Thumb Code    48  k_process.o(.text)
-    bq_dequeue                               0x00001469   Thumb Code    76  k_process.o(.text)
-    bq_dequeue_by_pid                        0x000014b5   Thumb Code    76  k_process.o(.text)
-    get_current_proc                         0x00001501   Thumb Code     6  k_process.o(.text)
-    set_current_proc                         0x00001507   Thumb Code     6  k_process.o(.text)
-    get_pcb_from_pid                         0x0000150d   Thumb Code    40  k_process.o(.text)
-    uart_irq_init                            0x00001545   Thumb Code   132  uart_irq.o(.text)
-    c_UART0_IRQHandler                       0x000015c9   Thumb Code   272  uart_irq.o(.text)
-    set_uart0_interrupt                      0x000016d9   Thumb Code    16  uart_irq.o(.text)
-    msg_enqueue                              0x0000172d   Thumb Code    32  message.o(.text)
-    msg_dequeue                              0x0000174d   Thumb Code    98  message.o(.text)
-    k_send_message                           0x000017af   Thumb Code   100  message.o(.text)
-    k_send_message_no_preemp                 0x00001813   Thumb Code    76  message.o(.text)
-    k_receive_message                        0x0000185f   Thumb Code    54  message.o(.text)
-    k_delayed_send                           0x00001895   Thumb Code    84  message.o(.text)
-    print_rpq_process                        0x000018f1   Thumb Code   152  cmd_proc.o(.text)
-    print_blk_on_mem_process                 0x00001989   Thumb Code   142  cmd_proc.o(.text)
-    print_blk_on_msg_process                 0x00001a17   Thumb Code   142  cmd_proc.o(.text)
-    strncpy                                  0x00001b45   Thumb Code    50  string.o(.text)
-    strlen                                   0x00001b77   Thumb Code    16  string.o(.text)
-    strcmp                                   0x00001b87   Thumb Code    28  string.o(.text)
-    wc_process                               0x00001ba5   Thumb Code   830  wall_clock.o(.text)
-    clear_buffer                             0x00001f09   Thumb Code    18  sys_procs.o(.text)
-    crt_process                              0x00001f1b   Thumb Code    46  sys_procs.o(.text)
-    kcd_process                              0x00001f49   Thumb Code   558  sys_procs.o(.text)
-    set_up_sys_procs                         0x00002177   Thumb Code    58  sys_procs.o(.text)
-    set_priority_process                     0x000021c9   Thumb Code   220  set_priority_process.o(.text)
-    __aeabi_memcpy4                          0x000022f9   Thumb Code     0  rt_memcpy_w.o(.text)
-    __aeabi_memcpy8                          0x000022f9   Thumb Code     0  rt_memcpy_w.o(.text)
-    __rt_memcpy_w                            0x000022f9   Thumb Code   100  rt_memcpy_w.o(.text)
-    _memcpy_lastbytes_aligned                0x00002341   Thumb Code     0  rt_memcpy_w.o(.text)
-    __user_setup_stackheap                   0x0000235d   Thumb Code    74  sys_stackheap_outer.o(.text)
+    enqueue                                  0x00000905   Thumb Code    18  usr_proc.o(.text)
+    dequeue                                  0x00000917   Thumb Code    24  usr_proc.o(.text)
+    proc_c                                   0x0000092f   Thumb Code   204  usr_proc.o(.text)
+    proc_b                                   0x000009fb   Thumb Code    28  usr_proc.o(.text)
+    proc_a                                   0x00000a17   Thumb Code   182  usr_proc.o(.text)
+    proc6                                    0x00000acd   Thumb Code    10  usr_proc.o(.text)
+    proc5                                    0x00000ad7   Thumb Code    10  usr_proc.o(.text)
+    proc4                                    0x00000ae1   Thumb Code    84  usr_proc.o(.text)
+    printEndTestString                       0x00000b35   Thumb Code   170  usr_proc.o(.text)
+    proc3                                    0x00000bdf   Thumb Code   104  usr_proc.o(.text)
+    proc2                                    0x00000c47   Thumb Code   154  usr_proc.o(.text)
+    proc1                                    0x00000ce1   Thumb Code   660  usr_proc.o(.text)
+    set_test_procs                           0x00000f75   Thumb Code   156  usr_proc.o(.text)
+    memory_init                              0x00001069   Thumb Code   132  k_memory.o(.text)
+    alloc_stack                              0x000010ed   Thumb Code    32  k_memory.o(.text)
+    k_request_memory_block                   0x0000110d   Thumb Code    72  k_memory.o(.text)
+    k_release_memory_block                   0x00001155   Thumb Code   102  k_memory.o(.text)
+    rpq_enqueue                              0x000011dd   Thumb Code    92  k_process.o(.text)
+    timer_i_process                          0x00001239   Thumb Code    74  k_process.o(.text)
+    process_switch                           0x00001283   Thumb Code   132  k_process.o(.text)
+    rpq_dequeue                              0x00001307   Thumb Code    28  k_process.o(.text)
+    scheduler                                0x00001323   Thumb Code    42  k_process.o(.text)
+    k_release_processor                      0x0000134d   Thumb Code    48  k_process.o(.text)
+    null_process                             0x0000137d   Thumb Code     8  k_process.o(.text)
+    process_init                             0x00001385   Thumb Code   374  k_process.o(.text)
+    k_set_process_priority                   0x000014fb   Thumb Code   202  k_process.o(.text)
+    k_get_process_priority                   0x000015c5   Thumb Code    72  k_process.o(.text)
+    get_rpq                                  0x0000160d   Thumb Code     4  k_process.o(.text)
+    get_bq                                   0x00001611   Thumb Code     4  k_process.o(.text)
+    bq_enqueue                               0x00001615   Thumb Code    48  k_process.o(.text)
+    bq_dequeue                               0x00001645   Thumb Code    76  k_process.o(.text)
+    bq_dequeue_by_pid                        0x00001691   Thumb Code    76  k_process.o(.text)
+    get_current_proc                         0x000016dd   Thumb Code     6  k_process.o(.text)
+    set_current_proc                         0x000016e3   Thumb Code     6  k_process.o(.text)
+    get_pcb_from_pid                         0x000016e9   Thumb Code    40  k_process.o(.text)
+    uart_irq_init                            0x00001721   Thumb Code   132  uart_irq.o(.text)
+    c_UART0_IRQHandler                       0x000017a5   Thumb Code   272  uart_irq.o(.text)
+    set_uart0_interrupt                      0x000018b5   Thumb Code    16  uart_irq.o(.text)
+    msg_enqueue                              0x00001909   Thumb Code    32  message.o(.text)
+    msg_dequeue                              0x00001929   Thumb Code    98  message.o(.text)
+    k_send_message                           0x0000198b   Thumb Code   100  message.o(.text)
+    k_send_message_no_preemp                 0x000019ef   Thumb Code    76  message.o(.text)
+    k_receive_message                        0x00001a3b   Thumb Code    54  message.o(.text)
+    k_delayed_send                           0x00001a71   Thumb Code    84  message.o(.text)
+    print_rpq_process                        0x00001acd   Thumb Code   134  cmd_proc.o(.text)
+    print_blk_on_mem_process                 0x00001b53   Thumb Code   142  cmd_proc.o(.text)
+    print_blk_on_msg_process                 0x00001be1   Thumb Code   142  cmd_proc.o(.text)
+    strncpy                                  0x00001cf1   Thumb Code    50  string.o(.text)
+    strlen                                   0x00001d23   Thumb Code    16  string.o(.text)
+    strcmp                                   0x00001d33   Thumb Code    28  string.o(.text)
+    wc_process                               0x00001d51   Thumb Code   814  wall_clock.o(.text)
+    clear_buffer                             0x000020a5   Thumb Code    18  sys_procs.o(.text)
+    crt_process                              0x000020b7   Thumb Code    46  sys_procs.o(.text)
+    kcd_process                              0x000020e5   Thumb Code   558  sys_procs.o(.text)
+    set_up_sys_procs                         0x00002313   Thumb Code    58  sys_procs.o(.text)
+    set_priority_process                     0x00002365   Thumb Code   288  set_priority_proc.o(.text)
+    __aeabi_memcpy4                          0x000024f9   Thumb Code     0  rt_memcpy_w.o(.text)
+    __aeabi_memcpy8                          0x000024f9   Thumb Code     0  rt_memcpy_w.o(.text)
+    __rt_memcpy_w                            0x000024f9   Thumb Code   100  rt_memcpy_w.o(.text)
+    _memcpy_lastbytes_aligned                0x00002541   Thumb Code     0  rt_memcpy_w.o(.text)
+    __user_setup_stackheap                   0x0000255d   Thumb Code    74  sys_stackheap_outer.o(.text)
     SystemFrequency                          0x10000000   Data           4  system_lpc17xx.o(.data)
     test_num                                 0x1000000c   Data           4  usr_proc.o(.data)
     ok_tests                                 0x10000010   Data           4  usr_proc.o(.data)
@@ -610,27 +615,25 @@ Image Symbol Table
     gp_current_process                       0x10000028   Data           4  k_process.o(.data)
     gp_pcbs                                  0x1000002c   Data           4  k_process.o(.data)
     current_time                             0x10000030   Data           4  k_process.o(.data)
-    input_char_counter                       0x10000034   Data           4  k_process.o(.data)
-    timeout_queue                            0x10000038   Data           4  k_process.o(.data)
-    g_timer_count                            0x1000003c   Data           4  timer.o(.data)
-    empty_buffer                             0x10000040   Data           1  uart_irq.o(.data)
-    gp_buffer                                0x10000044   Data           4  uart_irq.o(.data)
-    g_send_char                              0x10000048   Data           1  uart_irq.o(.data)
-    msg                                      0x1000004c   Data           4  uart_irq.o(.data)
-    g_char_in                                0x10000050   Data           1  uart_irq.o(.data)
-    g_char_out                               0x10000051   Data           1  uart_irq.o(.data)
-    state                                    0x10000054   Data           4  wall_clock.o(.data)
-    time                                     0x10000058   Data           4  wall_clock.o(.data)
-    regCmds                                  0x1000005c   Data           4  sys_procs.o(.data)
-    g_test_procs                             0x10000060   Data          96  usr_proc.o(.bss)
-    g_proc_table                             0x100000c0   Data         208  k_process.o(.bss)
-    ready_queue                              0x10000190   Data          52  k_process.o(.bss)
-    blocked_queue                            0x100001c4   Data          52  k_process.o(.bss)
-    input                                    0x100001f8   Data          64  k_process.o(.bss)
-    commands                                 0x10000238   Data         160  sys_procs.o(.bss)
-    __libspace_start                         0x100002d8   Data          96  libspace.o(.bss)
-    __temporary_stack_top$libspace           0x10000338   Data           0  libspace.o(.bss)
-    Image$$RW_IRAM1$$ZI$$Limit               0x10000538   Number         0  startup_lpc17xx.o(STACK)
+    timeout_queue                            0x10000034   Data           4  k_process.o(.data)
+    g_timer_count                            0x10000038   Data           4  timer.o(.data)
+    empty_buffer                             0x1000003c   Data           1  uart_irq.o(.data)
+    gp_buffer                                0x10000040   Data           4  uart_irq.o(.data)
+    g_send_char                              0x10000044   Data           1  uart_irq.o(.data)
+    msg                                      0x10000048   Data           4  uart_irq.o(.data)
+    g_char_in                                0x1000004c   Data           1  uart_irq.o(.data)
+    g_char_out                               0x1000004d   Data           1  uart_irq.o(.data)
+    state                                    0x10000050   Data           4  wall_clock.o(.data)
+    time                                     0x10000054   Data           4  wall_clock.o(.data)
+    regCmds                                  0x10000058   Data           4  sys_procs.o(.data)
+    g_test_procs                             0x1000005c   Data         176  usr_proc.o(.bss)
+    g_proc_table                             0x1000010c   Data         256  k_process.o(.bss)
+    ready_queue                              0x1000020c   Data          64  k_process.o(.bss)
+    blocked_queue                            0x1000024c   Data          64  k_process.o(.bss)
+    commands                                 0x1000028c   Data         160  sys_procs.o(.bss)
+    __libspace_start                         0x1000032c   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x1000038c   Data           0  libspace.o(.bss)
+    Image$$RW_IRAM1$$ZI$$Limit               0x10000590   Number         0  startup_lpc17xx.o(STACK)
 
 
 
@@ -640,9 +643,9 @@ Memory Map of the image
 
   Image Entry point : 0x000000cd
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00002458, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00002654, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x000023f8, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x000025f8, Max: 0x00080000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -713,43 +716,44 @@ Memory Map of the image
     0x00000300   0x0000021c   Code   RO           15    .text               system_lpc17xx.o
     0x0000051c   0x00000124   Code   RO           59    .text               uart_polling.o
     0x00000640   0x000002c4   Code   RO          150    .text               printf.o
-    0x00000904   0x00000538   Code   RO          164    .text               usr_proc.o
-    0x00000e3c   0x00000174   Code   RO          186    .text               k_memory.o
-    0x00000fb0   0x00000594   Code   RO          207    .text               k_process.o
-    0x00001544   0x000001e8   Code   RO          279    .text               uart_irq.o
-    0x0000172c   0x000001c4   Code   RO          313    .text               message.o
-    0x000018f0   0x00000254   Code   RO          332    .text               cmd_proc.o
-    0x00001b44   0x0000005e   Code   RO          344    .text               string.o
-    0x00001ba2   0x00000002   PAD
-    0x00001ba4   0x00000364   Code   RO          356    .text               wall_clock.o
-    0x00001f08   0x000002c0   Code   RO          374    .text               sys_procs.o
-    0x000021c8   0x00000130   Code   RO          399    .text               set_priority_process.o
-    0x000022f8   0x00000064   Code   RO          413    .text               c_w.l(rt_memcpy_w.o)
-    0x0000235c   0x0000004a   Code   RO          435    .text               c_w.l(sys_stackheap_outer.o)
-    0x000023a6   0x00000002   PAD
-    0x000023a8   0x00000050   Data   RO          280    .constdata          uart_irq.o
+    0x00000904   0x00000764   Code   RO          164    .text               usr_proc.o
+    0x00001068   0x00000174   Code   RO          192    .text               k_memory.o
+    0x000011dc   0x00000544   Code   RO          213    .text               k_process.o
+    0x00001720   0x000001e8   Code   RO          279    .text               uart_irq.o
+    0x00001908   0x000001c4   Code   RO          313    .text               message.o
+    0x00001acc   0x00000224   Code   RO          332    .text               cmd_proc.o
+    0x00001cf0   0x0000005e   Code   RO          344    .text               string.o
+    0x00001d4e   0x00000002   PAD
+    0x00001d50   0x00000354   Code   RO          356    .text               wall_clock.o
+    0x000020a4   0x000002c0   Code   RO          374    .text               sys_procs.o
+    0x00002364   0x00000194   Code   RO          399    .text               set_priority_proc.o
+    0x000024f8   0x00000064   Code   RO          413    .text               c_w.l(rt_memcpy_w.o)
+    0x0000255c   0x0000004a   Code   RO          435    .text               c_w.l(sys_stackheap_outer.o)
+    0x000025a6   0x00000002   PAD
+    0x000025a8   0x00000050   Data   RO          280    .constdata          uart_irq.o
 
 
-    Execution Region RW_IRAM1 (Base: 0x10000000, Size: 0x00000538, Max: 0x00008000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Base: 0x10000000, Size: 0x00000590, Max: 0x00008000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x10000000   0x00000004   Data   RW           16    .data               system_lpc17xx.o
     0x10000004   0x00000008   Data   RW          151    .data               printf.o
     0x1000000c   0x00000008   Data   RW          166    .data               usr_proc.o
-    0x10000014   0x00000014   Data   RW          188    .data               k_memory.o
-    0x10000028   0x00000014   Data   RW          209    .data               k_process.o
-    0x1000003c   0x00000004   Data   RW          249    .data               timer.o
-    0x10000040   0x00000012   Data   RW          281    .data               uart_irq.o
-    0x10000052   0x00000002   PAD
-    0x10000054   0x00000008   Data   RW          357    .data               wall_clock.o
-    0x1000005c   0x00000004   Data   RW          376    .data               sys_procs.o
-    0x10000060   0x00000060   Zero   RW          165    .bss                usr_proc.o
-    0x100000c0   0x00000178   Zero   RW          208    .bss                k_process.o
-    0x10000238   0x000000a0   Zero   RW          375    .bss                sys_procs.o
-    0x100002d8   0x00000060   Zero   RW          446    .bss                c_w.l(libspace.o)
-    0x10000338   0x00000000   Zero   RW            2    HEAP                startup_lpc17xx.o
-    0x10000338   0x00000200   Zero   RW            1    STACK               startup_lpc17xx.o
+    0x10000014   0x00000014   Data   RW          194    .data               k_memory.o
+    0x10000028   0x00000010   Data   RW          215    .data               k_process.o
+    0x10000038   0x00000004   Data   RW          249    .data               timer.o
+    0x1000003c   0x00000012   Data   RW          281    .data               uart_irq.o
+    0x1000004e   0x00000002   PAD
+    0x10000050   0x00000008   Data   RW          357    .data               wall_clock.o
+    0x10000058   0x00000004   Data   RW          376    .data               sys_procs.o
+    0x1000005c   0x000000b0   Zero   RW          165    .bss                usr_proc.o
+    0x1000010c   0x00000180   Zero   RW          214    .bss                k_process.o
+    0x1000028c   0x000000a0   Zero   RW          375    .bss                sys_procs.o
+    0x1000032c   0x00000060   Zero   RW          446    .bss                c_w.l(libspace.o)
+    0x1000038c   0x00000004   PAD
+    0x10000390   0x00000000   Zero   RW            2    HEAP                startup_lpc17xx.o
+    0x10000390   0x00000200   Zero   RW            1    STACK               startup_lpc17xx.o
 
 
 ==============================================================================
@@ -759,27 +763,27 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       596        160          0          0          0       1582   cmd_proc.o
-        50          0          0          0          0        292   hal.o
-       372         34          0         20          0       2279   k_memory.o
-      1428         58          0         20        376       8948   k_process.o
-        60          8          0          0          0       1425   k_rtx_init.o
-        36         10          0          0          0       2259   main_svc.o
-       452          8          0          0          0       2828   message.o
-       708         12          0          8          0       3468   printf.o
-       304         84          0          0          0       1127   set_priority_process.o
-        56         22        204          0        512        880   startup_lpc17xx.o
-        94          0          0          0          0       1008   string.o
-       704         24          0          4        160       3343   sys_procs.o
-       540         64          0          4          0      21539   system_lpc17xx.o
-       112          6          0          4          0      25264   timer.o
-       504         44         80         18          0       2611   uart_irq.o
-       292         54          0          0          0       1969   uart_polling.o
-      1336        486          0          8         96       2373   usr_proc.o
-       868         38          0          8          0       2377   wall_clock.o
+       548        130          0          0          0       1446   cmd_proc.o
+        50          0          0          0          0        264   hal.o
+       372         34          0         20          0       2083   k_memory.o
+      1348         44          0         16        384       8487   k_process.o
+        60          8          0          0          0       1117   k_rtx_init.o
+        36         10          0          0          0       2123   main_svc.o
+       452          8          0          0          0       2652   message.o
+       708         12          0          8          0       3224   printf.o
+       404        116          0          0          0       1083   set_priority_proc.o
+        56         22        204          0        512        828   startup_lpc17xx.o
+        94          0          0          0          0        928   string.o
+       704         24          0          4        160       2907   sys_procs.o
+       540         64          0          4          0      21491   system_lpc17xx.o
+       112          6          0          4          0      25016   timer.o
+       504         44         80         18          0       2367   uart_irq.o
+       292         54          0          0          0       1821   uart_polling.o
+      1892        524          0          8        176       4094   usr_proc.o
+       852         38          0          8          0       2097   wall_clock.o
 
     ----------------------------------------------------------------------
-      8516       1112        316         96       1144      85572   Object Totals
+      9028       1138        316         92       1232      84028   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          4          0          0          2          0          0   (incl. Padding)
 
@@ -810,8 +814,8 @@ Image component sizes
          2          0          0          0          0         68   use_no_semi.o
 
     ----------------------------------------------------------------------
-       376         16          0          0         96        656   Library Totals
-        10          0          0          0          0          0   (incl. Padding)
+       376         16          0          0        100        656   Library Totals
+        10          0          0          0          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -820,7 +824,7 @@ Image component sizes
        366         16          0          0         96        656   c_w.l
 
     ----------------------------------------------------------------------
-       376         16          0          0         96        656   Library Totals
+       376         16          0          0        100        656   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -829,15 +833,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      8892       1128        316         96       1240      84512   Grand Totals
-      8892       1128        316         96       1240      84512   ELF Image Totals
-      8892       1128        316         96          0          0   ROM Totals
+      9404       1154        316         92       1332      82968   Grand Totals
+      9404       1154        316         92       1332      82968   ELF Image Totals
+      9404       1154        316         92          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 9208 (   8.99kB)
-    Total RW  Size (RW Data + ZI Data)              1336 (   1.30kB)
-    Total ROM Size (Code + RO Data + RW Data)       9304 (   9.09kB)
+    Total RO  Size (Code + RO Data)                 9720 (   9.49kB)
+    Total RW  Size (RW Data + ZI Data)              1424 (   1.39kB)
+    Total ROM Size (Code + RO Data + RW Data)       9812 (   9.58kB)
 
 ==============================================================================
 

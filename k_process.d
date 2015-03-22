@@ -16,4 +16,4 @@ k_process.o: uart.h
 k_process.o: uart_def.h
 k_process.o: sys_procs.h
 k_process.o: wall_clock.h
-k_process.o: set_priority_process.h
+k_process.o: set_priority_proc.h

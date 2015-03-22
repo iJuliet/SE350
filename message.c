@@ -61,7 +61,6 @@ void* msg_dequeue(PCB* pcb, int* sender_pid){
 int k_send_message(int process_id, void *env){
 	int status;
 	msgbuf* message_envelope;
-	PCB* timer;
 	PCB* receiving_proc = get_pcb_from_pid(process_id);
 	
 	
@@ -94,7 +93,6 @@ int k_send_message(int process_id, void *env){
 int k_send_message_no_preemp(int process_id, void *env){
 	int status;
 	msgbuf* message_envelope;
-	PCB* timer;
 	PCB* receiving_proc = get_pcb_from_pid(process_id);
 	
 	__disable_irq();

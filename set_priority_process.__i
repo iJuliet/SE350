@@ -1,5 +1,0 @@
--c --cpu Cortex-M3 -g -O0 --apcs=interwork 
--I C:\Software\Keil\ARM\RV31\INC 
--I C:\Software\Keil\ARM\CMSIS\Include 
--I C:\Software\Keil\ARM\Inc\NXP\LPC17xx 
--o "set_priority_process.o" --omf_browse "set_priority_process.crf" --depend "set_priority_process.d" "set_priority_process.c"

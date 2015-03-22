@@ -2,4 +2,4 @@
 -I C:\Software\Keil\ARM\RV31\INC 
 -I C:\Software\Keil\ARM\CMSIS\Include 
 -I C:\Software\Keil\ARM\Inc\NXP\LPC17xx 
--o "uart_irq.o" --omf_browse "uart_irq.crf" --depend "uart_irq.d" "uart_irq.c"
+-o "set_priority_proc.o" --omf_browse "set_priority_proc.crf" --depend "set_priority_proc.d" "set_priority_proc.c"

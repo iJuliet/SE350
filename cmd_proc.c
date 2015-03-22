@@ -9,14 +9,14 @@ void print_rpq_process() {
 	int i, pid;
 	PCB** ready_queue = get_rpq();
 	uart1_put_string("Ready queue processes: \n\r");
-	for (i = 0; i < NUM_TEST_PROCS; i++) {
+	for (i = 0; i < TOTAL_PROCS; i++) {
 		if (ready_queue[i]->m_pid == NULL_PROC_ID) {
 			return;
 		}
-		printf("Process %d: priority = %d \n\r", ready_queue[i]->m_pid, ready_queue[i]->m_priority);
+		//printf("Process %d: priority = %d \n\r", ready_queue[i]->m_pid, ready_queue[i]->m_priority);
 		uart1_put_string("Process ");
 		pid = ready_queue[i]->m_pid;
-		if(pid >10){
+		if(pid >= 10){
 			uart1_put_char('0'+pid/10);
 		}
 		uart1_put_char('0'+pid%10);
@@ -30,7 +30,7 @@ void print_blk_on_mem_process() {
 	int i, pid;
 	PCB** blocked_queue = get_bq();
 	uart1_put_string("Processes blocked on memory: \n\r");
-	for (i = 0; i < NUM_TEST_PROCS; i++) {
+	for (i = 0; i < TOTAL_PROCS; i++) {
 		if (blocked_queue[i] == NULL) {
 			return;
 		}
@@ -38,7 +38,7 @@ void print_blk_on_mem_process() {
 			//printf("Process %d: priority = %d \n\r", blocked_queue[i]->m_pid, blocked_queue[i]->m_priority);
 			uart1_put_string("Process ");
 			pid = blocked_queue[i]->m_pid;
-			if(pid >10){
+			if(pid >= 10){
 				uart1_put_char('0'+pid/10);
 			}
 			uart1_put_char('0'+pid%10);
@@ -53,7 +53,7 @@ void print_blk_on_msg_process() {
 	int i, pid;
 	PCB** blocked_queue = get_bq();
 	uart1_put_string("Processes blocked on receive: \n\r");
-	for (i = 0; i < NUM_TEST_PROCS; i++) {
+	for (i = 0; i < TOTAL_PROCS; i++) {
 		if (blocked_queue[i] == NULL) {
 			return;
 		}
@@ -61,7 +61,7 @@ void print_blk_on_msg_process() {
 			//printf("Process %d: priority = %d \n\r", blocked_queue[i]->m_pid, blocked_queue[i]->m_priority);
 			uart1_put_string("Process ");
 			pid = blocked_queue[i]->m_pid;
-			if(pid >10){
+			if(pid >= 10){
 				uart1_put_char('0'+pid/10);
 			}
 			uart1_put_char('0'+pid%10);

@@ -3,12 +3,19 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\xcliu\Downloads\SE.350.W15-G013_xcliu_SE350_p2_hardfixed\SE350\se350.uvproj
+N:\SE350\se350.uvproj
 Project File Date:  03/19/2015
 
 <h2>Output:</h2>
 Build target 'SE350'
+linking...
+se350.axf: Error: L6218E: Undefined symbol set_priority_process (referred from k_process.o).
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
 compiling uart_polling.c...
+compiling HAL.c...
 compiling k_rtx_init.c...
 uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
 compiling main_svc.c...
@@ -43,20 +50,24 @@ compiling sys_procs.c...
 sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
 uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
 linking...
-Program Size: Code=8396 RO-data=316 RW-data=96 ZI-data=1216  
-"se350.axf" - 0 Error(s), 20 Warning(s).
-Build target 'SE350'
-compiling k_process.c...
-uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
-sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
-wall_clock.h(17): warning:  #1-D: last line of file ends without a newline
-compiling set_priority_process.c...
-linking...
-Program Size: Code=8396 RO-data=316 RW-data=96 ZI-data=1216  
-"se350.axf" - 0 Error(s), 3 Warning(s).
-Build target 'SE350'
+se350.axf: Error: L6218E: Undefined symbol set_priority_process (referred from k_process.o).
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
 compiling k_rtx_init.c...
 uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+wall_clock.h(17): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(132): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(185): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(173): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(201): warning:  #177-D: variable "ret_val" was declared but never referenced
 compiling k_memory.c...
 compiling k_process.c...
 uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
@@ -70,73 +81,1502 @@ compiling message.c...
 message.c(64): warning:  #177-D: variable "timer" was declared but never referenced
 message.c(97): warning:  #177-D: variable "timer" was declared but never referenced
 compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+wall_clock.h(17): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(186): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(15): warning:  #177-D: variable "next_second_message" was declared but never referenced
 compiling sys_procs.c...
 sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
 uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
 compiling set_priority_process.c...
 linking...
-Program Size: Code=8836 RO-data=316 RW-data=96 ZI-data=1240  
-"se350.axf" - 0 Error(s), 10 Warning(s).
-Build target 'SE350'
-linking...
-Program Size: Code=8836 RO-data=316 RW-data=96 ZI-data=1240  
-"se350.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\xcliu\\Downloads\\SE.350.W15-G013_xcliu_SE350_p2_hardfixed\\SE350\\se350.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'SE350'
-compiling k_process.c...
-uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
-sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
-wall_clock.h(17): warning:  #1-D: last line of file ends without a newline
-linking...
-Program Size: Code=8844 RO-data=316 RW-data=96 ZI-data=1240  
-"se350.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\xcliu\\Downloads\\SE.350.W15-G013_xcliu_SE350_p2_hardfixed\\SE350\\se350.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'SE350'
-compiling set_priority_process.c...
-linking...
-Program Size: Code=8856 RO-data=316 RW-data=96 ZI-data=1240  
-"se350.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\xcliu\\Downloads\\SE.350.W15-G013_xcliu_SE350_p2_hardfixed\\SE350\\se350.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'SE350'
-compiling set_priority_process.c...
-linking...
-Program Size: Code=8856 RO-data=316 RW-data=96 ZI-data=1240  
-"se350.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\xcliu\\Downloads\\SE.350.W15-G013_xcliu_SE350_p2_hardfixed\\SE350\\se350.AXF" 
-Erase Done.
-Programming Done.
-Verify OK.
-Build target 'SE350'
-compiling set_priority_process.c...
-linking...
-Program Size: Code=8852 RO-data=316 RW-data=96 ZI-data=1240  
-"se350.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SE350'
-compiling set_priority_process.c...
-linking...
-Program Size: Code=8844 RO-data=316 RW-data=96 ZI-data=1240  
-"se350.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\xcliu\\Downloads\\SE.350.W15-G013_xcliu_SE350_p2_hardfixed\\SE350\\se350.AXF" 
-Erase Failed!
-Load "C:\\Users\\xcliu\\Downloads\\SE.350.W15-G013_xcliu_SE350_p2_hardfixed\\SE350\\se350.AXF" 
+Program Size: Code=8892 RO-data=316 RW-data=96 ZI-data=1240  
+"se350.axf" - 0 Error(s), 20 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
 Erase Done.
 Programming Done.
 Verify OK.
 Build target 'SE350'
 compiling cmd_proc.c...
 linking...
-Program Size: Code=8892 RO-data=316 RW-data=96 ZI-data=1240  
+Program Size: Code=8844 RO-data=316 RW-data=96 ZI-data=1240  
 "se350.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\xcliu\\Downloads\\SE.350.W15-G013_xcliu_SE350_p2_hardfixed\\SE350\\se350.AXF" 
+Load "N:\\SE350\\se350.AXF" 
 Erase Done.
 Programming Done.
 Verify OK.
+Build target 'SE350'
+linking...
+Program Size: Code=8844 RO-data=316 RW-data=96 ZI-data=1240  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+wall_clock.h(17): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(132): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(185): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(173): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(173): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(201): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+wall_clock.h(17): warning:  #1-D: last line of file ends without a newline
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(267): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(64): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(97): warning:  #177-D: variable "timer" was declared but never referenced
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+wall_clock.h(17): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(186): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(15): warning:  #177-D: variable "next_second_message" was declared but never referenced
+compiling sys_procs.c...
+sys_procs.h(12): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+compiling set_priority_process.c...
+linking...
+Program Size: Code=8848 RO-data=316 RW-data=96 ZI-data=1240  
+"se350.axf" - 0 Error(s), 20 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(46): error:  #20: identifier "NUM_USER_PROCS" is undefined
+usr_proc.c(139): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(192): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(180): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(180): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(208): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+k_memory.c(142): error:  #20: identifier "UART_I_PROCESS" is undefined
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+k_process.c(96): error:  #20: identifier "NULL_PROCESS" is undefined
+k_process.c(113): error:  #20: identifier "TIMER_I_PROCESS" is undefined
+k_process.c(119): error:  #20: identifier "UART_I_PROCESS" is undefined
+k_process.c(148): error:  #20: identifier "KCD_PROCESS" is undefined
+k_process.c(149): error:  #20: identifier "CRT_PROCESS" is undefined
+k_process.c(416): error:  #20: identifier "TIMER_I_PROCESS" is undefined
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(187): error:  #20: identifier "UART_I_PROCESS" is undefined
+uart_irq.c(232): error:  #20: identifier "KCD_PROC_ID" is undefined
+uart_irq.c(267): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(64): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(97): warning:  #177-D: variable "timer" was declared but never referenced
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(184): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(13): warning:  #177-D: variable "next_second_message" was declared but never referenced
+compiling sys_procs.c...
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+compiling set_priority_proc.c...
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(46): error:  #20: identifier "NUM_USER_PROCS" is undefined
+usr_proc.c(139): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(192): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(180): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(180): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(208): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+k_memory.c(142): error:  #20: identifier "UART_I_PROCESS" is undefined
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+k_process.c(113): error:  #20: identifier "TIMER_I_PROC_ID" is undefined
+k_process.c(119): error:  #20: identifier "UART_I_PROC_ID" is undefined
+k_process.c(416): error:  #20: identifier "TIMER_I_PROCESS" is undefined
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(187): error:  #20: identifier "UART_I_PROCESS" is undefined
+uart_irq.c(232): error:  #20: identifier "KCD_PROC_ID" is undefined
+uart_irq.c(267): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(64): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(97): warning:  #177-D: variable "timer" was declared but never referenced
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(184): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(13): warning:  #177-D: variable "next_second_message" was declared but never referenced
+compiling sys_procs.c...
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+compiling set_priority_proc.c...
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(46): error:  #20: identifier "NUM_USER_PROCS" is undefined
+usr_proc.c(139): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(192): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(180): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(180): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(208): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+k_memory.c(142): error:  #20: identifier "UART_I_PROCESS" is undefined
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+k_process.c(113): error:  #20: identifier "TIMER_I_PROC_ID" is undefined
+k_process.c(119): error:  #20: identifier "UART_I_PROC_ID" is undefined
+k_process.c(416): error:  #20: identifier "TIMER_I_PROCESS" is undefined
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+uart_irq.c(188): error:  #20: identifier "UART_I_PROCESS" is undefined
+uart_irq.c(268): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(46): error:  #20: identifier "NUM_USER_PROCS" is undefined
+usr_proc.c(139): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(192): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(180): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(180): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(208): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+k_memory.c(142): error:  #20: identifier "UART_I_PROCESS" is undefined
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+k_process.c(113): error:  #20: identifier "TIMER_I_PROC_ID" is undefined
+k_process.c(119): error:  #20: identifier "UART_I_PROC_ID" is undefined
+k_process.c(416): error:  #20: identifier "TIMER_I_PROCESS" is undefined
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+uart_irq.c(188): error:  #20: identifier "UART_I_PROC_ID" is undefined
+uart_irq.c(226): error:  #20: identifier "UART_I_PROCESS" is undefined
+uart_irq.c(258): error:  #20: identifier "UART_I_PROCESS" is undefined
+uart_irq.c(268): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+uart_irq.c(283): error:  #20: identifier "UART_I_PROCESS" is undefined
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(46): error:  #20: identifier "NUM_USER_PROCS" is undefined
+usr_proc.c(139): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(192): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(180): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(180): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(208): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+k_memory.c(142): error:  #20: identifier "UART_I_PROCESS" is undefined
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+k_process.c(113): error:  #20: identifier "TIMER_I_PROC_ID" is undefined
+k_process.c(119): error:  #20: identifier "UART_I_PROC_ID" is undefined
+k_process.c(416): error:  #20: identifier "TIMER_I_PROCESS" is undefined
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+uart_irq.c(226): error:  #20: identifier "UART_I_PROCESS" is undefined
+uart_irq.c(258): error:  #20: identifier "UART_I_PROCESS" is undefined
+uart_irq.c(268): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+uart_irq.c(283): error:  #20: identifier "UART_I_PROCESS" is undefined
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(46): error:  #20: identifier "NUM_USER_PROCS" is undefined
+usr_proc.c(139): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(192): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(180): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(180): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(208): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+k_memory.c(142): error:  #20: identifier "UART_I_PROCESS" is undefined
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+k_process.c(113): error:  #20: identifier "TIMER_I_PROC_ID" is undefined
+k_process.c(119): error:  #20: identifier "UART_I_PROC_ID" is undefined
+k_process.c(416): error:  #20: identifier "TIMER_I_PROCESS" is undefined
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+uart_irq.c(226): error:  #20: identifier "UART_I_PROCESS" is undefined
+uart_irq.c(258): error:  #20: identifier "UART_I_PROCESS" is undefined
+uart_irq.c(268): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+uart_irq.c(283): error:  #20: identifier "UART_I_PROCESS" is undefined
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(46): error:  #20: identifier "NUM_USER_PROCS" is undefined
+usr_proc.c(139): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(192): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(180): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(180): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(208): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+k_memory.c(142): error:  #20: identifier "UART_I_PROCESS" is undefined
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+k_process.c(113): error:  #20: identifier "TIMER_I_PROC_ID" is undefined
+k_process.c(119): error:  #20: identifier "UART_I_PROC_ID" is undefined
+k_process.c(416): error:  #20: identifier "TIMER_I_PROCESS" is undefined
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+uart_irq.c(268): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(46): error:  #20: identifier "NUM_USER_PROCS" is undefined
+usr_proc.c(139): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(192): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(180): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(180): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(208): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+k_memory.c(142): error:  #20: identifier "UART_I_PROCESS" is undefined
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+k_process.c(113): error:  #20: identifier "TIMER_I_PROC_ID" is undefined
+k_process.c(416): error:  #20: identifier "TIMER_I_PROCESS" is undefined
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(46): error:  #20: identifier "NUM_USER_PROCS" is undefined
+usr_proc.c(139): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(192): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(180): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(180): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(208): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+k_memory.c(142): error:  #20: identifier "UART_I_PROCESS" is undefined
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+k_process.c(416): error:  #20: identifier "TIMER_I_PROCESS" is undefined
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(46): error:  #20: identifier "NUM_USER_PROCS" is undefined
+usr_proc.c(139): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(192): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(180): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(180): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(208): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+k_memory.c(142): error:  #20: identifier "UART_I_PROCESS" is undefined
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+Target not created
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(73): warning:  #175-D: subscript out of range
+usr_proc.c(74): warning:  #175-D: subscript out of range
+usr_proc.c(139): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(192): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(180): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(180): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(208): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+uart_irq.c(268): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(64): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(97): warning:  #177-D: variable "timer" was declared but never referenced
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(184): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(13): warning:  #177-D: variable "next_second_message" was declared but never referenced
+compiling sys_procs.c...
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+compiling set_priority_proc.c...
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=8788 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 25 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+wall_clock.h(15): warning:  #1-D: last line of file ends without a newline
+usr_proc.c(139): warning:  #177-D: variable "temp" was declared but never referenced
+usr_proc.c(192): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(180): warning:  #177-D: variable "i" was declared but never referenced
+usr_proc.c(180): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(208): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=8788 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 6 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(190): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(206): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+compiling wall_clock.c...
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(184): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(13): warning:  #177-D: variable "next_second_message" was declared but never referenced
+linking...
+Program Size: Code=8788 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 7 Warning(s).
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(190): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(206): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+uart_irq.c(268): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(64): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(97): warning:  #177-D: variable "timer" was declared but never referenced
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(184): warning:  #1-D: last line of file ends without a newline
+wall_clock.c(13): warning:  #177-D: variable "next_second_message" was declared but never referenced
+compiling sys_procs.c...
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+compiling set_priority_proc.c...
+sys_procs.h(14): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=8788 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 17 Warning(s).
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(190): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(206): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(268): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+message.c(64): warning:  #177-D: variable "timer" was declared but never referenced
+message.c(97): warning:  #177-D: variable "timer" was declared but never referenced
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+wall_clock.c(13): warning:  #177-D: variable "next_second_message" was declared but never referenced
+compiling sys_procs.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+compiling set_priority_proc.c...
+linking...
+Program Size: Code=8788 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 11 Warning(s).
+Rebuild target 'SE350'
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling uart_polling.c...
+compiling HAL.c...
+compiling k_rtx_init.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling main_svc.c...
+compiling printf.c...
+compiling usr_proc.c...
+usr_proc.c(190): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(206): warning:  #177-D: variable "ret_val" was declared but never referenced
+compiling k_memory.c...
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+compiling timer.c...
+compiling uart_irq.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+uart_irq.c(268): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+compiling message.c...
+compiling cmd_proc.c...
+compiling string.c...
+string.c(10): warning:  #1293-D: assignment in condition
+compiling wall_clock.c...
+compiling sys_procs.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+compiling set_priority_proc.c...
+linking...
+Program Size: Code=8788 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 8 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+linking...
+Program Size: Code=8796 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling sys_procs.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+linking...
+Program Size: Code=8796 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(191): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(207): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=8808 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(195): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(211): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=8860 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=8852 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+linking...
+Program Size: Code=8852 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=8848 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling k_process.c...
+uart_def.h(36): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 30 of "uart_polling.h")
+linking...
+Program Size: Code=8848 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+linking...
+Program Size: Code=8848 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling set_priority_proc.c...
+linking...
+Program Size: Code=8852 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling set_priority_proc.c...
+linking...
+Program Size: Code=8852 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling set_priority_proc.c...
+set_priority_proc.c(36): error:  #20: identifier "mtext" is undefined
+Target not created
+Build target 'SE350'
+compiling set_priority_proc.c...
+linking...
+Program Size: Code=8860 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+compiling sys_procs.c...
+uart_polling.h(30): warning:  #47-D: incompatible redefinition of macro "BIT" (declared at line 36 of "uart_def.h")
+sys_procs.c - 0 Error(s), 1 Warning(s).
+Build target 'SE350'
+linking...
+Program Size: Code=8860 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SE350'
+linking...
+Program Size: Code=8860 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling set_priority_proc.c...
+linking...
+Program Size: Code=8872 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling set_priority_proc.c...
+set_priority_proc.c(23): error:  #167: argument of type "MSGBUF *" is incompatible with parameter of type "unsigned char *"
+Target not created
+Build target 'SE350'
+compiling set_priority_proc.c...
+set_priority_proc.c(23): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+linking...
+Program Size: Code=8868 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 1 Warning(s).
+Build target 'SE350'
+compiling set_priority_proc.c...
+set_priority_proc.c(23): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+set_priority_proc.c(17): warning:  #550-D: variable "pid" was set but never used
+set_priority_proc.c(17): warning:  #550-D: variable "new_priority" was set but never used
+set_priority_proc.c(17): warning:  #177-D: variable "index" was declared but never referenced
+set_priority_proc.c(18): warning:  #177-D: variable "digit" was declared but never referenced
+linking...
+Program Size: Code=8524 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 5 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling set_priority_proc.c...
+linking...
+Program Size: Code=8884 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling set_priority_proc.c...
+linking...
+Program Size: Code=8884 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling set_priority_proc.c...
+linking...
+Program Size: Code=8884 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling set_priority_proc.c...
+linking...
+Program Size: Code=8884 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SE350'
+compiling set_priority_proc.c...
+linking...
+Program Size: Code=8884 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling set_priority_proc.c...
+linking...
+Program Size: Code=8872 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling set_priority_proc.c...
+linking...
+Program Size: Code=8860 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling set_priority_proc.c...
+linking...
+Program Size: Code=8944 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(194): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(210): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=8944 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(43): error:  #20: identifier "MAX_MSG_SIZE" is undefined
+usr_proc.c(198): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(214): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(259): warning:  #223-D: function "release_memory" declared implicitly
+usr_proc.c(259): warning:  #223-D: function "block" declared implicitly
+usr_proc.c(259): error:  #18: expected a ")"
+usr_proc.c(310): warning:  #223-D: function "dequeue" declared implicitly
+usr_proc.c(315): error:  #20: identifier "digit" is undefined
+usr_proc.c(323): warning:  #223-D: function "strncpy" declared implicitly
+usr_proc.c(335): warning:  #223-D: function "enqueue" declared implicitly
+usr_proc.c(347): error:  #159: declaration is incompatible with previous "dequeue" (declared at line 310)
+usr_proc.c(361): error:  #159: declaration is incompatible with previous "enqueue" (declared at line 335)
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.h(27): error:  #20: identifier "MAX_MSG_SIZE" is undefined
+usr_proc.h(43): error:  #130: expected a "{"
+usr_proc.c(48): warning:  #12-D: parsing restarts here after previous syntax error
+usr_proc.c(50): error:  #20: identifier "test_num" is undefined
+usr_proc.c(51): error:  #20: identifier "ok_tests" is undefined
+usr_proc.c(54): error:  #20: identifier "g_test_procs" is undefined
+usr_proc.c(59): error:  #20: identifier "g_test_procs" is undefined
+usr_proc.c(72): error:  #20: identifier "set_priority_process" is undefined
+usr_proc.c(75): error:  #20: identifier "wc_process" is undefined
+usr_proc.c(82): warning:  #940-D: missing return statement at end of non-void function "dequeue"
+usr_proc.c(107): error:  #20: identifier "ok_tests" is undefined
+usr_proc.c(108): error:  #20: identifier "test_num" is undefined
+usr_proc.c(112): error:  #20: identifier "ok_tests" is undefined
+usr_proc.c(113): error:  #20: identifier "test_num" is undefined
+usr_proc.c(117): error:  #20: identifier "ok_tests" is undefined
+usr_proc.c(118): error:  #20: identifier "test_num" is undefined
+usr_proc.c(122): error:  #20: identifier "ok_tests" is undefined
+usr_proc.c(123): error:  #20: identifier "test_num" is undefined
+usr_proc.c(147): error:  #20: identifier "test_num" is undefined
+usr_proc.c(150): error:  #20: identifier "ok_tests" is undefined
+usr_proc.c(194): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(197): error:  #20: identifier "ok_tests" is undefined
+usr_proc.c(210): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(255): warning:  #223-D: function "release_memory" declared implicitly
+usr_proc.c(255): warning:  #223-D: function "block" declared implicitly
+usr_proc.c(255): error:  #18: expected a ")"
+usr_proc.c(311): error:  #20: identifier "digit" is undefined
+usr_proc.c(319): warning:  #223-D: function "strncpy" declared implicitly
+usr_proc.c(331): warning:  #223-D: function "enqueue" declared implicitly
+usr_proc.c(343): error:  #247: function "dequeue" has already been defined
+usr_proc.c(357): error:  #159: declaration is incompatible with previous "enqueue" (declared at line 331)
+usr_proc.c(372): error:  #20: identifier "ok_tests" is undefined
+usr_proc.c(374): error:  #20: identifier "test_num" is undefined
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.h(29): error:  #20: identifier "MAX_MSG_SIZE" is undefined
+usr_proc.h(45): error:  #130: expected a "{"
+usr_proc.c(47): warning:  #12-D: parsing restarts here after previous syntax error
+usr_proc.c(49): error:  #20: identifier "test_num" is undefined
+usr_proc.c(50): error:  #20: identifier "ok_tests" is undefined
+usr_proc.c(53): error:  #20: identifier "g_test_procs" is undefined
+usr_proc.c(58): error:  #20: identifier "g_test_procs" is undefined
+usr_proc.c(71): error:  #20: identifier "set_priority_process" is undefined
+usr_proc.c(74): error:  #20: identifier "wc_process" is undefined
+usr_proc.c(81): warning:  #940-D: missing return statement at end of non-void function "dequeue"
+usr_proc.c(106): error:  #20: identifier "ok_tests" is undefined
+usr_proc.c(107): error:  #20: identifier "test_num" is undefined
+usr_proc.c(111): error:  #20: identifier "ok_tests" is undefined
+usr_proc.c(112): error:  #20: identifier "test_num" is undefined
+usr_proc.c(116): error:  #20: identifier "ok_tests" is undefined
+usr_proc.c(117): error:  #20: identifier "test_num" is undefined
+usr_proc.c(121): error:  #20: identifier "ok_tests" is undefined
+usr_proc.c(122): error:  #20: identifier "test_num" is undefined
+usr_proc.c(146): error:  #20: identifier "test_num" is undefined
+usr_proc.c(149): error:  #20: identifier "ok_tests" is undefined
+usr_proc.c(193): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(196): error:  #20: identifier "ok_tests" is undefined
+usr_proc.c(209): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(254): warning:  #223-D: function "release_memory" declared implicitly
+usr_proc.c(254): warning:  #223-D: function "block" declared implicitly
+usr_proc.c(254): error:  #18: expected a ")"
+usr_proc.c(310): error:  #20: identifier "digit" is undefined
+usr_proc.c(318): warning:  #223-D: function "strncpy" declared implicitly
+usr_proc.c(330): warning:  #223-D: function "enqueue" declared implicitly
+usr_proc.c(342): error:  #247: function "dequeue" has already been defined
+usr_proc.c(356): error:  #159: declaration is incompatible with previous "enqueue" (declared at line 330)
+usr_proc.c(371): error:  #20: identifier "ok_tests" is undefined
+usr_proc.c(373): error:  #20: identifier "test_num" is undefined
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(193): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(209): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(254): warning:  #223-D: function "release_memory" declared implicitly
+usr_proc.c(254): warning:  #223-D: function "block" declared implicitly
+usr_proc.c(254): error:  #18: expected a ")"
+usr_proc.c(310): error:  #20: identifier "digit" is undefined
+usr_proc.c(318): warning:  #223-D: function "strncpy" declared implicitly
+usr_proc.c(330): error:  #167: argument of type "MSGBUF *" is incompatible with parameter of type "MSG_QUEUE_NODE *"
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(193): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(209): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(254): warning:  #223-D: function "release_memory" declared implicitly
+usr_proc.c(254): warning:  #223-D: function "block" declared implicitly
+usr_proc.c(254): error:  #18: expected a ")"
+usr_proc.c(310): error:  #20: identifier "digit" is undefined
+usr_proc.c(318): warning:  #223-D: function "strncpy" declared implicitly
+usr_proc.c(330): error:  #167: argument of type "MSGBUF *" is incompatible with parameter of type "MSG_QUEUE_NODE *"
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(193): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(209): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(310): error:  #20: identifier "digit" is undefined
+usr_proc.c(318): warning:  #223-D: function "strncpy" declared implicitly
+usr_proc.c(330): error:  #167: argument of type "MSGBUF *" is incompatible with parameter of type "MSG_QUEUE_NODE *"
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(193): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(209): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(318): warning:  #223-D: function "strncpy" declared implicitly
+usr_proc.c(330): error:  #167: argument of type "MSGBUF *" is incompatible with parameter of type "MSG_QUEUE_NODE *"
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(193): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(209): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(318): warning:  #223-D: function "strncpy" declared implicitly
+usr_proc.c(325): error:  #513: a value of type "MSG_QUEUE_NODE *" cannot be assigned to an entity of type "MSGBUF *"
+usr_proc.c(330): error:  #167: argument of type "MSGBUF *" is incompatible with parameter of type "MSG_QUEUE_NODE *"
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(193): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(209): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(318): warning:  #223-D: function "strncpy" declared implicitly
+linking...
+Program Size: Code=9404 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(193): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(209): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(318): warning:  #223-D: function "strncpy" declared implicitly
+usr_proc.c(324): error:  #54-D: too few arguments in invocation of macro "delayed_send"
+usr_proc.c(324): error:  #29: expected an expression
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(193): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(209): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(318): warning:  #223-D: function "strncpy" declared implicitly
+linking...
+Program Size: Code=9412 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=9416 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=9412 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=9460 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=9460 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(284): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+linking...
+Program Size: Code=9456 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=9456 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=9460 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(284): error:  #167: argument of type "char" is incompatible with parameter of type "unsigned char *"
+Target not created
+Load "N:\\SE350\\se350.AXF" 
+_____^
+*** error 56: cannot open file
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(284): error:  #167: argument of type "char" is incompatible with parameter of type "unsigned char *"
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(284): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+linking...
+Program Size: Code=9472 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(284): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+linking...
+Program Size: Code=9476 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+linking...
+Program Size: Code=9468 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 2 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(284): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+linking...
+Program Size: Code=9464 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(284): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+linking...
+Program Size: Code=9476 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(284): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+linking...
+Program Size: Code=9484 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(286): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(266): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9468 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 4 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(266): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9456 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(266): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9456 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(266): error:  #268: declaration may not appear after executable statement in block
+usr_proc.c(266): warning:  #550-D: variable "index" was set but never used
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9456 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9460 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9460 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9544 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9536 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9516 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9536 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9560 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9556 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9552 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9516 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+usr_proc.c(332): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+linking...
+Program Size: Code=9504 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 4 Warning(s).
+Build target 'SE350'
+linking...
+Program Size: Code=9504 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+usr_proc.c(332): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+linking...
+Program Size: Code=9516 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 4 Warning(s).
+Build target 'SE350'
+linking...
+Program Size: Code=9516 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+usr_proc.c(332): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+linking...
+Program Size: Code=9536 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 4 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+usr_proc.c(321): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(323): error:  #268: declaration may not appear after executable statement in block
+usr_proc.c(324): error:  #268: declaration may not appear after executable statement in block
+Target not created
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+usr_proc.c(324): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+linking...
+Program Size: Code=9536 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 4 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9504 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9404 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+linking...
+Program Size: Code=9420 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling usr_proc.c...
+usr_proc.c(196): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+usr_proc.c(212): warning:  #177-D: variable "ret_val" was declared but never referenced
+usr_proc.c(265): warning:  #550-D: variable "index" was set but never used
+compiling wall_clock.c...
+linking...
+Program Size: Code=9412 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 3 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling wall_clock.c...
+linking...
+Program Size: Code=9412 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SE350'
+compiling wall_clock.c...
+linking...
+Program Size: Code=9376 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling wall_clock.c...
+linking...
+Program Size: Code=9376 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling wall_clock.c...
+linking...
+Program Size: Code=9392 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling wall_clock.c...
+linking...
+Program Size: Code=9432 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling wall_clock.c...
+wall_clock.c(108): error:  #20: identifier "messge" is undefined
+Target not created
+Build target 'SE350'
+compiling wall_clock.c...
+wall_clock.c(108): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+linking...
+Program Size: Code=9424 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling wall_clock.c...
+wall_clock.c(107): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+wall_clock.c(109): error:  #20: identifier "buf" is undefined
+Target not created
+Build target 'SE350'
+compiling wall_clock.c...
+wall_clock.c(107): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "unsigned char *"
+linking...
+Program Size: Code=9412 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 1 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+linking...
+Program Size: Code=9412 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).
+Load "N:\\SE350\\se350.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'SE350'
+compiling wall_clock.c...
+linking...
+Program Size: Code=9404 RO-data=316 RW-data=92 ZI-data=1332  
+"se350.axf" - 0 Error(s), 0 Warning(s).

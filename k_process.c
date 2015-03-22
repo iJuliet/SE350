@@ -24,7 +24,7 @@
 #include "uart.h"
 #include "sys_procs.h"
 #include "wall_clock.h"
-#include "set_priority_process.h"
+#include "set_priority_proc.h"
 
 #ifdef DEBUG_0
 #include "printf.h"
@@ -39,19 +39,13 @@ PCB *gp_current_process = NULL; /* always point to the current RUN process */
 
 /* process initialization table */
 PROC_INIT g_proc_table[TOTAL_PROCS];
-extern PROC_INIT g_test_procs[NUM_TEST_PROCS];
+extern PROC_INIT g_test_procs[NUM_USER_PROCS];
 
 //queues
 PCB* ready_queue[TOTAL_PROCS];
 PCB* blocked_queue[TOTAL_PROCS];
 
 int current_time;
-
-char input[MAX_MSG_SIZE];
-int input_char_counter;
-
-
-
 
 /*typedef struct _queue_node{
 	struct _queue_node* next;
@@ -63,9 +57,6 @@ typedef struct _queue{
 	queue_node *last;
 } queue;
 */
-
-
-
 
 msgbuf* timeout_queue;
 /*	
@@ -98,46 +89,37 @@ void process_init()
 	int i;
 	U32 *sp;
   
-        /* fill out the initialization table */
+  /* fill out the initialization table */
 	set_test_procs();
-	for ( i = 0; i < NUM_TEST_PROCS; i++ ) {
-		g_proc_table[i].m_pid = g_test_procs[i].m_pid;
-		g_proc_table[i].m_stack_size = g_test_procs[i].m_stack_size;
-		g_proc_table[i].mpf_start_pc = g_test_procs[i].mpf_start_pc;
-		g_proc_table[i].m_priority = g_test_procs[i].m_priority;
+	
+	//set up null_process
+	g_proc_table[NULL_PROC_ID].m_pid = NULL_PROC_ID;
+	g_proc_table[NULL_PROC_ID].mpf_start_pc = &null_process;
+	g_proc_table[NULL_PROC_ID].m_stack_size = 0;
+	g_proc_table[NULL_PROC_ID].m_priority = 5;
+	
+	//set up user processes
+	for ( i = 1; i < NUM_USER_PROCS+1; i++ ) {
+		g_proc_table[i].m_pid = g_test_procs[i-1].m_pid;
+		g_proc_table[i].m_stack_size = g_test_procs[i-1].m_stack_size;
+		g_proc_table[i].mpf_start_pc = g_test_procs[i-1].mpf_start_pc;
+		g_proc_table[i].m_priority = g_test_procs[i-1].m_priority;
 	}
 	
-	//wall clock
-	g_proc_table[WALL_CLOCK_PROCESS].m_pid = WALL_CLOCK_PROC_ID;
-	g_proc_table[WALL_CLOCK_PROCESS].mpf_start_pc = &wc_process;
-	g_proc_table[WALL_CLOCK_PROCESS].m_stack_size = 0x100;
-	g_proc_table[WALL_CLOCK_PROCESS].m_priority = 1;
-	
-	//set up for null_process
-	g_proc_table[NULL_PROCESS].m_pid = NULL_PROC_ID;
-	g_proc_table[NULL_PROCESS].mpf_start_pc = &null_process;
-	g_proc_table[NULL_PROCESS].m_stack_size = 0;
-	g_proc_table[NULL_PROCESS].m_priority = 4;
-	
-	//set up for timer-i-process
-	g_proc_table[TIMER_I_PROCESS].m_pid = TIMER_PROC_ID;
-	g_proc_table[TIMER_I_PROCESS].mpf_start_pc = &timer_i_process;
-	g_proc_table[TIMER_I_PROCESS].m_stack_size = 0;
-	g_proc_table[TIMER_I_PROCESS].m_priority = -1; //does not matter, it is not in the ready queue
-	
-	//set up for uart-i-process
-	g_proc_table[UART_I_PROCESS].m_pid = UART_PROC_ID;
-	g_proc_table[UART_I_PROCESS].mpf_start_pc = NULL;
-	g_proc_table[UART_I_PROCESS].m_stack_size = 0;
-	g_proc_table[UART_I_PROCESS].m_priority = -1; //does not matter, it is not in the ready queue
-	
-	g_proc_table[SET_PRIORITY_PROC].m_pid = SET_PRIORITY_PROC_ID;
-	g_proc_table[SET_PRIORITY_PROC].mpf_start_pc = &set_priority_process;
-	g_proc_table[SET_PRIORITY_PROC].m_stack_size = 0x100;
-	g_proc_table[SET_PRIORITY_PROC].m_priority = 1;
-	
-	//set up for system processes
+	//set up kcd and crt process
 	set_up_sys_procs(g_proc_table);
+	
+	//set up timer-i-process
+	g_proc_table[TIMER_PROC_ID].m_pid = TIMER_PROC_ID;
+	g_proc_table[TIMER_PROC_ID].mpf_start_pc = &timer_i_process;
+	g_proc_table[TIMER_PROC_ID].m_stack_size = 0;
+	g_proc_table[TIMER_PROC_ID].m_priority = -1; //does not matter, it is not in the ready queue
+	
+	//set up uart-i-process
+	g_proc_table[UART_PROC_ID].m_pid = UART_PROC_ID;
+	g_proc_table[UART_PROC_ID].mpf_start_pc = NULL;
+	g_proc_table[UART_PROC_ID].m_stack_size = 0;
+	g_proc_table[UART_PROC_ID].m_priority = -1; //does not matter, it is not in the ready queue
   
 	/* initilize exception stack frame (i.e. initial context) for each process */
 	for ( i = 0; i < TOTAL_PROCS; i++ ) {
@@ -156,24 +138,18 @@ void process_init()
 		}
 		(gp_pcbs[i])->mp_sp = sp;
 	}
-	/*
-	//block KCD and CRT
-	gp_pcbs[KCD_PROCESS]->m_state = BLK_ON_MSG;
-	gp_pcbs[CRT_PROCESS]->m_state = BLK_ON_MSG;*/
+	
 	//organize priority queue
-	for( i = 0; i < NUM_TEST_PROCS; i++) {
+	
+	rpq_enqueue(gp_pcbs[NULL_PROC_ID]);
+	for( i = 1; i < NUM_USER_PROCS+1; i++) {
 		rpq_enqueue(gp_pcbs[i]);
 	}
-	rpq_enqueue(gp_pcbs[WALL_CLOCK_PROCESS]);
-	rpq_enqueue(gp_pcbs[KCD_PROCESS]);
-	rpq_enqueue(gp_pcbs[CRT_PROCESS]);
-	rpq_enqueue(gp_pcbs[NULL_PROCESS]);
-	rpq_enqueue(gp_pcbs[SET_PRIORITY_PROC]);
+	rpq_enqueue(gp_pcbs[KCD_PROC_ID]);
+	rpq_enqueue(gp_pcbs[CRT_PROC_ID]);
 	
 	//init current_time
 	current_time = 0;
-	//set input char counter
-	input_char_counter = 0;
 }
 
 /*@brief: scheduler, pick the pid of the next to run process
@@ -268,16 +244,16 @@ int k_release_processor(void)
 
 int k_set_process_priority(int process_id, int priority) {
 	int i,j;
-	int oldPriority = ready_queue[i]->m_priority;
+	int oldPriority = gp_pcbs[process_id]->m_priority;
 	PCB* tmp;
 	//set priority for specified process
-	for (i = 0; i < NUM_TEST_PROCS; i++ ) {
+	for (i = 0; i < NUM_USER_PROCS+1; i++ ) {
 		if (gp_pcbs[i]->m_pid == process_id) {
 			gp_pcbs[i]->m_priority = priority;
 		}
 	}
 	//reorder ready_queue
-	for( i = 0; i < NUM_TEST_PROCS+1; i++) {
+	for( i = 0; i < NUM_USER_PROCS+3; i++) {
 		if (ready_queue[i]->m_pid == process_id) {
 			if(oldPriority == priority){
 				return RTX_OK;
@@ -296,7 +272,7 @@ int k_set_process_priority(int process_id, int priority) {
 				//move backward
 				tmp = ready_queue[i];
 				j = i;
-				while(j < NUM_TEST_PROCS && ready_queue[j+1]->m_priority <= priority) {
+				while(j < NUM_USER_PROCS && ready_queue[j+1]->m_priority <= priority) {
 					ready_queue[j] = ready_queue[j+1];
 					j++;
 				}
@@ -310,7 +286,7 @@ int k_set_process_priority(int process_id, int priority) {
 
 int k_get_process_priority(int process_id) {
 	int i;
-	for (i = 0; i < NUM_TEST_PROCS; i++ ) {
+	for (i = 0; i < NUM_USER_PROCS+1; i++ ) {
 		if (gp_pcbs[i]->m_pid == process_id) {
 			return gp_pcbs[i]->m_priority;
 		}
@@ -437,7 +413,7 @@ PCB* get_pcb_from_pid(int process_id){
 
 void timer_i_process(){
 	int target_pid;
-	PCB* timer_pcb = gp_pcbs[TIMER_I_PROCESS];
+	PCB* timer_pcb = gp_pcbs[TIMER_PROC_ID];
 	timer_pcb ->m_state = RUN;
 
 	//increment current_time
@@ -451,29 +427,3 @@ void timer_i_process(){
 	
 	timer_pcb -> m_state = WAITING_FOR_INTERRUPT;
 }
-
-
-/*void uart_i_process(char c){
-		msgbuf* env;
-		int counter;
-		if(c != '\r'){
-			input[input_char_counter] = c;
-			input_char_counter++;
-		}else{
-			env = (msgbuf*)k_request_memory_block();
-			counter = 0;
-			env->mtype = DEFAULT;
-			while(input[counter] != '\0'){
-				env->mtext[counter] = input[counter];
-				input[counter] = '\0';
-				counter++;
-			}
-			//send to KCD process
-			k_send_message(KCD_PROC_ID,env);
-			
-			//clear input 
-			input_char_counter = 0;
-		}
-}*/
-
-

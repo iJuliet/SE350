@@ -28,21 +28,20 @@
  
  */
 
-#include "rtx.h"
 #include "uart_polling.h"
 #include "usr_proc.h"
 #include "wall_clock.h"
+#include "set_priority_proc.h"
+#include "string.h"
 
 #ifdef DEBUG_0
 #include "printf.h"
 #endif /* DEBUG_0 */
 
-#define DEFAULT 0
-#define KCD_REG 1
-#define KCD_PROC_ID 12
+
 
 /* initialization table item */
-PROC_INIT g_test_procs[NUM_TEST_PROCS];
+PROC_INIT g_test_procs[NUM_USER_PROCS];
 int test_num; // this indicates which test are we on
 int ok_tests;
 
@@ -51,7 +50,7 @@ void set_test_procs() {
 	test_num = 1;
 	ok_tests = 0;
 	//uart0_put_string("setting test procs");
-	for( i = 0; i < NUM_TEST_PROCS; i++ ) {
+	for( i = 0; i < NUM_USER_PROCS; i++ ) {
 		g_test_procs[i].m_pid=(U32)(i+1);
 		g_test_procs[i].m_priority=LOWEST;
 		g_test_procs[i].m_stack_size=0x100;
@@ -64,11 +63,24 @@ void set_test_procs() {
 	g_test_procs[4].mpf_start_pc = &proc5;
 	g_test_procs[5].mpf_start_pc = &proc6;
 	
+	//TODO: Process A, B and C
+	
+	g_test_procs[6].mpf_start_pc = &proc_a;
+	g_test_procs[6].m_priority = MEDIUM;
+	g_test_procs[7].mpf_start_pc = &proc_b;
+	g_test_procs[7].m_priority = HIGH;
+	g_test_procs[8].mpf_start_pc = &proc_c;
+	g_test_procs[8].m_priority = HIGH;
+	
+	g_test_procs[9].mpf_start_pc = &set_priority_process;
+	g_test_procs[9].m_priority = HIGH;
+	
+	g_test_procs[10].mpf_start_pc = &wc_process;
+	g_test_procs[10].m_priority = HIGH;
+	
 	g_test_procs[3].m_priority=HIGH;
 	g_test_procs[2].m_priority=HIGH;
-	
-	
-	
+
 }
 
 /**
@@ -91,6 +103,7 @@ void proc1(void)
 				message = (MSGBUF*)receive_message(NULL);
 				received_messages++;
 				uart0_put_string("Proc1 received message from Proc2!\n\r");
+				//uart0_put_char('0'+received_messages);
 				if (received_messages == 1) {
 					uart0_put_string("G013_test: test 2 pass\n\r");
 					ok_tests++;
@@ -129,7 +142,6 @@ void proc2(void)
 {
 	
 	MSGBUF* msg_env;
-	void* temp;
 	int sent_msg = 0;
 	
 	while(1){
@@ -170,7 +182,6 @@ void proc2(void)
 void proc3(void)
 {
 	MSGBUF* msg;
-	int i, ret_val;
 	msg = request_memory_block();
 	msg->mtype = KCD_REG;
 	msg->mtext[0] = '%';
@@ -229,6 +240,137 @@ void proc5(void){
 			release_processor();
 	 }
 }
+void proc_a(void){
+	MSGBUF* msg;
+	int i, temp_num;
+	msg = request_memory_block();
+	msg->mtype = KCD_REG;
+	msg->mtext[0] = '%';
+	msg->mtext[1] = 'Z';
+	msg->mtext[2] = '\0';
+	send_message(KCD_PROC_ID,msg);
+	while(1){
+		msg = (MSGBUF*)receive_message(NULL);
+		if (msg->mtype == DEFAULT) {
+			//check if data is %Z
+			if(msg->mtext[0] == '%' && msg->mtext[1] == 'Z'){
+				release_memory_block(msg);
+				break;
+			}
+		}else{
+			release_memory_block(msg);
+		}
+	}
+	while(1){
+		int num_digits, index;
+		num_digits = 0;
+		index = 0;
+		msg = request_memory_block();
+		msg->mtype = COUNT_REPORT;
+		temp_num = i;
+		//count digits
+		while(temp_num != 0){
+			num_digits++;
+			temp_num = temp_num/10;
+		}
+		
+		temp_num = i;
+		msg->mtext[num_digits] = '\0';
+		while(num_digits != 0){
+			 msg->mtext[num_digits-1] = temp_num%10 + '0';
+			 temp_num = temp_num/10;
+			 num_digits--;
+		}
+		send_message(PROC_B_ID, msg);
+		i++;
+		release_processor();
+	}
+}
+
+
+void proc_b(void){
+	 MSGBUF* msg;
+	while(1){
+		msg = (MSGBUF*)receive_message(NULL);
+		send_message(PROC_C_ID, msg);
+		release_processor();
+	}
+}
+void proc_c(void){
+	 MSG_QUEUE_NODE* msg_queue = NULL;
+	 MSG_QUEUE_NODE* msg_queue_end = NULL;
+	 MSGBUF* msg;
+	
+	 while(1){
+		 if(msg_queue == NULL){
+			 msg = receive_message(NULL);
+		 }
+		 else{
+			 msg = (MSGBUF *)dequeue(msg_queue, msg_queue_end);
+		 }
+		 if(msg->mtype == COUNT_REPORT){
+			 int num, index, digit;
+			  while(msg->mtext[index] != '\0'){
+					digit = msg->mtext[index] - '0';
+					num = num*10 + digit;
+					index++;
+				}
+				if(num%20 == 0){
+					
+					MSGBUF* delayed_msg;
+					char text[] = "PROCESS C";
+					msg->mtype = CRT_REQ;
+					strncpy(msg->mtext, text, MAX_MSG_SIZE);
+					send_message(CRT_PROC_ID, msg);
+					//hibernate 10s
+					delayed_msg = (MSGBUF* )request_memory_block();
+					delayed_msg -> mtype = WAKE_UP_TEN;
+					delayed_msg -> mtext[0] = '\0';
+					delayed_send(PROC_C_ID, delayed_msg, 10000);
+					while(1){
+						 msg = receive_message(NULL);
+						 if(msg->mtype == WAKE_UP_TEN){
+							  release_memory_block(msg);
+							  break;
+						 }else{
+							  enqueue(msg_queue, msg_queue_end, (MSG_QUEUE_NODE*)msg);
+						 }
+					}
+
+				}else{
+					release_memory_block(msg);
+				}
+		 }
+			release_processor();
+	 }
+}
+
+MSG_QUEUE_NODE* dequeue(MSG_QUEUE_NODE* queue_start, MSG_QUEUE_NODE* queue_end){
+	MSG_QUEUE_NODE* temp;
+	if(queue_start == NULL){
+		return NULL;
+	}else{
+		if(queue_start == queue_end){
+			queue_end = NULL;
+		}
+		temp = queue_start;
+		queue_start = queue_start->next;
+		return temp;
+	}
+}
+
+void enqueue(MSG_QUEUE_NODE* queue_start, MSG_QUEUE_NODE* queue_end, MSG_QUEUE_NODE* new_node){
+		if(queue_start == NULL){
+			queue_start = new_node;
+			queue_end = new_node;
+		}else{
+			new_node->next = NULL;
+			queue_end -> next = new_node;
+			queue_end = new_node;
+		}
+}
+
+
 
 void printEndTestString(){
 		uart0_put_string("G013_test: ");

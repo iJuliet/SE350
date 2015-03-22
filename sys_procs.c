@@ -42,16 +42,16 @@ void clear_buffer(char* buffer){
 }
 void set_up_sys_procs(PROC_INIT *g_proc_table){
 	//set up for kcd-process
-	g_proc_table[KCD_PROCESS].m_pid = KCD_PROC_ID;
-	g_proc_table[KCD_PROCESS].mpf_start_pc = &kcd_process;
-	g_proc_table[KCD_PROCESS].m_stack_size = 0x200;
-	g_proc_table[KCD_PROCESS].m_priority = SYSTEM; 
+	g_proc_table[KCD_PROC_ID].m_pid = KCD_PROC_ID;
+	g_proc_table[KCD_PROC_ID].mpf_start_pc = &kcd_process;
+	g_proc_table[KCD_PROC_ID].m_stack_size = 0x200;
+	g_proc_table[KCD_PROC_ID].m_priority = SYSTEM; 
 	
 	//set up for crt-process
-	g_proc_table[CRT_PROCESS].m_pid = CRT_PROC_ID;
-	g_proc_table[CRT_PROCESS].mpf_start_pc = &crt_process;
-	g_proc_table[CRT_PROCESS].m_stack_size = 0x100;
-	g_proc_table[CRT_PROCESS].m_priority = SYSTEM; 
+	g_proc_table[CRT_PROC_ID].m_pid = CRT_PROC_ID;
+	g_proc_table[CRT_PROC_ID].mpf_start_pc = &crt_process;
+	g_proc_table[CRT_PROC_ID].m_stack_size = 0x100;
+	g_proc_table[CRT_PROC_ID].m_priority = SYSTEM; 
 }
 
 void crt_process(){
@@ -98,6 +98,7 @@ void kcd_process(){
 				temp = msgText;
 				if(validCmd){
 						//read chars until '\r'
+						buffer[i++] = *temp;
 						if(*temp == '\r'){
 							msg_for_cmd = (msgbuf* )request_memory_block();
 							strncpy(msg_for_cmd->mtext, buffer, MAX_MSG_SIZE);
@@ -115,7 +116,6 @@ void kcd_process(){
 						}else{
 							//release the msg
 							//sent to crt
-							buffer[i++] = *temp;
 							msg_env->mtype = CRT_REQ;
 							send_message(CRT_PROC_ID, msg_env);
 							

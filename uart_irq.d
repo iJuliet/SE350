@@ -13,3 +13,4 @@ uart_irq.o: k_rtx.h
 uart_irq.o: rtx.h
 uart_irq.o: message.h
 uart_irq.o: cmd_proc.h
+uart_irq.o: sys_procs.h
